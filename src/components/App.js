@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Main from "./Main";
-import NavBar from './NavBar';
+import Main from "./routing/Main";
+import NavBar from './nav_bar/NavBar';
 
 function App() {
   return (

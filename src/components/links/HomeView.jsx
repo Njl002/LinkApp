@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './HomeView.css';
-import ProfileCard from "./ProfileCard";
+import './css/HomeView.css';
+import ProfileCard from "./link_profile/ProfileCard";
 
 export default class HomeView extends Component {
   render() {

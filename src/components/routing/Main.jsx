@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { navConsts } from './constants';
+import { navConsts } from '../../constants';
 
-import HomeView from './HomeView';
-import ProfileView from './ProfileView';
-import UserView from './UserView';
-import MessagesView from './MessagesView';
+import HomeView from '../links/HomeView';
+import ProfileView from '../links/link_profile/ProfileView';
+import UserView from '../user_profile/UserView';
+import MessagesView from '../messages/MessagesView';
 
 export default class Main extends Component {
   render() {

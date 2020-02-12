@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
-import { navConsts } from './constants';
+import { navConsts } from '../../constants';
 
 export default class NavBar extends Component {
   render() {
