@@ -5,7 +5,7 @@ import { navConsts } from '../../constants';
 
 export default class NavBar extends Component {
   render() {
-    const {MESSAGES, PROFILE} = navConsts;
+    const {MESSAGES, USERPROFILE} = navConsts;
     return (
       <div>
         <Link to={"/"}>
@@ -16,7 +16,7 @@ export default class NavBar extends Component {
           <Button> Messages </Button>
         </Link>
 
-        <Link to={"/" + PROFILE}>
+        <Link to={"/" + USERPROFILE}>
           <Button> Profile </Button>
         </Link>
         

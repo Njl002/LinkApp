@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { navConsts } from '../../constants';
 
-import HomeView from '../links/HomeView';
-import ProfileView from '../links/link_profile/ProfileView';
-import UserView from '../user_profile/UserView';
+import LinksView from '../links/LinksView';
+import LinkProfileView from '../links/link_profile/LinkProfileView';
+import UserProfileView from '../user_profile/UserProfileView';
 import MessagesView from '../messages/MessagesView';
 
 export default class Main extends Component {
@@ -12,7 +12,7 @@ export default class Main extends Component {
 
     const {
       HOMEPAGE,
-      PROFILE,
+      LINKPROFILE,
       USERPROFILE,
       MESSAGES
     } = navConsts;
@@ -21,15 +21,15 @@ export default class Main extends Component {
       <Switch>
         <Route
           exact path="/"
-          component={HomeView}
+          component={LinksView}
         />
         <Route
-          exact path={"/" + PROFILE}
-          component={ProfileView}
+          exact path={"/" + LINKPROFILE}
+          component={LinkProfileView}
         />
         <Route
           exact path={"/" + USERPROFILE}
-          component={UserView}
+          component={UserProfileView}
         />
         <Route
           exact path={"/" + MESSAGES}

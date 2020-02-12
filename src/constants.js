@@ -1,6 +1,6 @@
 export const navConsts = {
   HOMEPAGE: "home",
-  PROFILE: "profile",
+  LINKPROFILE: "link",
   USERPROFILE: "user",
   MESSAGES: "messages"
 };
