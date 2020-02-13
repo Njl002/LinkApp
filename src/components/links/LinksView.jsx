@@ -7,20 +7,20 @@ export default class LinksView extends Component {
     return (
       <div>
       <h1> Today's Links </h1>
-      <div class="row">
-        <div class="column">
+      <div className="row">
+        <div className="column">
           <LinkProfileCard />
         </div>
-        <div class="column">
+        <div className="column">
           <LinkProfileCard />
         </div>
       </div>
 
-      <div class="row">
-        <div class="column">
+      <div className="row">
+        <div className="column">
           <LinkProfileCard />
         </div>
-        <div class="column">
+        <div className="column">
           <LinkProfileCard />
         </div>
       </div>

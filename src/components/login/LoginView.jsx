@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { navConsts } from '../../constants';
-import default_profile_img from '../../resources/blank-profile-picture.png';
+
+import LoginForm from './LoginForm';
+
 
 export default class LoginView extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleLogin(email, password) {
+    this.props.onUserSessionUpdate(email, true)
+  }
+
   render() {
     return (
-      <div>Login page holder</div>
+      <Container>
+        <Col>
+          <LoginForm 
+            onLogin={this.handleLogin} 
+          />
+        </Col>
+      </Container>
     );
   }
 }
