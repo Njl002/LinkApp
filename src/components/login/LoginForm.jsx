@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
           />
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check type="checkbox" label="Remember login" />
         </Form.Group>
         <Button 
           variant="primary" type="submit" 
