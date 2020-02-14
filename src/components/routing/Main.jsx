@@ -87,7 +87,7 @@ export default class Main extends Component {
           component={LinksView}
         />
         <Route
-          exact path={"/" + LINKPROFILE}
+          exact path={"/" + LINKPROFILE + "/:id"}
           component={LinkProfileView}
         />
         <Route

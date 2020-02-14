@@ -19,7 +19,7 @@ export default class LinksView extends Component {
     let stateData = [];
     for (let i = 0; i < data.links.length; i++) {
       let newItem = {
-        key: data.links[i].id,
+        id: data.links[i].id,
         name: data.links[i].name,
         description: data.links[i].description,
         imageURL: data.links[i].imageURL
@@ -40,10 +40,11 @@ export default class LinksView extends Component {
 
     let list = this.state.links.map((link) => (
       <LinkProfileCard
-        key={link.key}
+        key={link.id}
+        id={link.id}
         name={link.name}
         description={link.description}
-        imageUrl={link.imageURL}
+        imageURL={link.imageURL}
       />
     ))
 
