@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './css/LinksView.css';
 
-import LinkProfileCard from "./link_profile/LinkProfileCard";
+import LinkProfileCard from './link_profile/LinkProfileCard';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 export default class LinksView extends Component {
@@ -39,6 +40,7 @@ export default class LinksView extends Component {
   render() {
 
     let list = this.state.links.map((link) => (
+      <Col xs={6} md={6}>
       <LinkProfileCard
         key={link.id}
         id={link.id}
@@ -46,13 +48,18 @@ export default class LinksView extends Component {
         description={link.description}
         imageURL={link.imageURL}
       />
+      </Col>
     ))
 
     return (
-      <div>
-        <h1> Today's Links </h1>
-        {list}
-      </div>
+      <Container>
+        <Row >
+          <h1> Today's Links </h1>
+        </Row>
+        <Row>
+          {list}
+        </Row>
+      </Container>
     );
   }
 }

@@ -12,6 +12,8 @@ import NavBar from '../nav_bar/NavBar'
 
 import UserSession from '../../backend/UserSession';
 
+import './Main.css';
+
 
 export default class Main extends Component {
 
@@ -51,7 +53,7 @@ export default class Main extends Component {
     } = navConsts;
 
     return (
-    <div>
+    <div className="main">
       <Switch>
 
         <Route
@@ -100,11 +102,9 @@ export default class Main extends Component {
         />
 
       </Switch>
-      <div>
       {this.state.isAuthenticated && (
         <NavBar />
       )}
-      </div>
     </div>
     );
   }

@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+import { Navbar, Container } from 'react-bootstrap';
 import { navConsts } from '../../constants';
 
 export default class NavBar extends Component {
   render() {
-    const {MESSAGES, USERPROFILE} = navConsts;
+    const {LINKS, MESSAGES, USERPROFILE} = navConsts;
     return (
-      <div>
-        <Link to={"/"}>
-          <Button> Home </Button>
+      // todo add images to the links
+      <Navbar expand="true" bg="light" fixed="bottom" >
+        <Link to={"/" + LINKS}>
+          <Navbar.Brand>
+            Links
+          </Navbar.Brand>
         </Link>
-        
         <Link to={"/" + MESSAGES}>
-          <Button> Messages </Button>
+          <Navbar.Brand>
+            Messages
+          </Navbar.Brand>
         </Link>
-
         <Link to={"/" + USERPROFILE}>
-          <Button> Profile </Button>
+          <Navbar.Brand>
+            Profile
+          </Navbar.Brand>
         </Link>
-        
-      </div>
+      </Navbar>
     );
   }
 }
