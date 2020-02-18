@@ -11,12 +11,20 @@ var UserSession = (function() {
   var setAuthenticated = function(isAuthenticated) {
     sessionStorage.setItem("isAuthenticated", isAuthenticated);
   };
-
+  var getId = function() {
+    return sessionStorage.getItem("userId");
+  }
+  var setId = function(userId) {
+    return sessionStorage.setItem("userId", userId);
+  }
+ 
   return {
     getUsername: getUsername,
     setUsername: setUsername,
     getAuthenticated: getAuthenticated,
     setAuthenticated: setAuthenticated,
+    getId: getId,
+    setId: setId,
   };
 })();
 
