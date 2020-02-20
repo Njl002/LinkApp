@@ -14,6 +14,7 @@ import NavBar from '../nav_bar/NavBar'
 import UserSession from '../../storage/UserSession';
 
 import './Main.css';
+import LaunchView from '../launch/LaunchView';
 
 
 export default class Main extends Component {
@@ -50,6 +51,7 @@ export default class Main extends Component {
   render() {
 
     const {
+      LAUNCH,
       LOGIN,
       LINKS,
       LINKPROFILE,
@@ -70,14 +72,32 @@ export default class Main extends Component {
             />
           )}
         />
+        
+        {this.state.isAuthenticated ? (
+          <Route
+            exact path={"/" + LAUNCH}
+            render={() => (
+              <LoginRedirect 
+                isAuthenticated={this.state.isAuthenticated}
+              />)}
+          />
+          ) : (
+          <Route
+            exact path={"/" + LAUNCH}
+            render={() => (
+              <LaunchView 
+                onBackClick={this.handleBackToLaunch}
+              />)}
+          />
+        )}
+
         {this.state.isAuthenticated ? (
           <Route
             exact path={"/" + LOGIN}
             render={() => (
               <LoginRedirect 
                 isAuthenticated={this.state.isAuthenticated}
-              />
-            )}
+              />)}
           />
           ) : (
           <Route
@@ -85,8 +105,7 @@ export default class Main extends Component {
             render={() => (
               <LoginView 
                 onUserSessionUpdate={this.handleUserSessionUpdate}
-              />
-            )}
+              />)}
           />
         )}
         

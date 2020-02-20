@@ -24,7 +24,7 @@ export default class EmailForm extends Component {
           </Row>
           <Row>
             <Form>
-              <Form.Group controlID="formSchoolEmail">
+              <Form.Group>
                 <Form.Control type="schoolEmail" placeholder="School email" />
               </Form.Group>
             </Form>

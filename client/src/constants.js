@@ -1,5 +1,5 @@
 export const navConsts = {
-  HOMEPAGE: "home",
+  LAUNCH: "launch",
   LINKS: "links",
   LINKPROFILE: "link",
   USERPROFILE: "user",

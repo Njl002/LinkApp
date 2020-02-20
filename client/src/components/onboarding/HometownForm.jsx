@@ -24,7 +24,7 @@ export default class NameForm extends Component {
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="hometownForm">
+            <Form.Group>
               <Form.Control type="hometown" placeholder="Add city" />
             </Form.Group>
           </Form>

@@ -5,11 +5,11 @@ import { Redirect } from "react-router-dom";
 export default class LoginRedirect extends Component {
 
   render() {
-    const { LOGIN, LINKS } = navConsts;
+    const { LAUNCH, LINKS } = navConsts;
     if (this.props.isAuthenticated) {
       return <Redirect to={LINKS} />;
     } else {
-      return <Redirect to={LOGIN} />;
+      return <Redirect to={LAUNCH} />;
     }
   }
 }

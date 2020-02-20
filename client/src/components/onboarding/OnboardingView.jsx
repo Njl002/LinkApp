@@ -16,7 +16,9 @@ import MajorChoice from './MajorChoice';
 export default class OnboardingView extends Component {
   constructor(props) {
     super(props);
-    this.state = {page: 0};
+    this.state = {
+      page: 0
+    };
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
   }
@@ -36,21 +38,21 @@ export default class OnboardingView extends Component {
   }
   
   render() {
-    if(this.state.page == 0) {
+    if(this.state.page === 0) {
       return(<NameForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 1) {
+    } else if (this.state.page === 1) {
       return(<SchoolForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 2) {
+    } else if (this.state.page === 2) {
       return(<EmailForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 3) {
+    } else if (this.state.page === 3) {
       return(<RoleChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 4) {
+    } else if (this.state.page === 4) {
       return (<NotificationChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 5) {
+    } else if (this.state.page === 5) {
       return (<BasicInfoStart onNextClick={this.handleNextClick}/>);
-    } else if (this.state.page == 6) {
+    } else if (this.state.page === 6) {
       return (<HometownForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page == 7) {
+    } else if (this.state.page === 7) {
       return (<MajorChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     }
   }
