@@ -8,6 +8,7 @@ import LinksView from '../links/LinksView';
 import LinkProfileView from '../links/link_profile/LinkProfileView';
 import UserProfileView from '../user_profile/UserProfileView';
 import MessagesView from '../messages/MessagesView';
+import OnboardingView from '../onboarding/OnboardingView';
 import NavBar from '../nav_bar/NavBar'
 
 import UserSession from '../../storage/UserSession';
@@ -53,7 +54,8 @@ export default class Main extends Component {
       LINKS,
       LINKPROFILE,
       USERPROFILE,
-      MESSAGES
+      MESSAGES,
+      ONBOARDING
     } = navConsts;
 
     return (
@@ -107,6 +109,11 @@ export default class Main extends Component {
         <Route
           exact path={"/" + MESSAGES}
           component={MessagesView}
+        />
+
+        <Route
+          exact path={"/" + ONBOARDING}
+          component={OnboardingView}
         />
 
       </Switch>
