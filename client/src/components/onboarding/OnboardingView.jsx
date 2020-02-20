@@ -12,6 +12,9 @@ import NotificationChoice from './NotificationChoice';
 import BasicInfoStart from './BasicInfoStart';
 import HometownForm from './HometownForm';
 import MajorChoice from './MajorChoice';
+import SkillsForm from './SkillsForm';
+import HobbiesForm from './HobbiesForm';
+import BioForm from './BioForm';
 
 export default class OnboardingView extends Component {
   constructor(props) {
@@ -54,6 +57,12 @@ export default class OnboardingView extends Component {
       return (<HometownForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 7) {
       return (<MajorChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+    } else if (this.state.page === 8) {
+      return (<SkillsForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+    } else if (this.state.page === 9) {
+      return (<HobbiesForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+    } else if (this.state.page === 10) {
+      return (<BioForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     }
   }
 }

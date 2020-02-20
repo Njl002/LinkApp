@@ -15,7 +15,7 @@ export default class MajorChoice extends Component {
             onClick={() => {
               this.props.onPrevClick();
             }}
-            >
+          >
             Back
         </Button>
         </Row>
@@ -27,9 +27,14 @@ export default class MajorChoice extends Component {
         </Row>
         <Row>
           <ButtonToolbar>
-            <ToggleButtonGroup vertical type="radio" name="notificationsToggle" defaultValue={1}>
-              <ToggleButton value={1}>Enable Notifications </ToggleButton>
-              <ToggleButton value={2}>Disable Notifications </ToggleButton>
+            <ToggleButtonGroup vertical type="radio" name="majorToggle" defaultValue={1}>
+              <ToggleButton value={1}>Aerospace Engineering </ToggleButton>
+              <ToggleButton value={2}>BioInformatics </ToggleButton>
+              <ToggleButton value={3}>Biomedical Engineering</ToggleButton>
+              <ToggleButton value={4}>Chemical Engineering</ToggleButton>
+              <ToggleButton value={5}>Civil Engineering</ToggleButton>
+              <ToggleButton value={6}>Cognitive Science </ToggleButton>
+              <ToggleButton value={7}>Computer Science</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>
@@ -39,7 +44,7 @@ export default class MajorChoice extends Component {
             onClick={() => {
               this.props.onNextClick();
             }}
-            >
+          >
             >
           </Button>
         </Row>
