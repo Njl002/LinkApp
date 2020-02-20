@@ -24,9 +24,6 @@ export default class LoginView extends Component {
           <LoginForm 
             onLogin={this.handleLogin} 
           />
-          <Button onClick={this.handleAddUser}>
-            Sign Up
-          </Button>
         </Col>
       </Container>
     );
