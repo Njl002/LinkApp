@@ -23,7 +23,7 @@ export default class MajorChoice extends Component {
           <h1> Hi Bianca, </h1>
         </Row>
         <Row>
-          <h2> Pick up to two majors. </h2>
+          <h2> Pick a major. </h2>
         </Row>
         <Row>
           <ButtonToolbar>
