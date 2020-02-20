@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { navConsts } from '../../constants';
 
-import LoginRedirect from './LoginRedirect'
+import LoginRedirect from './LoginRedirect';
+import LaunchView from '../launch/LaunchView';
 import LoginView from '../login/LoginView';
 import LinksView from '../links/LinksView';
 import LinkProfileView from '../links/link_profile/LinkProfileView';
@@ -14,7 +15,6 @@ import NavBar from '../nav_bar/NavBar'
 import UserSession from '../../storage/UserSession';
 
 import './Main.css';
-import LaunchView from '../launch/LaunchView';
 
 
 export default class Main extends Component {
@@ -32,12 +32,12 @@ export default class Main extends Component {
   componentDidMount() {
     let priorUsername = UserSession.getUsername() || null;
     let priorAuthentication = UserSession.getAuthenticated() || false;
-    let priorId = UserSession.getId || null;
+    let priorId = UserSession.getId() || null;
     UserSession.setUsername(priorUsername);
     UserSession.setAuthenticated(priorAuthentication);
     UserSession.setId(priorId);
 
-    this.setState({username: priorUsername, isAuthenticated: priorAuthentication});
+    this.setState({username: priorUsername, isAuthenticated: priorAuthentication, userId: priorId});
   }
 
   handleUserSessionUpdate(username, isAuthenticated, userId) {
@@ -132,12 +132,15 @@ export default class Main extends Component {
 
         <Route
           exact path={"/" + ONBOARDING}
-          component={OnboardingView}
+          render={() => (
+            <OnboardingView 
+              onUserSessionUpdate={this.handleUserSessionUpdate}
+            />)}
         />
 
       </Switch>
       {this.state.isAuthenticated && (
-        <NavBar />
+        <NavBar userId={this.state.userId}/>
       )}
     </div>
     );

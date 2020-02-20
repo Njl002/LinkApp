@@ -9,16 +9,15 @@ export default class LinkProfileView extends Component {
       id: props.match.params.id,
       name: "",
       description: "",
-      imageUrl: ""
+      imageURL: ""
     }
-    this.getLink = this.getLink.bind(this);
   }
 
   componentDidMount() {
-    this.getLink();
+    this.getLink(this.state.id);
   }
 
-  getLink = () => {
+  getLink(userId) {
     fetch("/api/getUsers", {
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +26,7 @@ export default class LinkProfileView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      let linkData = data.users.find(x => x.id === this.state.id);
+      let linkData = data.users.find(x => x.id === userId);
       this.setState({
         id: linkData.id,
         name: linkData.name,

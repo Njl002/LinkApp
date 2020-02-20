@@ -2,7 +2,7 @@ export const navConsts = {
   LAUNCH: "launch",
   LINKS: "links",
   LINKPROFILE: "link",
-  USERPROFILE: "user",
+  USERPROFILE: "user_profile",
   MESSAGES: "messages",
   LOGIN: "login",
   SIGNUP: "signup",

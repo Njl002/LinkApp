@@ -56,18 +56,24 @@ const userRoutes = (app, path, fs) => {
       true);
   });
 
-  // // UPDATE
-  // app.put('/api/updateUser/:id', (req, res) => {
-  //   readFile(data => {
-  //     const userId = req.params["id"];
-  //     let index = data.users.findIndex(x => x.id === userId);
-  //     data.users[index] = JSON.parse(req.body.data);
-  //     writeFile(JSON.stringify(data, null, 2), () => {
-  //       res.status(200).send("user id" + userId + " updated");
-  //     });
-  //   },
-  //     true);
-  // });
+  // UPDATE
+  app.put('/api/updateUser/:id', (req, res) => {
+    readFile(data => {
+      const userId = req.params["id"];
+      let index = data.users.findIndex(x => x.id === userId);
+      let updatedUser = {
+        id: req.body.id,
+        name: req.body.name,
+        description: req.body.description,
+        imageURL: req.body.imageURL
+      }
+      data.users[index] = updatedUser;
+      writeFile(JSON.stringify(data, null, 2), () => {
+        res.status(200).send("user id" + userId + " updated");
+      });
+    },
+      true);
+  });
 
   //   // DELETE
   // app.put('/api/updateUser/:id', (req, res) => {

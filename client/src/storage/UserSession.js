@@ -13,10 +13,10 @@ var UserSession = (function() {
   };
   var getId = function() {
     return sessionStorage.getItem("userId");
-  }
+  };
   var setId = function(userId) {
-    return sessionStorage.setItem("userId", userId);
-  }
+    sessionStorage.setItem("userId", userId);
+  };
  
   return {
     getUsername: getUsername,

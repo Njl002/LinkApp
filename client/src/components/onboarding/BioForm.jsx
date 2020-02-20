@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import { navConsts } from '../../constants';
 
 export default class SkillsForm extends Component {
   constructor(props) {
@@ -7,6 +10,7 @@ export default class SkillsForm extends Component {
   }
 
   render() {
+    const {LINKS} = navConsts;
     return (
       <Container>
         <Row>
@@ -63,14 +67,13 @@ export default class SkillsForm extends Component {
           </Form>
         </Row>
         <Row>
+          <Link to={"/"}>
           <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onNextClick();
-            }}
+            variant="primary" type="submit" onClick={this.props.onSignUp}
           >
-            >
+            Finish
           </Button>
+          </Link>
         </Row>
       </Container>
     )

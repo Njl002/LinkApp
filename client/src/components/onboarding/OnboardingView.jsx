@@ -24,6 +24,9 @@ export default class OnboardingView extends Component {
     };
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    // this.addUser = this.addUser.addUser.bind(this);
+    // this.getLinks = this.getLinks.bind(this);
   }
 
   handleNextClick() {
@@ -39,7 +42,59 @@ export default class OnboardingView extends Component {
     }));
     console.log("This is the current page state: " + this.state.page);
   }
-  
+
+  handleSignUp() {
+    this.addUser("Test Name", "Test Description", "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg");
+  }
+
+  addUser (name, description, imageURL, callback) {
+    console.log("adding User: " + name + " " + description + " " + imageURL);
+    let data = {
+      id: "7",
+      name: name,
+      description: description,
+      imageURL: imageURL
+    };
+    fetch("/api/addUser", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        console.log("Getting response back: ");
+        console.log(response);
+        this.getLinks(); // to do add to response
+        return response;
+      })
+      .then(links => {
+        this.props.onUserSessionUpdate("temp", true, "7"); // to update with sign up values
+        return links;
+      })
+      .catch(error => {
+        console.log("Add User error: ");
+        console.log(error);
+      })
+  }
+
+  // to do filter out self
+  getLinks = () => {
+    fetch("/api/getUsers", {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      let linkData = data.users.filter(x => x.id === "7");
+      console.log("Found user? ");
+      console.log(linkData);
+    });
+  }
+
   render() {
     if(this.state.page === 0) {
       return(<NameForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
@@ -62,7 +117,7 @@ export default class OnboardingView extends Component {
     } else if (this.state.page === 9) {
       return (<HobbiesForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 10) {
-      return (<BioForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return (<BioForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick} onSignUp={this.handleSignUp}/>);
     }
   }
 }

@@ -14,7 +14,8 @@ export default class LaunchView extends Component {
       <Container fluid>
         <Row>
           <Col xs={6} md={4}>
-            <Image src={default_profile_img} rounded/>
+            {/*<Image src={default_profile_img} rounded/>*/}
+            <h1> TEMPORARY LOGO </h1>
           </Col>
         </Row>
         <Row>
