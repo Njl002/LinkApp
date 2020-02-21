@@ -8,7 +8,7 @@ import NameForm from './NameForm';
 import SchoolForm from './SchoolForm';
 import EmailForm from './EmailForm';
 import RoleChoice from './RoleChoice';
-import NotificationChoice from './NotificationChoice';
+// import NotificationChoice from './NotificationChoice';
 import BasicInfoStart from './BasicInfoStart';
 import HometownForm from './HometownForm';
 import MajorChoice from './MajorChoice';
@@ -104,19 +104,19 @@ export default class OnboardingView extends Component {
       return(<EmailForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 3) {
       return(<RoleChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+    // } else if (this.state.page === 4) {
+    //   return (<NotificationChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 4) {
-      return (<NotificationChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page === 5) {
       return (<BasicInfoStart onNextClick={this.handleNextClick}/>);
-    } else if (this.state.page === 6) {
+    } else if (this.state.page === 5) {
       return (<HometownForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page === 7) {
+    } else if (this.state.page === 6) {
       return (<MajorChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page === 8) {
+    } else if (this.state.page === 7) {
       return (<SkillsForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page === 9) {
+    } else if (this.state.page === 8) {
       return (<HobbiesForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
-    } else if (this.state.page === 10) {
+    } else if (this.state.page === 9) {
       return (<BioForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick} onSignUp={this.handleSignUp}/>);
     }
   }

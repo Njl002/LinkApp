@@ -4,6 +4,9 @@ import { Button, Container, Row, Form } from 'react-bootstrap';
 export default class SkillsForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sSkills: ""
+    };
   }
 
   render() {
@@ -24,8 +27,19 @@ export default class SkillsForm extends Component {
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="skillsForm">
-              <Form.Control type="skills" placeholder="Skills" />
+            <Form.Group>
+              <Form.Control 
+                type="text"
+                name="skillsForm"
+                placeholder="Skills" 
+                onChange={e =>
+                  this.setState({
+                    sSkills: e.target.value
+                  }, () => {
+                    console.log("New skills:", this.state.sSkills); 
+                  })
+                }
+              />
             </Form.Group>
           </Form>
         </Row>

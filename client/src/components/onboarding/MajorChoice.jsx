@@ -4,6 +4,14 @@ import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton 
 export default class MajorChoice extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sMajor: ""
+    };
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleToggle(vals) {
+    this.setState({ sMajor: vals }, () => { console.log("New major:", this.state.sMajor)});
   }
 
   render() {
@@ -27,14 +35,20 @@ export default class MajorChoice extends Component {
         </Row>
         <Row>
           <ButtonToolbar>
-            <ToggleButtonGroup vertical type="radio" name="majorToggle" defaultValue={1}>
-              <ToggleButton value={1}>Aerospace Engineering </ToggleButton>
-              <ToggleButton value={2}>BioInformatics </ToggleButton>
-              <ToggleButton value={3}>Biomedical Engineering</ToggleButton>
-              <ToggleButton value={4}>Chemical Engineering</ToggleButton>
-              <ToggleButton value={5}>Civil Engineering</ToggleButton>
-              <ToggleButton value={6}>Cognitive Science </ToggleButton>
-              <ToggleButton value={7}>Computer Science</ToggleButton>
+            <ToggleButtonGroup 
+              vertical 
+              type="radio" 
+              name="majorToggle" 
+              defaultValue={"Aerospace Engineering"}
+              onChange={this.handleToggle}
+            >
+              <ToggleButton value={"Aerospace Engineering"}>Aerospace Engineering</ToggleButton>
+              <ToggleButton value={"BioInformatics"}>BioInformatics</ToggleButton>
+              <ToggleButton value={"Biomedical Engineering"}>Biomedical Engineering</ToggleButton>
+              <ToggleButton value={"Chemical Engineering"}>Chemical Engineering</ToggleButton>
+              <ToggleButton value={"Civil Engineering"}>Civil Engineering</ToggleButton>
+              <ToggleButton value={"Cognitive Science"}>Cognitive Science</ToggleButton>
+              <ToggleButton value={"Computer Science"}>Computer Science</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>

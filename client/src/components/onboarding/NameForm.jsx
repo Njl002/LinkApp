@@ -6,6 +6,10 @@ import { navConsts } from '../../constants';
 export default class NameForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sFirstName: "",
+      sLastName: ""
+    };
   }
 
   render() {
@@ -25,14 +29,36 @@ export default class NameForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="firstName" placeholder="First Name" />
+              <Form.Control 
+                type="text" 
+                name="firstNameForm" 
+                placeholder="First Name" 
+                onChange={e =>
+                  this.setState({
+                    sFirstName: e.target.value
+                  }, () => {
+                    console.log("New First Name:", this.state.sFirstName); 
+                  })
+                }
+              />
             </Form.Group>
           </Form>
         </Row>
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="lastName" placeholder="Last Name" />
+              <Form.Control 
+                type="text" 
+                name="lastNameForm" 
+                placeholder="Last Name"
+                onChange={e =>
+                  this.setState({
+                    sLastName: e.target.value
+                  }, () => {
+                    console.log("New Last Name:", this.state.sLastName); 
+                  })
+                }
+              />
             </Form.Group>
           </Form>
         </Row>

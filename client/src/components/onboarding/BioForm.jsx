@@ -7,6 +7,9 @@ import { navConsts } from '../../constants';
 export default class SkillsForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sBio: ""
+    };
   }
 
   render() {
@@ -57,12 +60,22 @@ export default class SkillsForm extends Component {
           {/* <h2> Drag to reorder </h2> */}
         </Row>
         <Row>
-          <h1> What are you looking for? </h1>
+          <h1> What are you looking for in your partnership? </h1>
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="bioForm">
-              <Form.Control type="bio" />
+            <Form.Group>
+              <Form.Control 
+                type="bio"
+                name="bioForm"
+                onChange={e =>
+                  this.setState({
+                    sBio: e.target.value
+                  }, () => {
+                    console.log("New bio:", this.state.sBio); 
+                  })
+                }
+              />
             </Form.Group>
           </Form>
         </Row>

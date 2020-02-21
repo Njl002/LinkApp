@@ -18,7 +18,7 @@ export default class BasicInfoStart extends Component {
             onClick={() => {
               this.props.onNextClick();
             }}
-            >
+          >
             Add basic info
           </Button>
         </Row>
