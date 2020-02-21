@@ -6,5 +6,6 @@ export const navConsts = {
   MESSAGES: "messages",
   LOGIN: "login",
   SIGNUP: "signup",
-  ONBOARDING: "onboarding"
+  ONBOARDING: "onboarding",
+  CHAT: "chat"
 };

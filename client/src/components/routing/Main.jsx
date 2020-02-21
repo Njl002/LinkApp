@@ -10,6 +10,7 @@ import LinkProfileView from '../links/link_profile/LinkProfileView';
 import UserProfileView from '../user_profile/UserProfileView';
 import MessagesView from '../messages/MessagesView';
 import OnboardingView from '../onboarding/OnboardingView';
+import ChatView from '../messages/chat/ChatView';
 import NavBar from '../nav_bar/NavBar'
 
 import UserSession from '../../storage/UserSession';
@@ -57,7 +58,8 @@ export default class Main extends Component {
       LINKPROFILE,
       USERPROFILE,
       MESSAGES,
-      ONBOARDING
+      ONBOARDING,
+      CHAT
     } = navConsts;
 
     return (
@@ -136,6 +138,10 @@ export default class Main extends Component {
             <OnboardingView 
               onUserSessionUpdate={this.handleUserSessionUpdate}
             />)}
+        />
+        <Route
+          exact path={"/" + CHAT + "/:id"}
+          component={ChatView}
         />
 
       </Switch>

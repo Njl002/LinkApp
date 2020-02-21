@@ -29,6 +29,7 @@ export default class LinkProfileView extends Component {
       skills: "", // to change to list
       hobbies: "", // to change to list
       bio: "",
+      imageURL: "", 
 
       modalShow: false
     }
