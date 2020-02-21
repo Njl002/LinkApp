@@ -31,7 +31,7 @@ export default class UserProfileView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(userId);
+      //console.log(userId);
       let linkData = data.users.find(x => x.id === userId);
       this.setState({
         id: linkData.id,

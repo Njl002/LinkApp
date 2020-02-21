@@ -41,6 +41,12 @@
       "name": "Test Name",
       "description": "Test Description",
       "imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Test Name",
+      "description": "Test Description",
+      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"
     }
   ]
 }

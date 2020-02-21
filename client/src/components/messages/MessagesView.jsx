@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import MessageCard from './MessageCard';
 
+import { getAllUsers, getAllMessages } from '../../api';
 import UserSession from '../../storage/UserSession';
 
 export default class MessagesView extends Component {
@@ -16,50 +17,93 @@ export default class MessagesView extends Component {
 
   componentDidMount() {
     let userId = UserSession.getId(); // should be set at this point 
-    let matchingMessages = this.getMessages(userId, this.first);
-
-    console.log(matchingMessages);
-    this.setState({
-      messages: matchingMessages
-    });
-  }
-  first(list, callback) {
-    list.sort((a,b) => new Date(b.timeStamp) - new Date(a.timeStamp)); // latest to first
-    //console.log("Sorted: " + JSON.stringify(list));
-    return callback(list);
-  }
-  second(list) {
-    let latestMessages = [];
-    list.forEach(message => {
-      let found = false;
-      latestMessages.forEach(savedMessage => {
-        if ((message.to === savedMessage.to && message.from === savedMessage.from) ||
-              (message.to === savedMessage.from && message.from === savedMessage.to)) {
-            found = true;
-        }
+    const displayMessagesPromise = this.getDisplayMessages(userId);
+    displayMessagesPromise.then((values) => {
+      console.log(values);
+      this.setState({
+        messages: values
       });
-      if (!found) {
-        // add new field
-        message['name'] = message
-        latestMessages.push(message);
-      }
-    });
-    return latestMessages;
+    }).catch(error => {
+      console.log("setting messages view state error: ");
+      console.log(error);
+    })
   }
-  getMessages(userId, callback) {
-    // todo add to database
-    var messageData = require("../../messages.json");
-    let messageList = messageData.messages.filter(x => x.to === userId || x.from === userId);
-    return callback(messageList, this.second);
+
+  getDisplayMessages(userId) {
+    const usersPromise = getAllUsers();
+    console.log(usersPromise);
+    return usersPromise.then(data => {
+      console.log("Got users response: ");
+      console.log(data);
+      return data.users;
+    }).then((allUsers) => {
+      
+        const messagesPromise = getAllMessages();
+        return messagesPromise.then(data => {
+          console.log("Got messages response: ");
+          console.log(data);
+          return data.messages.filter(x => x.to === userId || x.from === userId);;
+        }).then((selectMessages) => {
+          selectMessages.sort((a,b) => new Date(b.timeStamp) - new Date(a.timeStamp)); // latest to first
+          return selectMessages;
+        }).then((list) => {
+          let latestMessages = [];
+          list.forEach(message => {
+            let found = false;
+            latestMessages.forEach(savedMessage => {
+              if ((message.to === savedMessage.to && message.from === savedMessage.from) ||
+                    (message.to === savedMessage.from && message.from === savedMessage.to)) {
+                  found = true;
+              }
+            });
+            if (!found) {
+              // add new field
+              message['name'] = message
+              latestMessages.push(message);
+            }
+          });
+          return latestMessages;
+        }).then((latestMessages) => {
+          // add imageURL name from all users
+          latestMessages.forEach(message => {
+            let toAddName = "";
+            let toAddImage = "";
+            // find the other user
+            if (message.to != userId) {
+              let user = allUsers.find(x => x.id === message.to);
+              toAddName = user.name;
+              toAddImage = user.imageURL;
+            }
+            else if (message.to == userId) {
+              let user = allUsers.find(x => x.id === message.from);
+              toAddName = user.name;
+              toAddImage = user.imageURL;
+            }
+            message['name'] = toAddName;
+            message['imageURL'] = toAddImage;
+          });
+          console.log("Filtered messages: ");
+          console.log(latestMessages);
+          return latestMessages;
+
+        }).catch(error => {
+          console.log("Get all messages error: ");
+          console.log(error);
+        });
+      
+      }).catch(error => {
+          console.log("Get all users error: ");
+          console.log(error);
+      });
   }
 
   render() {
     let messageList = this.state.messages.map((messageCard) => (
       <Col xs={12} md={9} key={messageCard.to + messageCard.from}>
       <MessageCard
-        name={"temp"}
+        partnerName={messageCard.name}
         lastMessage={messageCard.body}
-        imageURL={"temp link"}
+        partnerImageURL={messageCard.imageURL}
       />
       </Col>
     ));
