@@ -16,6 +16,8 @@ export function getAllUsers() {
 }
 
 export function addUser(data) {
+  console.log("Adding user");
+  console.log(data);
   return fetch("/api/addUser", {
     method: "POST",
     headers: {
@@ -25,9 +27,8 @@ export function addUser(data) {
     body: JSON.stringify(data)
   })
   .then(response => {
-    console.log("Getting response back: ");
     console.log(response);
-    return response;
+    return response.json();
   })
   .catch(error => {
     console.log("add user error: ");
@@ -48,6 +49,27 @@ export function getAllMessages() {
   })
   .catch(error => {
     console.log("get user error: ");
+    console.log(error);
+  })
+}
+
+export function addMessage(data) {
+  console.log("Adding Message");
+  console.log(data);
+  return fetch("/api/addMessage", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    console.log(response);
+    return response.json();
+  })
+  .catch(error => {
+    console.log("add message error: ");
     console.log(error);
   })
 }

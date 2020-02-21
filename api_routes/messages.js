@@ -46,9 +46,9 @@ const messageRoutes = (app, path, fs) => {
         body: req.body.body,
         timeStamp: req.body.timeStamp
       }
-      data.users.push(newUser);
+      data.messages.push(newMessage);
       writeFile(JSON.stringify(data, null, 2), () => {
-        res.status(200).send("new message added"); // return the updated list
+        res.status(200).send(JSON.stringify(newMessage)); // return the updated list
       });
     },
       true);

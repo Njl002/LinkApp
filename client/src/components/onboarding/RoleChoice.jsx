@@ -60,10 +60,10 @@ export default class RoleChoice extends Component {
             variant="primary" type="submit"
             onClick={() => {
               if (this.state.sLookingForMentee) {
-                this.props.onRoleChange("mentor");
+                this.props.onRoleChange("Mentor");
               }
               else {
-                this.props.onRoleChange("mentee");
+                this.props.onRoleChange("Mentee");
               }
               this.props.onNextClick();
             }}

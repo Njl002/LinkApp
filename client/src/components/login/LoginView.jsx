@@ -10,9 +10,9 @@ export default class LoginView extends Component {
     this.handleLogin = this.handleLogin.bind(this);
   }
 
-  // TODO give login check functionality and add signup functionality
+  // TODO give login check functionality
   handleLogin(email, password) {
-    
+    // to fix later
     this.props.onUserSessionUpdate(email, true, "7");
   }
 

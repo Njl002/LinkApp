@@ -43,7 +43,7 @@ const userRoutes = (app, path, fs) => {
       // add new user
       //let newUser = JSON.parse(JSON.stringify(req.body));
       let newUser = {
-        id: newUserId,
+        id: newUserId.toString(),
         firstName: req.body.firstName, 
         lastName: req.body.lastName,
         schoolName: req.body.schoolName,
@@ -62,30 +62,30 @@ const userRoutes = (app, path, fs) => {
       }
       data.users.push(newUser);
       writeFile(JSON.stringify(data, null, 2), () => {
-        res.status(200).send("new user added"); // return the updated list
+        res.status(200).send(JSON.stringify(newUser)); // return the updated list
       });
     },
       true);
   });
 
   // UPDATE
-  app.put('/api/updateUser/:id', (req, res) => {
-    readFile(data => {
-      const userId = req.params["id"];
-      let index = data.users.findIndex(x => x.id === userId);
-      let updatedUser = {
-        id: req.body.id,
-        name: req.body.name,
-        description: req.body.description,
-        imageURL: req.body.imageURL
-      }
-      data.users[index] = updatedUser;
-      writeFile(JSON.stringify(data, null, 2), () => {
-        res.status(200).send("user id" + userId + " updated");
-      });
-    },
-      true);
-  });
+  // app.put('/api/updateUser/:id', (req, res) => {
+  //   readFile(data => {
+  //     const userId = req.params["id"];
+  //     let index = data.users.findIndex(x => x.id === userId);
+  //     let updatedUser = {
+  //       id: req.body.id,
+  //       name: req.body.name,
+  //       description: req.body.description,
+  //       imageURL: req.body.imageURL
+  //     }
+  //     data.users[index] = updatedUser;
+  //     writeFile(JSON.stringify(data, null, 2), () => {
+  //       res.status(200).send("user id" + userId + " updated");
+  //     });
+  //   },
+  //     true);
+  // });
 
   //   // DELETE
   // app.put('/api/updateUser/:id', (req, res) => {

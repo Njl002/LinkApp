@@ -46,6 +46,7 @@ export default class OnboardingView extends Component {
       monthEnd: "",
       yearEnd: "",
       email: "",
+      password: "",
       // role mentee or mentor
       role: "",
       hometown: "",
@@ -67,6 +68,7 @@ export default class OnboardingView extends Component {
     this.handleMonthEndChange = this.handleMonthEndChange.bind(this);
     this.handleYearEndChange = this.handleYearEndChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleRoleChange = this.handleRoleChange.bind(this);
     this.handleHometownChange = this.handleHometownChange.bind(this);
     this.handleMajorChange = this.handleMajorChange.bind(this);
@@ -89,7 +91,38 @@ export default class OnboardingView extends Component {
   }
 
   handleSignUp() {
-    return null;
+    this.signUpUser(); // add params?
+  }
+
+  signUpUser () {
+    console.log("adding User: " + this.state.firstName + " " + this.state.lastName);
+    let data = {
+      firstName: this.state.firstName, 
+      lastName: this.state.lastName,
+      schoolName: this.state.schoolName,
+      monthStart: this.state.monthStart,
+      yearStart: this.state.yearStart,
+      monthEnd: this.state.monthEnd,
+      yearEnd: this.state.yearEnd,
+      email: this.state.email,
+      role: this.state.role,
+      hometown: this.state.hometown,
+      major: this.state.major,
+      skills: this.state.skills,
+      hobbies: this.state.hobbies, 
+      bio: this.state.bio,
+      imageURL: "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"
+    };
+    const addUserPromise = addUser(data);
+    addUserPromise.then(newUser => {
+      console.log("Getting response back: ");
+      console.log(newUser);
+      this.props.onUserSessionUpdate(newUser.firstName + " " + newUser.lastName, true, newUser.id);
+    })
+    .catch(error => {
+      console.log("Add User error: ");
+      console.log(error);
+    })
   }
 
   // name form
@@ -137,7 +170,11 @@ export default class OnboardingView extends Component {
       email: val
     }));
   }
-
+  handlePasswordChange(val) {
+    this.setState(prevState => ({
+      password: val
+    }));
+  }
   // role form
   handleRoleChange(val) {
     this.setState(prevState => ({
@@ -197,7 +234,8 @@ export default class OnboardingView extends Component {
     } else if (this.state.page === 2) {
       return(<EmailForm onNextClick={this.handleNextClick} 
                         onPrevClick={this.handlePrevClick}
-                        onEmailChange={this.handleEmailChange}/>);
+                        onEmailChange={this.handleEmailChange}
+                        onPasswordChange={this.handlePasswordChange}/>);
     } else if (this.state.page === 3) {
       return(<RoleChoice onNextClick={this.handleNextClick} 
                         onPrevClick={this.handlePrevClick}
@@ -205,7 +243,7 @@ export default class OnboardingView extends Component {
     // } else if (this.state.page === 4) {
     //   return (<NotificationChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 4) {
-      return (<BasicInfoStart onNextClick={this.handleNextClick}/>);
+      return (<BasicInfoStart onPrevClick={this.handlePrevClick} onNextClick={this.handleNextClick}/>);
     } else if (this.state.page === 5) {
       return (<HometownForm onNextClick={this.handleNextClick} 
                             onPrevClick={this.handlePrevClick}

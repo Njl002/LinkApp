@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import LinkProfileCard from './link_profile/LinkProfileCard';
+
+import { getAllUsers } from '../../api';
+
 import './css/LinksView.css';
 
-import LinkProfileCard from './link_profile/LinkProfileCard';
-import { Container, Row, Col } from 'react-bootstrap';
 
 
 export default class LinksView extends Component {
@@ -12,8 +15,6 @@ export default class LinksView extends Component {
     this.state = {
       links : []
     }
-
-    this.getLinks = this.getLinks.bind(this);
   }
 
   componentDidMount() {
@@ -22,16 +23,14 @@ export default class LinksView extends Component {
 
   // to do filter out self
   getLinks = () => {
-    fetch("/api/getUsers", {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
+    const allUsersPromise = getAllUsers();
+    allUsersPromise.then(data => {
       let linkData = data.users.filter(x => x.id !== this.props.userId);
       this.setState({links: linkData});
+    })
+    .catch(error => {
+      console.log("Get links error: ");
+      console.log(error);
     });
   }
 

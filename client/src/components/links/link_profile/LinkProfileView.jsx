@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Container, Row, Col, Image, Button, ButtonToolbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ChatModal from './ChatModal';
+
+import { navConsts } from '../../../constants';
+
+import { getAllUsers } from '../../../api';
 
 // is LINKPROFILE routing
 export default class LinkProfileView extends Component {
@@ -22,8 +28,11 @@ export default class LinkProfileView extends Component {
       major: "",
       skills: "", // to change to list
       hobbies: "", // to change to list
-      bio: ""
+      bio: "",
+
+      modalShow: false
     }
+
   }
 
   componentDidMount() {
@@ -31,14 +40,8 @@ export default class LinkProfileView extends Component {
   }
 
   getLink(userId) {
-    fetch("/api/getUsers", {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
+    const allUsersPromise = getAllUsers();
+    allUsersPromise.then(data => {
       let user = data.users.find(x => x.id === userId);
       this.setState({
         id: user.id,
@@ -57,22 +60,40 @@ export default class LinkProfileView extends Component {
         major: user.major,
         skills: user.skills, // to change to list
         hobbies: user.hobbies, // to change to list
-        bio: user.bio
+        bio: user.bio,
+        imageURL: user.imageURL
       });
     });
   }
 
   render() {
+    const { LINKS } = navConsts;
     return (
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={this.state.imageURL} style={{ width: '18rem'}}/>
-      <Card.Body>
-        <Card.Title>{this.state.firstName + " " + this.state.lastName}</Card.Title>
-        <Card.Text>
-          {this.state.bio}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+      <Container>
+        <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
+        <Row> <h3>{this.state.major} </h3> </Row>
+        <Row> <h3> {this.state.role} </h3> </Row>
+        <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
+        <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
+        <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
+        <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
+        <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
+        <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row>
+        <Row> 
+          <Col> <Link to={"/" + LINKS}> <Button> X </Button> </Link> </Col> 
+          <Col> 
+            <ButtonToolbar>
+              <Button onClick={() => this.setState({ modalShow: true })}> 
+                Message 
+              </Button> 
+              <ChatModal show={this.state.modalShow} onHide={() => this.setState({modalShow: false})}
+                         name={this.state.firstName + " " + this.state.lastName}
+                         imageurl={this.state.imageURL} to={this.state.id}
+              />
+            </ButtonToolbar>
+          </Col> 
+        </Row>
+      </Container>
     );
   }
 }
