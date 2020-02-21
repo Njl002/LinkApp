@@ -15,6 +15,26 @@ export function getAllUsers() {
   })
 }
 
+export function addUser(data) {
+  return fetch("/api/addUser", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    console.log("Getting response back: ");
+    console.log(response);
+    return response;
+  })
+  .catch(error => {
+    console.log("add user error: ");
+    console.log(error);
+  })
+}
+
 export function getAllMessages() {
   return fetch("/api/getMessages", {
     headers: {

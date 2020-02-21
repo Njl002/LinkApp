@@ -39,13 +39,25 @@ const userRoutes = (app, path, fs) => {
   // CREATE
   app.post('/api/addUser', (req, res) => {
     readFile(data => {
-      //const newUserId = data.users.length + 1;
+      const newUserId = data.users.length + 1;
       // add new user
       //let newUser = JSON.parse(JSON.stringify(req.body));
       let newUser = {
-        id: req.body.id,
-        name: req.body.name,
-        description: req.body.description,
+        id: newUserId,
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName,
+        schoolName: req.body.schoolName,
+        monthStart: req.body.monthStart,
+        yearStart: req.body.yearStart,
+        monthEnd: req.body.monthEnd,
+        yearEnd: req.body.yearEnd,
+        email: req.body.email,
+        role: req.body.role,
+        hometown: req.body.hometown,
+        major: req.body.major,
+        skills: req.body.skills, // to change to list
+        hobbies: req.body.hobbies, // to change to list
+        bio: req.body.bio,
         imageURL: req.body.imageURL
       }
       data.users.push(newUser);

@@ -12,9 +12,9 @@ export default class LinkProfileCard extends Component {
           <Card.Img variant="top" src={this.props.imageURL} style={{ width: '18rem'}}/>
         </Link>
         <Card.Body>
-          <Card.Title>{this.props.name}</Card.Title>
+          <Card.Title>{this.props.firstName + " " + this.props.lastName}</Card.Title>
           <Card.Text>
-            {this.props.description}
+            {this.props.bio}
           </Card.Text>
         </Card.Body>
       </Card>

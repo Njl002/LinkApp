@@ -10,12 +10,7 @@ export default class NotificationChoice extends Component {
     return (
       <Container>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onPrevClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
             Back
           </Button>
         </Row>

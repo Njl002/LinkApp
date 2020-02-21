@@ -12,7 +12,6 @@ export default class MessagesView extends Component {
     this.state = {
       messages: []
     }
-
   }
 
   componentDidMount() {
@@ -69,12 +68,12 @@ export default class MessagesView extends Component {
             let toAddName = "";
             let toAddImage = "";
             // find the other user
-            if (message.to != userId) {
+            if (message.to !== userId) {
               let user = allUsers.find(x => x.id === message.to);
               toAddName = user.name;
               toAddImage = user.imageURL;
             }
-            else if (message.to == userId) {
+            else if (message.to === userId) {
               let user = allUsers.find(x => x.id === message.from);
               toAddName = user.name;
               toAddImage = user.imageURL;

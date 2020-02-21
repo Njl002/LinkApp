@@ -4,13 +4,12 @@ import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton 
 export default class MajorChoice extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      sMajor: ""
-    };
+
     this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle(vals) {
+    this.props.onMajorChange(vals);
     this.setState({ sMajor: vals }, () => { console.log("New major:", this.state.sMajor)});
   }
 
@@ -18,14 +17,9 @@ export default class MajorChoice extends Component {
     return (
       <Container>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onPrevClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
             Back
-        </Button>
+          </Button>
         </Row>
         <Row>
           <h1> Hi Bianca, </h1>
@@ -53,12 +47,7 @@ export default class MajorChoice extends Component {
           </ButtonToolbar>
         </Row>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onNextClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
             >
           </Button>
         </Row>

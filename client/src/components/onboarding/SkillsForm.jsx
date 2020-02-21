@@ -2,23 +2,12 @@ import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 
 export default class SkillsForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sSkills: ""
-    };
-  }
 
   render() {
     return (
       <Container>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onPrevClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
             Back
           </Button>
         </Row>
@@ -28,28 +17,13 @@ export default class SkillsForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control 
-                type="text"
-                name="skillsForm"
-                placeholder="Skills" 
-                onChange={e =>
-                  this.setState({
-                    sSkills: e.target.value
-                  }, () => {
-                    console.log("New skills:", this.state.sSkills); 
-                  })
-                }
-              />
+              <Form.Control type="text" name="skillsForm" placeholder="Skills" 
+                onChange={e => this.props.onSkillsChange(e.target.value)} />
             </Form.Group>
           </Form>
         </Row>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onNextClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
             >
           </Button>
         </Row>

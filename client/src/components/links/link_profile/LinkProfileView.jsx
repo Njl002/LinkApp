@@ -7,9 +7,22 @@ export default class LinkProfileView extends Component {
     super(props);
     this.state = {
       id: props.match.params.id,
-      name: "",
-      description: "",
-      imageURL: ""
+      firstName: "", 
+      lastName: "",
+      // school info
+      schoolName: "",
+      monthStart: "",
+      yearStart: "",
+      monthEnd: "",
+      yearEnd: "",
+      email: "",
+      // role mentee or mentor
+      role: "",
+      hometown: "",
+      major: "",
+      skills: "", // to change to list
+      hobbies: "", // to change to list
+      bio: ""
     }
   }
 
@@ -26,12 +39,25 @@ export default class LinkProfileView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      let linkData = data.users.find(x => x.id === userId);
+      let user = data.users.find(x => x.id === userId);
       this.setState({
-        id: linkData.id,
-        name: linkData.name,
-        description: linkData.description,
-        imageURL: linkData.imageURL
+        id: user.id,
+        firstName: user.firstName, 
+        lastName: user.lastName,
+        // school info
+        schoolName: user.schoolName,
+        monthStart: user.monthStart,
+        yearStart: user.yearStart,
+        monthEnd: user.monthEnd,
+        yearEnd: user.yearEnd,
+        email: user.email,
+        // role mentee or mentor
+        role: user.role,
+        hometown: user.hometown,
+        major: user.major,
+        skills: user.skills, // to change to list
+        hobbies: user.hobbies, // to change to list
+        bio: user.bio
       });
     });
   }
@@ -41,9 +67,9 @@ export default class LinkProfileView extends Component {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={this.state.imageURL} style={{ width: '18rem'}}/>
       <Card.Body>
-        <Card.Title>{this.state.name}</Card.Title>
+        <Card.Title>{this.state.firstName + " " + this.state.lastName}</Card.Title>
         <Card.Text>
-          {this.state.description}
+          {this.state.bio}
         </Card.Text>
       </Card.Body>
     </Card>

@@ -2,29 +2,14 @@ import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 
 export default class SchoolForm extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        sSchoolName: "",
-        sMonthStart: "",
-        sYearStart: "",
-        sMonthEnd: "",
-        sYearEnd: ""
-      };
-    }
   
     render() {
       return(
         <Container>
-            <Row>
-                <Button 
-                  variant="primary" type="submit" 
-                  onClick={() => {
-                    this.props.onPrevClick();
-                  }}
-                >
-                  Back
-                </Button>
+          <Row>
+            <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
+              Back
+            </Button>
           </Row>
           <Row>
             <h1> I attend </h1>
@@ -32,18 +17,8 @@ export default class SchoolForm extends Component {
           <Row>
             <Form>
               <Form.Group>
-                <Form.Control 
-                  type="text"
-                  name="schoolNameForm"
-                  placeholder="Your school name" 
-                    onChange={e =>
-                      this.setState({
-                        sSchoolName: e.target.value
-                      }, () => {
-                        console.log("New School Name:", this.state.sSchoolName); 
-                      })
-                    }
-                />
+                <Form.Control type="text" name="schoolNameForm" placeholder="Your school name" 
+                    onChange={e => this.props.onSchoolNameChange(e.target.value)} />
               </Form.Group>
             </Form>
           </Row>
@@ -53,17 +28,8 @@ export default class SchoolForm extends Component {
           <Row>
             <Form>
               <Form.Group>
-                <Form.Control 
-                  name="startMonthForm" 
-                  as="select" 
-                  onChange={e =>
-                    this.setState({
-                      sMonthStart: e.target.value
-                    }, () => {
-                      console.log("New starting month:", this.state.sMonthStart); 
-                    })
-                  }
-                >
+                <Form.Control name="startMonthForm" as="select" 
+                  onChange={e => this.props.onMonthStartChange(e.target.value)} >
                   <option>01</option>
                   <option>02</option>
                   <option>03</option>
@@ -82,17 +48,8 @@ export default class SchoolForm extends Component {
             </Form>
             <Form>
               <Form.Group>
-                <Form.Control 
-                  name="startYearForm" 
-                  as="select" 
-                  onChange={e =>
-                    this.setState({
-                      sYearStart: e.target.value
-                    }, () => {
-                      console.log("New starting year:", this.state.sYearStart); 
-                    })
-                  }
-                >
+                <Form.Control name="startYearForm" as="select" 
+                  onChange={e => this.props.onYearStartChange(e.target.value)} >
                   <option>2009</option>
                   <option>2010</option>
                   <option>2011</option>
@@ -121,17 +78,8 @@ export default class SchoolForm extends Component {
           <Row>
             <Form>
               <Form.Group>
-                <Form.Control 
-                  name="endMonthForm" 
-                  as="select" 
-                  onChange={e =>
-                    this.setState({
-                      sMonthEnd: e.target.value
-                    }, () => {
-                      console.log("New ending month:", this.state.sMonthEnd); 
-                    })
-                  }
-                >
+                <Form.Control name="endMonthForm" as="select" 
+                  onChange={e => this.props.onMonthEndChange(e.target.value)} >
                   <option>01</option>
                   <option>02</option>
                   <option>03</option>
@@ -150,17 +98,8 @@ export default class SchoolForm extends Component {
             </Form>
             <Form>
               <Form.Group>
-                <Form.Control 
-                  name="endYearForm" 
-                  as="select" 
-                  onChange={e =>
-                    this.setState({
-                      sYearEnd: e.target.value
-                    }, () => {
-                      console.log("New ending year:", this.state.sYearEnd); 
-                    })
-                  }
-                >
+                <Form.Control name="endYearForm" as="select" 
+                  onChange={e => this.props.onYearEndChange(e.target.value)} >
                   <option>2009</option>
                   <option>2010</option>
                   <option>2011</option>
@@ -184,12 +123,7 @@ export default class SchoolForm extends Component {
             </Form>
           </Row>
           <Row>
-            <Button 
-              variant="primary" type="submit" 
-              onClick={() => {
-                this.props.onNextClick();
-              }}
-            >
+            <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
               >
             </Button>
           </Row>

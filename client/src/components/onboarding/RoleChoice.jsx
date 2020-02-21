@@ -14,14 +14,9 @@ export default class RoleChoice extends Component {
     return (
       <Container>
         <Row>
-          <Button
-            variant="primary" type="submit"
-            onClick={() => {
-              this.props.onPrevClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
             Back
-        </Button>
+          </Button>
         </Row>
         <Row>
           <h1> I am looking for a </h1>
@@ -64,6 +59,12 @@ export default class RoleChoice extends Component {
           <Button
             variant="primary" type="submit"
             onClick={() => {
+              if (this.state.sLookingForMentee) {
+                this.props.onRoleChange("mentor");
+              }
+              else {
+                this.props.onRoleChange("mentee");
+              }
               this.props.onNextClick();
             }}
           >

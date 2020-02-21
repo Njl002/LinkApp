@@ -41,9 +41,21 @@ export default class LinksView extends Component {
       <Col xs={6} md={6} key={link.id}>
       <LinkProfileCard
         id={link.id}
-        name={link.name}
-        description={link.description}
         imageURL={link.imageURL}
+        firstName={link.firstName} 
+        lastName={link.lastName}
+        schoolName={link.schoolName}
+        monthStart={link.monthStart}
+        yearStart={link.yearStart}
+        monthEnd={link.monthEnd}
+        yearEnd={link.yearEnd}
+        email={link.email}
+        role={link.role}
+        hometown={link.hometown}
+        major={link.major}
+        skills={link.skills}
+        hobbies={link.hobbies}
+        bio={link.bio}
       />
       </Col>
     ));

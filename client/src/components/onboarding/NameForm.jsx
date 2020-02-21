@@ -4,13 +4,6 @@ import { Link } from 'react-router-dom';
 import { navConsts } from '../../constants';
 
 export default class NameForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sFirstName: "",
-      sLastName: ""
-    };
-  }
 
   render() {
     const { LAUNCH } = navConsts;
@@ -33,13 +26,7 @@ export default class NameForm extends Component {
                 type="text" 
                 name="firstNameForm" 
                 placeholder="First Name" 
-                onChange={e =>
-                  this.setState({
-                    sFirstName: e.target.value
-                  }, () => {
-                    console.log("New First Name:", this.state.sFirstName); 
-                  })
-                }
+                onChange={e => this.props.onFirstNameChange(e.target.value)}
               />
             </Form.Group>
           </Form>
@@ -51,23 +38,13 @@ export default class NameForm extends Component {
                 type="text" 
                 name="lastNameForm" 
                 placeholder="Last Name"
-                onChange={e =>
-                  this.setState({
-                    sLastName: e.target.value
-                  }, () => {
-                    console.log("New Last Name:", this.state.sLastName); 
-                  })
-                }
+                onChange={e => this.props.onLastNameChange(e.target.value)}
               />
             </Form.Group>
           </Form>
         </Row>
         <Row>
-          <Button variant="primary" type="submit"
-            onClick={() => {
-              this.props.onNextClick();
-            }}
-          >
+          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
             >
           </Button>
         </Row>

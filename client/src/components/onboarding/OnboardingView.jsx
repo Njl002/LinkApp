@@ -16,108 +16,217 @@ import SkillsForm from './SkillsForm';
 import HobbiesForm from './HobbiesForm';
 import BioForm from './BioForm';
 
+
+import { addUser, getAllUsers } from '../../api';
+
 export default class OnboardingView extends Component {
   constructor(props) {
     super(props);
+
+    // order of forms
+    // Name
+    // School
+    // Email
+    // Role
+    // Hometown
+    // Major
+    // Skills
+    // Hobbies
+    // Bio
+
     this.state = {
-      page: 0
+      page: 0,
+      // name
+      firstName: "", 
+      lastName: "",
+      // school info
+      schoolName: "",
+      monthStart: "",
+      yearStart: "",
+      monthEnd: "",
+      yearEnd: "",
+      email: "",
+      // role mentee or mentor
+      role: "",
+      hometown: "",
+      major: "",
+      skills: "", // to change to list
+      hobbies: "", // to change to list
+      bio: ""
     };
+    // paging handlers
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
+
+    // fields
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+    this.handleLastNameChange = this.handleLastNameChange.bind(this);
+    this.handleSchoolNameChange = this.handleSchoolNameChange.bind(this);
+    this.handleMonthStartChange = this.handleMonthStartChange.bind(this);
+    this.handleYearStartChange = this.handleYearStartChange.bind(this);
+    this.handleMonthEndChange = this.handleMonthEndChange.bind(this);
+    this.handleYearEndChange = this.handleYearEndChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
+    this.handleHometownChange = this.handleHometownChange.bind(this);
+    this.handleMajorChange = this.handleMajorChange.bind(this);
+    this.handleSkillsChange = this.handleSkillsChange.bind(this);
+    this.handleHobbiesChange = this.handleHobbiesChange.bind(this);
+    this.handleBioChange = this.handleBioChange.bind(this);
+
     this.handleSignUp = this.handleSignUp.bind(this);
-    // this.addUser = this.addUser.addUser.bind(this);
-    // this.getLinks = this.getLinks.bind(this);
   }
 
   handleNextClick() {
     this.setState(prevState => ({
       page: prevState.page + 1
     }));
-    console.log("This is the current page state: " + this.state.page);
   }
-
   handlePrevClick() {
     this.setState(prevState => ({
       page: prevState.page - 1
     }));
-    console.log("This is the current page state: " + this.state.page);
   }
 
   handleSignUp() {
-    this.addUser("Test Name", "Test Description", "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg");
+    return null;
   }
 
-  addUser (name, description, imageURL) {
-    console.log("adding User: " + name + " " + description + " " + imageURL);
-    let data = {
-      id: "7",
-      name: name,
-      description: description,
-      imageURL: imageURL
-    };
-    fetch("/api/addUser", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => {
-        console.log("Getting response back: ");
-        console.log(response);
-        this.getLinks(); // to do add to response
-        return response;
-      })
-      .then(links => {
-        this.props.onUserSessionUpdate("temp", true, "7"); // to update with sign up values
-        return links;
-      })
-      .catch(error => {
-        console.log("Add User error: ");
-        console.log(error);
-      })
+  // name form
+  handleFirstNameChange(val) {
+    this.setState(prevState => ({
+      firstName: val
+    }));
+  }
+  handleLastNameChange(val) {
+    this.setState(prevState => ({
+      lastName: val
+    }));
   }
 
-  // to do filter out self
-  getLinks = () => {
-    fetch("/api/getUsers", {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      let linkData = data.users.filter(x => x.id === "7"); // to fix
-      console.log("Found user? ");
-      console.log(linkData);
-    });
+  // school form
+  handleSchoolNameChange(val) {
+    this.setState(prevState => ({
+      schoolName: val
+    }));
+  }
+  handleMonthStartChange(val) {
+    this.setState(prevState => ({
+      monthStart: val
+    }));
+  }
+  handleYearStartChange(val) {
+    this.setState(prevState => ({
+      yearStart: val
+    }));
+  }
+  handleMonthEndChange(val) {
+    this.setState(prevState => ({
+      monthEnd: val
+    }));
+  }
+  handleYearEndChange(val) {
+    this.setState(prevState => ({
+      yearEnd: val
+    }));
+  }
+
+  // email form
+  handleEmailChange(val) {
+    this.setState(prevState => ({
+      email: val
+    }));
+  }
+
+  // role form
+  handleRoleChange(val) {
+    this.setState(prevState => ({
+      role: val
+    }));
+  }
+
+  // hometown form
+  handleHometownChange(val) {
+    this.setState(prevState => ({
+      hometown: val
+    }));
+  }
+
+  // major form
+  handleMajorChange(val) {
+    this.setState(prevState => ({
+      major: val
+    }));
+  }
+
+  // skills form
+  handleSkillsChange(val) {
+    this.setState(prevState => ({
+      skills: val
+    }));
+  }
+
+  // hobbies form
+  handleHobbiesChange(val) {
+    this.setState(prevState => ({
+      hobbies: val
+    }));
+  }
+
+  // bio form
+  handleBioChange(val) {
+    this.setState(prevState => ({
+      bio: val
+    }));
   }
 
   render() {
     if(this.state.page === 0) {
-      return(<NameForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return(<NameForm onNextClick={this.handleNextClick} 
+                      onPrevClick={this.handlePrevClick} 
+                      onFirstNameChange={this.handleFirstNameChange} 
+                      onLastNameChange={this.handleLastNameChange} />);
     } else if (this.state.page === 1) {
-      return(<SchoolForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return(<SchoolForm onNextClick={this.handleNextClick} 
+                        onPrevClick={this.handlePrevClick}
+                        onSchoolNameChange={this.handleSchoolNameChange}
+                        onMonthStartChange={this.handleMonthStartChange}
+                        onYearStartChange={this.handleYearStartChange}
+                        onMonthEndChange={this.handleMonthEndChange}
+                        onYearEndChange={this.handleYearEndChange}/>);
     } else if (this.state.page === 2) {
-      return(<EmailForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return(<EmailForm onNextClick={this.handleNextClick} 
+                        onPrevClick={this.handlePrevClick}
+                        onEmailChange={this.handleEmailChange}/>);
     } else if (this.state.page === 3) {
-      return(<RoleChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return(<RoleChoice onNextClick={this.handleNextClick} 
+                        onPrevClick={this.handlePrevClick}
+                        onRoleChange={this.handleRoleChange}/>);
     // } else if (this.state.page === 4) {
     //   return (<NotificationChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
     } else if (this.state.page === 4) {
       return (<BasicInfoStart onNextClick={this.handleNextClick}/>);
     } else if (this.state.page === 5) {
-      return (<HometownForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return (<HometownForm onNextClick={this.handleNextClick} 
+                            onPrevClick={this.handlePrevClick}
+                            onHometownChange={this.handleHometownChange}/>);
     } else if (this.state.page === 6) {
-      return (<MajorChoice onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return (<MajorChoice onNextClick={this.handleNextClick} 
+                          onPrevClick={this.handlePrevClick}
+                          onMajorChange={this.handleMajorChange}/>);
     } else if (this.state.page === 7) {
-      return (<SkillsForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return (<SkillsForm onNextClick={this.handleNextClick} 
+                          onPrevClick={this.handlePrevClick}
+                          onSkillsChange={this.handleSkillsChange}/>);
     } else if (this.state.page === 8) {
-      return (<HobbiesForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick}/>);
+      return (<HobbiesForm onNextClick={this.handleNextClick} 
+                          onPrevClick={this.handlePrevClick}
+                          onHobbiesChange={this.handleHobbiesChange}/>);
     } else if (this.state.page === 9) {
-      return (<BioForm onNextClick={this.handleNextClick} onPrevClick={this.handlePrevClick} onSignUp={this.handleSignUp}/>);
+      return (<BioForm onNextClick={this.handleNextClick} 
+                      onPrevClick={this.handlePrevClick} 
+                      onBioChange={this.handleBioChange}
+                      onSignUp={this.handleSignUp}/>);
     }
   }
 }
