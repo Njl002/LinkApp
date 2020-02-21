@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import MessageCard from './MessageCard';
 
-import { navConsts } from '../../constants';
 import { getAllUsers, getAllMessages } from '../../api';
 import UserSession from '../../storage/UserSession';
 
@@ -99,17 +98,14 @@ export default class MessagesView extends Component {
   }
 
   render() {
-    const { CHAT } = navConsts;
     let messageList = this.state.messages.map((messageCard) => (
       <Col xs={12} md={9} key={messageCard.to + messageCard.from}>
-      <Link to={CHAT + "/" + (messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}>
       <MessageCard
-        id={(messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}
+        partnerId={(messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}
         partnerName={messageCard.name}
         lastMessage={messageCard.body}
         partnerImageURL={messageCard.imageURL}
       />
-      </Link>
       </Col>
     ));
 
