@@ -15,9 +15,9 @@ export default class NotificationChoice extends Component {
             onClick={() => {
               this.props.onPrevClick();
             }}
-            >
+          >
             Back
-        </Button>
+          </Button>
         </Row>
         <Row>
           <h1> Enable notifications? </h1>

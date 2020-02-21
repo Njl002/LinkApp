@@ -4,6 +4,9 @@ import { Button, Container, Row, Form } from 'react-bootstrap';
 export default class HobbiesForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sHobbies: ""
+    };
   }
 
   render() {
@@ -25,7 +28,18 @@ export default class HobbiesForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="hobbies" placeholder="Hobbies & Interests" />
+              <Form.Control 
+                type="text"
+                name="hobbiesForm"
+                placeholder="Hobbies & Interests"
+                onChange={e =>
+                  this.setState({
+                    sHobbies: e.target.value
+                  }, () => {
+                    console.log("New hobbies:", this.state.sHobbies); 
+                  })
+                }
+              />
             </Form.Group>
           </Form>
         </Row>
