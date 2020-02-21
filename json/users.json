@@ -107,24 +107,6 @@
       "hobbies": "hobbying hard",
       "bio": "Really into psychology",
       "imageURL": "http://uploads.edubilla.com/awards-winners/92/b4/allen-newell.jpg"
-    },
-    {
-      "id": "7",
-      "firstName": "first",
-      "lastName": "last",
-      "schoolName": "schoole",
-      "monthStart": "05",
-      "yearStart": "2012",
-      "monthEnd": "06",
-      "yearEnd": "2018",
-      "email": "email",
-      "role": "Mentor",
-      "hometown": "hometownville",
-      "major": "Civil Engineering",
-      "skills": "skillss",
-      "hobbies": "hobiii",
-      "bio": "lots of work",
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"
     }
   ]
 }
