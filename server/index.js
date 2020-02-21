@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const userRoutes = require('./api_routes/users');
 userRoutes(app, path, fs);
+const messageRoutes = require('./api_routes/messages');
+messageRoutes(app, path, fs);
 // An api endpoint that returns all users
 // app.get('/api/getUsers', (req, res) => {
 //     var data = require('./json/users.json');

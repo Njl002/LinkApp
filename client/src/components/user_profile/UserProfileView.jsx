@@ -9,7 +9,7 @@ export default class UserProfileView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.match.params.id,
+      id: "",
       name: "",
       description: "",
       imageUrl: ""
@@ -17,12 +17,12 @@ export default class UserProfileView extends Component {
   }
 
   componentDidMount() {
-    let priorId = UserSession.getId() || null;
+    let userId = UserSession.getId(); // should be set at this point 
 
-    this.getLink(priorId);
+    this.getUser(userId);
   }
 
-  getLink(userId) {
+  getUser(userId) {
     fetch("/api/getUsers", {
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export default class UserProfileView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(userId);
+      //console.log(userId);
       let linkData = data.users.find(x => x.id === userId);
       this.setState({
         id: linkData.id,
