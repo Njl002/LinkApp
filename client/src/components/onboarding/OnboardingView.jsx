@@ -47,7 +47,7 @@ export default class OnboardingView extends Component {
     this.addUser("Test Name", "Test Description", "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg");
   }
 
-  addUser (name, description, imageURL, callback) {
+  addUser (name, description, imageURL) {
     console.log("adding User: " + name + " " + description + " " + imageURL);
     let data = {
       id: "7",
@@ -89,7 +89,7 @@ export default class OnboardingView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      let linkData = data.users.filter(x => x.id === "7");
+      let linkData = data.users.filter(x => x.id === "7"); // to fix
       console.log("Found user? ");
       console.log(linkData);
     });

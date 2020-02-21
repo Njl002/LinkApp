@@ -24,7 +24,7 @@ export default class HobbiesForm extends Component {
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="hobbiesForm">
+            <Form.Group>
               <Form.Control type="hobbies" placeholder="Hobbies & Interests" />
             </Form.Group>
           </Form>

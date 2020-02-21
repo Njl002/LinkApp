@@ -61,7 +61,7 @@ export default class SkillsForm extends Component {
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="bioForm">
+            <Form.Group>
               <Form.Control type="bio" />
             </Form.Group>
           </Form>

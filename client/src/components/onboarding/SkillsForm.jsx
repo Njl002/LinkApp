@@ -24,7 +24,7 @@ export default class SkillsForm extends Component {
         </Row>
         <Row>
           <Form>
-            <Form.Group controlID="skillsForm">
+            <Form.Group>
               <Form.Control type="skills" placeholder="Skills" />
             </Form.Group>
           </Form>

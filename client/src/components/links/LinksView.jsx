@@ -46,7 +46,7 @@ export default class LinksView extends Component {
         imageURL={link.imageURL}
       />
       </Col>
-    ))
+    ));
 
     return (
       <Container>
