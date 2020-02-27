@@ -1,0 +1,11 @@
+.launchView {
+  display: block;
+  height: 100%;
+  text-align: center;
+}
+
+.button {
+  margin-bottom: 1vh;
+  width: 100%;
+}
+

@@ -1,3 +1,7 @@
 .main {
-  margin-bottom: 70px;
+  padding-bottom: 12vh;
+  display: block;
+  align-items: center;
+  height: 100%;
+  overflow: scroll;
 }
