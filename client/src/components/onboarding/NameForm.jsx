@@ -48,7 +48,7 @@ export default class NameForm extends Component {
           </Form>
         </Row>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
+          <Button variant="primary" type="submit" bsPrefix="next-button" onClick={this.props.onNextClick}>
             <FiChevronRight />
           </Button>
         </Row>
