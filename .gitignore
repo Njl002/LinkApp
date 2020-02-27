@@ -1,0 +1,6 @@
+.git
+
+/client/package-lock.json
+/package-lock.json
+/client/node_modules
+/node_modules
