@@ -1,7 +1,16 @@
 .launchView {
   display: block;
-  height: 100%;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 5vh;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.logo {
+  margin-bottom: 18vh;
 }
 
 .button {

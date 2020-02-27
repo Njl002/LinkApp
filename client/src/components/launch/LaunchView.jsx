@@ -16,7 +16,7 @@ export default class LaunchView extends Component {
         <Row float="center">
           <Col xs={12} md={12}>
             <Image src={logo}/>
-            <h3> Link</h3>
+            <h3 className="logo"> Link</h3>
           </Col>
         </Row>
         <Row float="center">
