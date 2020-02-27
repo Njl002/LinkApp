@@ -3,32 +3,33 @@ import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { navConsts } from '../../constants';
 
+import './css/LaunchView.css';
 
-import default_profile_img from '../../resources/blank-profile-picture.png';
+import logo from '../../resources/link-image.png';
 
 export default class LaunchView extends Component {
 
   render() {
     const { LOGIN, ONBOARDING } = navConsts;
     return (
-      <Container fluid>
-        <Row>
-          <Col xs={6} md={4}>
-            {/*<Image src={default_profile_img} rounded/>*/}
-            <h1> TEMPORARY LOGO </h1>
+      <Container className="launchView">
+        <Row float="center">
+          <Col xs={12} md={12}>
+            <Image src={logo}/>
+            <h3> Link</h3>
           </Col>
         </Row>
-        <Row>
-          <Col xs={6} md={4}>
+        <Row float="center">
+          <Col xs={12} md={12}>
             <Link to={"/" + ONBOARDING}>
-              <Button> Get Started </Button>
+              <Button className="button"> Get Started </Button>
             </Link>
           </Col>
         </Row>
-        <Row>
-          <Col xs={6} md={4}>
+        <Row float="center">
+          <Col xs={12} md={12} >
             <Link to={"/" + LOGIN}>
-              <Button> Login </Button>
+              <Button className="button"> Login </Button>
             </Link>
           </Col>
         </Row>
