@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import LinkProfileCard from './link_profile/LinkProfileCard';
+import LinkProfileCard from './LinkProfileCard';
 
 import { getAllUsers } from '../../api';
 
@@ -43,7 +43,7 @@ export default class LinksView extends Component {
   render() {
 
     let list = this.state.links.map((link) => (
-      <Col xs={6} md={6} key={link.id}>
+      <Col xs={6} md={6} key={link.id} className="profileCardCol">
       <LinkProfileCard
         id={link.id}
         imageURL={link.imageURL}
