@@ -20,9 +20,9 @@ export default class MessageList extends Component {
     ));
 
     return (
-      <Container>
+      <div>
         {messagesList}
-      </Container>
+      </div>
     );
   }
 }

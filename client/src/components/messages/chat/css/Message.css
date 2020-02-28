@@ -1,0 +1,17 @@
+.messageBubble {
+  width: 100%;
+}
+
+.sentMessage {
+  float: right;
+  text-align: right;
+  width: 35%;
+  margin-top: .75vh;
+}
+
+.receivedMessage {
+  float: left;
+  text-align: left;
+  width: 35%;
+  margin-top: .75vh;
+}

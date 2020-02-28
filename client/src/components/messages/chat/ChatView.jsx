@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Col, Row, Tabs, Tab, Image } from 'react-bootstrap';
+import { Container, Col, Row, Tabs, Tab, Image, Nav } from 'react-bootstrap';
 
 import ChatBox from './ChatBox';
 
 import { getAllUsers, getAllMessages, addMessage } from '../../../api';
 import UserSession from '../../../storage/UserSession';
+
+import './css/ChatView.css';
 
 export default class ChatView extends Component {
   constructor(props) {
@@ -122,33 +124,45 @@ export default class ChatView extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
+      <Container className="chatViewContainer">
+        <Row className="chatViewName">
           <Col xs={12} md={12} lg={12}>
             <h3> {this.state.firstName + " " + this.state.lastName} </h3>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} md={12} lg={12}>
-            <Tabs defaultActiveKey="chat" id="uncontrolled-tab-example">
-              <Tab eventKey="chat" title="Home">
-                <ChatBox messages={this.state.messages} onSendMessage={this.handleSendMessage}/>
-              </Tab>
-              <Tab eventKey="profile" title="Profile">
-              <Container>
-                <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
-                <Row> <h3>{this.state.major} </h3> </Row>
-                <Row> <h3> {this.state.role} </h3> </Row>
-                <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
-                <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
-                <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
-                <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
-                <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
-                <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row>
-              </Container>
-              </Tab>
-            </Tabs>
-          </Col>
+        <Row className="chatViewContent">
+          <Tab.Container id="chatview" defaultActiveKey="message">
+            <Nav variant="tabs" className="chatViewTabbing">
+              <Nav.Item className="chatTab">
+                <Nav.Link eventKey="message">Message</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="chatTab">
+                <Nav.Link eventKey="profile"> Profile </Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Row className="chatViewBody">
+              <Col sm={12} md={12}>
+                <Tab.Content>
+                  <Tab.Pane eventKey="message">
+                    <ChatBox messages={this.state.messages} onSendMessage={this.handleSendMessage}/>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="profile">
+                    <Container>
+                      <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
+                      <Row> <h3>{this.state.major} </h3> </Row>
+                      <Row> <h3> {this.state.role} </h3> </Row>
+                      <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
+                      <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
+                      <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
+                      <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
+                      <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
+                      <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row>
+                    </Container>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Col>
+            </Row>
+          </Tab.Container>
         </Row>
       </Container>
       
