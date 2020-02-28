@@ -1,0 +1,18 @@
+.profileCard {
+  width: 100%;
+  height: auto;
+}
+
+.profileCardImg {
+  height: auto;
+  width: 100%;
+}
+
+.profileCardText {
+  margin-bottom: 0.1rem;
+}
+
+.profileCardCrop {
+  max-height: 75vh;
+  overflow: hidden;
+}

@@ -5,6 +5,8 @@ import ProfileModal from './ProfileModal';
 
 import { navConsts } from '../../constants';
 
+import './css/MessageCard.css';
+
 export default class MessageCard extends Component {
   constructor(props) {
     super(props);
@@ -18,23 +20,24 @@ export default class MessageCard extends Component {
 
     let partnerId = this.props.partnerId;
     return (
-      <Card style={{ width: '100%' }}>
+      <Card style={{ width: '100%', height: '15vh'}}>
         <Container>
           <Row>
-            <Col>
-              <Image src={this.props.partnerImageURL} roundedCircle style={{ width: '5rem', height: '6rem', float: 'left' }}
+            <Col xs={3} md={3} className="messageCardLeft">
+              <Image src={this.props.partnerImageURL} roundedCircle className="messageCardImg"
                      onClick={() => this.setState({ modalShow: true })} 
               /> 
               <ProfileModal show={this.state.modalShow} onHide={() => this.setState({modalShow: false})} id={partnerId}/>
             </Col>
-            <Link to={CHAT + "/" + partnerId}> 
-            <Col>
-              <Card.Title> {this.props.partnerName} </Card.Title>
-              <Card.Body>
-                <Card.Text> {this.props.lastMessage} </Card.Text>
+            
+            <Col xs={9} md={9}>
+            <Link to={CHAT + "/" + partnerId} className="messageCardRight"> 
+              <Card.Body className="messageCardBody">
+                <Card.Title className="messageCardText"> {this.props.partnerName} </Card.Title>
+                <Card.Text className="messageCardText"> {this.props.lastMessage} </Card.Text>
               </Card.Body>
+              </Link>
             </Col>
-            </Link>
           </Row>
         </Container>
       </Card>
