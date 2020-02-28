@@ -19,6 +19,7 @@
   margin-left: 0%;
   max-width: 100%;
   width: 100%;
+  max-height: 80vh;
 }
 
 .chatViewTabbing {
@@ -31,4 +32,6 @@
   padding-top: 2vh;
   width: 100%;
   margin-left: 0%;
+  max-height: 70vh;
+  overflow: scroll;
 }

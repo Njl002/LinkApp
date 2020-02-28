@@ -4,14 +4,20 @@
 
 .sentMessage {
   float: right;
-  text-align: right;
-  width: 35%;
+  max-width: 90%;
   margin-top: .75vh;
+  background-color: #4ABDAC;
 }
 
+.sentMessageText {
+  text-align: left;
+  color: white;
+
+}
 .receivedMessage {
   float: left;
   text-align: left;
-  width: 35%;
+  max-width: 90%;
   margin-top: .75vh;
+  background-color: #dedede;
 }

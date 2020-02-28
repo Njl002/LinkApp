@@ -15,7 +15,9 @@ export default class Message extends Component {
       message = (
         
         <Card body className="sentMessage">
-          {this.props.body}
+          <Card.Text className="sentMessageText">
+            {this.props.body}
+          </Card.Text>
         </Card>
       );
     }
