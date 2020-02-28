@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import './css/RoleChoice.css';
 
 export default class RoleChoice extends Component {
   constructor(props) {
@@ -16,8 +18,8 @@ export default class RoleChoice extends Component {
     return (
       <Container>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
-            Back
+          <Button variant="primary" type="submit" bsPrefix="role-back-button" onClick={this.props.onPrevClick}>
+            <FiChevronLeft />
           </Button>
         </Row>
         <Row>
@@ -32,19 +34,19 @@ export default class RoleChoice extends Component {
               defaultValue={"Mentor"}
               onChange={this.handleToggle}
             >
-              <ToggleButton value={"Mentor"}>Mentor</ToggleButton>
-              <ToggleButton value={"Mentee"}>Mentee</ToggleButton>
+              <ToggleButton value={"Mentor"} >Mentor</ToggleButton>
+              <ToggleButton value={"Mentee"} >Mentee</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>
         <Row>
           <Button
-            variant="primary" type="submit"
+            variant="primary" type="submit" bsPrefix="role-next-button"
             onClick={() => {
               this.props.onNextClick();
             }}
           >
-            >
+            <FiChevronRight />
           </Button>
         </Row>
       </Container>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import './css/SkillsForm.css';
 
 export default class SkillsForm extends Component {
 
@@ -7,8 +9,8 @@ export default class SkillsForm extends Component {
     return (
       <Container>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
-            Back
+          <Button variant="primary" type="submit" bsPrefix="skills-back-button" onClick={this.props.onPrevClick}>
+            <FiChevronLeft />
           </Button>
         </Row>
         <Row>
@@ -17,14 +19,14 @@ export default class SkillsForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="text" name="skillsForm" placeholder="Skills" 
+              <Form.Control type="text" name="skillsForm" bsPrefix="skills-form" placeholder="Skills" 
                 onChange={e => this.props.onSkillsChange(e.target.value)} />
             </Form.Group>
           </Form>
         </Row>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
-            >
+          <Button variant="primary" type="submit" bsPrefix="skills-next-button" onClick={this.props.onNextClick}>
+            <FiChevronRight />
           </Button>
         </Row>
       </Container>

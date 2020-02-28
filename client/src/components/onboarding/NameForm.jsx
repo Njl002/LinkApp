@@ -13,7 +13,7 @@ export default class NameForm extends Component {
       <Container>
         <Row>
           <Link to={"/" + LAUNCH}>
-            <Button variant="primary" type="submit" bsPrefix="back-button">
+            <Button variant="primary" type="submit" bsPrefix="name-back-button">
               <FiChevronLeft />
             </Button>
           </Link>
@@ -48,7 +48,7 @@ export default class NameForm extends Component {
           </Form>
         </Row>
         <Row>
-          <Button variant="primary" type="submit" bsPrefix="next-button" onClick={this.props.onNextClick}>
+          <Button variant="primary" type="submit" bsPrefix="name-next-button" onClick={this.props.onNextClick}>
             <FiChevronRight />
           </Button>
         </Row>

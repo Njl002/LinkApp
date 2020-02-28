@@ -3,7 +3,7 @@ import { Button, Container, Row, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { navConsts } from '../../constants';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import "./css/NameForm.css";
+import "./css/NameFormV2.css";
 
 export default class NameFormV2 extends Component {
 
