@@ -71,12 +71,12 @@ export default class MessagesView extends Component {
             // find the other user
             if (message.to !== userId) {
               let user = allUsers.find(x => x.id === message.to);
-              toAddName = user.name;
+              toAddName = user.firstName + " " + user.lastName;
               toAddImage = user.imageURL;
             }
             else if (message.to === userId) {
               let user = allUsers.find(x => x.id === message.from);
-              toAddName = user.name;
+              toAddName = user.firstName + " " + user.lastName;
               toAddImage = user.imageURL;
             }
             message['name'] = toAddName;
@@ -99,7 +99,8 @@ export default class MessagesView extends Component {
 
   render() {
     let messageList = this.state.messages.map((messageCard) => (
-      <Col xs={12} md={9} key={messageCard.to + messageCard.from}>
+      <Row key={messageCard.to + messageCard.from + messageCard.timeStamp}>
+      <Col xs={12} md={12}>
       <MessageCard
         partnerId={(messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}
         partnerName={messageCard.name}
@@ -107,6 +108,7 @@ export default class MessagesView extends Component {
         partnerImageURL={messageCard.imageURL}
       />
       </Col>
+      </Row>
     ));
 
     return (
@@ -114,9 +116,7 @@ export default class MessagesView extends Component {
         <Row >
           <h1> Messages </h1>
         </Row>
-        <Row>
-          {messageList}
-        </Row>
+        {messageList}
       </Container>
     );
   }

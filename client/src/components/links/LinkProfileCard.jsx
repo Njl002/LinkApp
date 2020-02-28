@@ -17,7 +17,7 @@ export default class LinkProfileCard extends Component {
         <Card.Text className="profileCardText">
           {this.props.role}
         </Card.Text>
-          <div className="crop">
+          <div className="profileCardCrop">
             <Link to={"/" + LINKPROFILE + "/" + this.props.id}>
               <Card.Img variant="top" src={this.props.imageURL} className="profileCardImg"/>
             </Link>

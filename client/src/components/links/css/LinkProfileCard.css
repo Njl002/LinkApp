@@ -1,6 +1,6 @@
 .profileCard {
   width: 100%;
-  height: 33vh;
+  height: auto;
 }
 
 .profileCardImg {
@@ -12,7 +12,7 @@
   margin-bottom: 0.1rem;
 }
 
-.crop {
-  max-height: 75%;
+.profileCardCrop {
+  max-height: 75vh;
   overflow: hidden;
 }

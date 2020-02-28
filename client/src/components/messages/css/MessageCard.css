@@ -1,0 +1,29 @@
+.messageCardText {
+  text-align : right;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+}
+
+.messageCardImg {
+  width: 10vh;
+  height: 100%;
+}
+
+.messageCardLeft {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.messageCardRight {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 1vh;
+  float: right;
+}
+
+.messageCardBody {
+  padding-right: 0%;
+  padding-top: 1vh;
+}
+
