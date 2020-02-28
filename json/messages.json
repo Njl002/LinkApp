@@ -2,19 +2,19 @@
   "messages": [
     {
       "from": "1",
-      "to": "7",
+      "to": "13",
       "timeStamp": "2012-04-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "7",
+      "from": "13",
       "to": "1",
       "timeStamp": "2012-04-23T19:25:43.511Z",
       "body": "Hi how are you?"
     },
     {
       "from": "1",
-      "to": "7",
+      "to": "13",
       "timeStamp": "2012-04-23T19:35:43.511Z",
       "body": "I'm doing well how about you?"
     },
@@ -31,50 +31,50 @@
       "body": "I'm doing well how about you?"
     },
     {
-      "from": "2",
-      "to": "7",
+      "from": "3",
+      "to": "13",
       "timeStamp": "2012-05-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "3",
-      "to": "7",
+      "from": "5",
+      "to": "13",
       "timeStamp": "2012-06-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "4",
-      "to": "7",
-      "timeStamp": "2012-04-23T18:25:43.511Z",
-      "body": "Hi nice to meet you!"
-    },
-    {
-      "from": "5",
-      "to": "7",
-      "timeStamp": "2012-04-23T18:25:43.511Z",
-      "body": "Hi nice to meet you!"
-    },
-    {
-      "from": "6",
-      "to": "7",
-      "timeStamp": "2012-04-23T18:25:43.511Z",
-      "body": "Hi nice to meet you!"
-    },
-    {
-      "from": "1",
-      "to": "8",
-      "timeStamp": "2012-04-23T18:25:43.511Z",
-      "body": "Hi nice to meet you!"
-    },
-    {
       "from": "8",
-      "to": "1",
+      "to": "13",
+      "timeStamp": "2012-04-23T18:25:43.511Z",
+      "body": "Hi nice to meet you!"
+    },
+    {
+      "from": "10",
+      "to": "13",
+      "timeStamp": "2012-04-23T18:25:43.511Z",
+      "body": "Hi nice to meet you!"
+    },
+    {
+      "from": "12",
+      "to": "13",
+      "timeStamp": "2012-04-23T18:25:43.511Z",
+      "body": "Hi nice to meet you!"
+    },
+    {
+      "from": "2",
+      "to": "14",
+      "timeStamp": "2012-04-23T18:25:43.511Z",
+      "body": "Hi nice to meet you!"
+    },
+    {
+      "from": "14",
+      "to": "2",
       "timeStamp": "2012-04-23T19:25:43.511Z",
       "body": "Hi how are you?"
     },
     {
-      "from": "1",
-      "to": "8",
+      "from": "2",
+      "to": "14",
       "timeStamp": "2012-04-23T19:35:43.511Z",
       "body": "I'm doing well how about you?"
     },
@@ -91,32 +91,32 @@
       "body": "I'm doing well how about you?"
     },
     {
-      "from": "2",
-      "to": "8",
+      "from": "4",
+      "to": "14",
       "timeStamp": "2012-05-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "3",
-      "to": "8",
+      "from": "6",
+      "to": "14",
       "timeStamp": "2012-06-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "4",
-      "to": "8",
+      "from": "7",
+      "to": "14",
       "timeStamp": "2012-04-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "5",
-      "to": "8",
+      "from": "9",
+      "to": "14",
       "timeStamp": "2012-04-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     },
     {
-      "from": "6",
-      "to": "8",
+      "from": "11",
+      "to": "14",
       "timeStamp": "2012-04-23T18:25:43.511Z",
       "body": "Hi nice to meet you!"
     }

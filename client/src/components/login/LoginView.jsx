@@ -12,8 +12,8 @@ export default class LoginView extends Component {
 
   // TODO give login check functionality
   handleLogin(email, password) {
-    // to fix later
-    this.props.onUserSessionUpdate(email, true, "7");
+    // give actually user/pass checking functionality later
+    this.props.onUserSessionUpdate(email, true, "13");
   }
 
 

@@ -17,7 +17,7 @@ import HobbiesForm from './HobbiesForm';
 import BioForm from './BioForm';
 
 
-import { addUser, getAllUsers } from '../../api';
+import { addUser, updateUser } from '../../api';
 
 export default class OnboardingView extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ export default class OnboardingView extends Component {
       email: "",
       password: "",
       // role mentee or mentor
-      role: "Mentor",
+      role: "Mentee",
       hometown: "",
       major: "Aerospace Engineering",
       skills: "", // to change to list
@@ -96,7 +96,9 @@ export default class OnboardingView extends Component {
 
   signUpUser () {
     console.log("adding User: " + this.state.firstName + " " + this.state.lastName);
+    let userId = (this.state.role === "Mentee") ? "13" : "14";
     let data = {
+      userId: userId,
       firstName: this.state.firstName, 
       lastName: this.state.lastName,
       schoolName: this.state.schoolName,
@@ -111,9 +113,10 @@ export default class OnboardingView extends Component {
       skills: this.state.skills,
       hobbies: this.state.hobbies, 
       bio: this.state.bio,
-      imageURL: "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"
+      imageURL: "https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg"
     };
-    const addUserPromise = addUser(data);
+    //const addUserPromise = addUser(data);
+    const addUserPromise = updateUser(data, userId);
     addUserPromise.then(newUser => {
       console.log("Getting response back: ");
       console.log(newUser);

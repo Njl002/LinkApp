@@ -41,7 +41,6 @@ const userRoutes = (app, path, fs) => {
     readFile(data => {
       const newUserId = data.users.length + 1;
       // add new user
-      //let newUser = JSON.parse(JSON.stringify(req.body));
       let newUser = {
         id: newUserId.toString(),
         firstName: req.body.firstName, 
@@ -60,45 +59,47 @@ const userRoutes = (app, path, fs) => {
         bio: req.body.bio,
         imageURL: req.body.imageURL
       }
+      
       data.users.push(newUser);
       writeFile(JSON.stringify(data, null, 2), () => {
-        res.status(200).send(JSON.stringify(newUser)); // return the updated list
+        res.status(200).send(JSON.stringify(newUser)); // return the updated 
       });
     },
       true);
   });
 
-  // UPDATE
-  // app.put('/api/updateUser/:id', (req, res) => {
-  //   readFile(data => {
-  //     const userId = req.params["id"];
-  //     let index = data.users.findIndex(x => x.id === userId);
-  //     let updatedUser = {
-  //       id: req.body.id,
-  //       name: req.body.name,
-  //       description: req.body.description,
-  //       imageURL: req.body.imageURL
-  //     }
-  //     data.users[index] = updatedUser;
-  //     writeFile(JSON.stringify(data, null, 2), () => {
-  //       res.status(200).send("user id" + userId + " updated");
-  //     });
-  //   },
-  //     true);
-  // });
+  //UPDATE
+  app.put('/api/updateUser/:id', (req, res) => {
+    readFile(data => {
+      const userId = req.params["id"];
+      let index = data.users.findIndex(x => x.id === userId);
 
-  //   // DELETE
-  // app.put('/api/updateUser/:id', (req, res) => {
-  //   readFile(data => {
-  //     const userId = req.params["id"];
-  //     let index = data.users.findIndex(x => x.id === userId);
-  //     data.users.splice(index, 1); // remove
-  //     writeFile(JSON.stringify(data, null, 2), () => {
-  //       res.status(200).send("user id" + userId + " updated");
-  //     });
-  //   },
-  //     true);
-  // });
+      let updatedUser = {
+        id: userId.toString(),
+        firstName: req.body.firstName, 
+        lastName: req.body.lastName,
+        schoolName: req.body.schoolName,
+        monthStart: req.body.monthStart,
+        yearStart: req.body.yearStart,
+        monthEnd: req.body.monthEnd,
+        yearEnd: req.body.yearEnd,
+        email: req.body.email,
+        role: req.body.role,
+        hometown: req.body.hometown,
+        major: req.body.major,
+        skills: req.body.skills, // to change to list
+        hobbies: req.body.hobbies, // to change to list
+        bio: req.body.bio,
+        imageURL: req.body.imageURL
+      }
+
+      data.users[index] = updatedUser;
+      writeFile(JSON.stringify(data, null, 2), () => {
+        res.status(200).send(JSON.stringify(updatedUser));
+      });
+    },
+      true);
+  });
   
 
 };

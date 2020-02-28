@@ -36,6 +36,27 @@ export function addUser(data) {
   })
 }
 
+export function updateUser(data, id) {
+  console.log("updating user");
+  console.log(data);
+  return fetch("/api/updateUser/" + id, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    console.log(response);
+    return response.json();
+  })
+  .catch(error => {
+    console.log("update user error: ");
+    console.log(error);
+  })
+}
+
 export function getAllMessages() {
   return fetch("/api/getMessages", {
     headers: {

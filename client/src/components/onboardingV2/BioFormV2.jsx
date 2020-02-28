@@ -15,7 +15,7 @@ export default class BioFormV2 extends Component {
   render() {
 
     let photoOrButton = this.state.photoSet ? (
-      <Image src="http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg" style={{ width: '5rem', height: '5rem'}}/>)
+      <Image src="https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg" style={{ width: '5rem', height: '5rem'}}/>)
       : (
         <Button variant="primary" type="submit" onClick={() => this.setState({photoSet: true})}>
             +

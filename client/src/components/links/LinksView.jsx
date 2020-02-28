@@ -25,8 +25,14 @@ export default class LinksView extends Component {
   getLinks = () => {
     const allUsersPromise = getAllUsers();
     allUsersPromise.then(data => {
-      let linkData = data.users.filter(x => x.id !== this.props.userId);
-      this.setState({links: linkData});
+      let mentorOrMentee = data.users.find(x => x.id === this.props.userId);
+      console.log("This user is a " + mentorOrMentee.role);
+      return data.users.filter(x => (x.id !== this.props.userId) && (x.role !== mentorOrMentee.role));
+    })
+    .then (data => {
+      console.log("Displaying links: ");
+      console.log(data);
+      this.setState({links: data});
     })
     .catch(error => {
       console.log("Get links error: ");
