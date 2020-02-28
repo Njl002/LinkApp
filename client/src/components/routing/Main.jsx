@@ -10,6 +10,7 @@ import LinkProfileView from '../links/link_profile/LinkProfileView';
 import UserProfileView from '../user_profile/UserProfileView';
 import MessagesView from '../messages/MessagesView';
 import OnboardingView from '../onboarding/OnboardingView';
+import OnboardingViewV2 from '../onboardingV2/OnboardingViewV2';
 import ChatView from '../messages/chat/ChatView';
 import NavBar from '../nav_bar/NavBar'
 
@@ -58,7 +59,8 @@ export default class Main extends Component {
       LINKPROFILE,
       USERPROFILE,
       MESSAGES,
-      ONBOARDING,
+      ONBOARDING_A,
+      ONBOARDING_B,
       CHAT
     } = navConsts;
 
@@ -133,9 +135,16 @@ export default class Main extends Component {
         />
 
         <Route
-          exact path={"/" + ONBOARDING}
+          exact path={"/" + ONBOARDING_A}
           render={() => (
             <OnboardingView 
+              onUserSessionUpdate={this.handleUserSessionUpdate}
+            />)}
+        />
+        <Route
+          exact path={"/" + ONBOARDING_B}
+          render={() => (
+            <OnboardingViewV2 
               onUserSessionUpdate={this.handleUserSessionUpdate}
             />)}
         />

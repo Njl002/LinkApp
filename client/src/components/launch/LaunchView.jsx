@@ -10,7 +10,7 @@ import logo from '../../resources/link-image.png';
 export default class LaunchView extends Component {
 
   render() {
-    const { LOGIN, ONBOARDING } = navConsts;
+    const { LOGIN, ONBOARDING_A, ONBOARDING_B } = navConsts;
     return (
       <Container className="launchView">
         <Row float="center">
@@ -21,8 +21,11 @@ export default class LaunchView extends Component {
         </Row>
         <Row float="center">
           <Col xs={12} md={12}>
-            <Link to={"/" + ONBOARDING}>
+            <Link to={"/" + ONBOARDING_A}>
               <Button className="button"> Get Started </Button>
+            </Link>
+            <Link to={"/" + ONBOARDING_B}>
+              <Button className="button"> Get Started V2 (for A/B testing)</Button>
             </Link>
           </Col>
         </Row>

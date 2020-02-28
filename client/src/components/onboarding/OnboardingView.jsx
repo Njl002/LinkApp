@@ -48,7 +48,7 @@ export default class OnboardingView extends Component {
       email: "",
       password: "",
       // role mentee or mentor
-      role: "Mentee",
+      role: "Mentor",
       hometown: "",
       major: "Aerospace Engineering",
       skills: "", // to change to list

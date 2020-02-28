@@ -21,7 +21,7 @@ export default class RoleChoice extends Component {
           </Button>
         </Row>
         <Row>
-          <h1> I am looking for a </h1>
+          <h1> I am looking to be a </h1>
         </Row>
         <Row>
           <ButtonToolbar>
@@ -32,8 +32,8 @@ export default class RoleChoice extends Component {
               defaultValue={"Mentor"}
               onChange={this.handleToggle}
             >
-              <ToggleButton value={"Mentee"}>Mentor</ToggleButton>
-              <ToggleButton value={"Mentor"}>Mentee</ToggleButton>
+              <ToggleButton value={"Mentor"}>Mentor</ToggleButton>
+              <ToggleButton value={"Mentee"}>Mentee</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>

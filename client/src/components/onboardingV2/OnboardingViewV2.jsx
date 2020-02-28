@@ -18,7 +18,7 @@ import HobbiesFormV2 from './HobbiesFormV2';
 import BioFormV2 from './BioFormV2';
 
 
-import { addUser, getAllUsers } from '../../api';
+import { addUser, updateUser } from '../../api';
 
 export default class OnboardingViewV2 extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ export default class OnboardingViewV2 extends Component {
       email: "",
       password: "",
       // role mentee or mentor
-      role: "Mentee",
+      role: "Mentor",
       hometown: "",
       major: "Aerospace Engineering",
       skills: "", // to change to list

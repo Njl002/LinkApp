@@ -16,7 +16,7 @@ export default class RoleChoiceV2 extends Component {
     return (
       <Container>
         <Row>
-          <h1> I am looking for a </h1>
+          <h1> I am looking to be a </h1>
         </Row>
         <Row>
           <ButtonToolbar>
