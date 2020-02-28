@@ -41,16 +41,16 @@ export default class OnboardingView extends Component {
       lastName: "",
       // school info
       schoolName: "",
-      monthStart: "",
-      yearStart: "",
-      monthEnd: "",
-      yearEnd: "",
+      monthStart: "01",
+      yearStart: "2009",
+      monthEnd: "01",
+      yearEnd: "2009",
       email: "",
       password: "",
       // role mentee or mentor
-      role: "",
+      role: "Mentor",
       hometown: "",
-      major: "",
+      major: "Aerospace Engineering",
       skills: "", // to change to list
       hobbies: "", // to change to list
       bio: ""

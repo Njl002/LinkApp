@@ -6,9 +6,11 @@ export default class BasicInfoStart extends Component {
   render() {
     return (
       <Container>
-        <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
-            Back
-        </Button>
+        <Row>
+          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
+              Back
+          </Button>
+        </Row>
         <Row>
           <h1> Adding basic info links you to better connections. </h1>
         </Row>

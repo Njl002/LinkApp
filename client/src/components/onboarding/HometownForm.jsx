@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 
-export default class NameForm extends Component {
+export default class HometownForm extends Component {
   render() {
     return (
       <Container>

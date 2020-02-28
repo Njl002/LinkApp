@@ -4,10 +4,12 @@ import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton 
 export default class RoleChoice extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      sLookingForMentee: false,
-      sLookingForMentor: false
-    };
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleToggle(vals) {
+    this.props.onRoleChange(vals);
+    this.setState({ sRole: vals }, () => { console.log("New role:", this.state.sRole)});
   }
 
   render() {
@@ -23,35 +25,15 @@ export default class RoleChoice extends Component {
         </Row>
         <Row>
           <ButtonToolbar>
-            <ToggleButtonGroup
-              type="checkbox" 
-              name="lookingForMentor"
-              onChange={e =>
-                this.setState({
-                  sLookingForMentor: !this.state.sLookingForMentor
-                }, () => {
-                  console.log("Looking for mentor? : ", this.state.sLookingForMentor); 
-                })
-              }
+            <ToggleButtonGroup 
+              vertical 
+              type="radio" 
+              name="roleToggle" 
+              defaultValue={"Mentor"}
+              onChange={this.handleToggle}
             >
-              <ToggleButton>Mentor</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
-        </Row>
-        <Row>
-          <ButtonToolbar>
-            <ToggleButtonGroup
-              type="checkbox" 
-              name="lookingForMentee"
-              onChange={e =>
-                this.setState({
-                  sLookingForMentee: !this.state.sLookingForMentee
-                }, () => {
-                  console.log("Looking for mentee? : ", this.state.sLookingForMentee); 
-                })
-              }
-            >
-              <ToggleButton>Mentee</ToggleButton>
+              <ToggleButton value={"Mentor"}>Mentor</ToggleButton>
+              <ToggleButton value={"Mentee"}>Mentee</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>
@@ -59,12 +41,6 @@ export default class RoleChoice extends Component {
           <Button
             variant="primary" type="submit"
             onClick={() => {
-              if (this.state.sLookingForMentee) {
-                this.props.onRoleChange("Mentor");
-              }
-              else {
-                this.props.onRoleChange("Mentee");
-              }
               this.props.onNextClick();
             }}
           >

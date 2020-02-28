@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { navConsts } from '../../constants';
 
-export default class SkillsForm extends Component {
+export default class BioForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
