@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import './css/BasicInfoStart.css'
 
 export default class BasicInfoStart extends Component {
 
@@ -7,8 +9,8 @@ export default class BasicInfoStart extends Component {
     return (
       <Container>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
-              Back
+          <Button variant="primary" type="submit" bsPrefix="basic-info-back-button" onClick={this.props.onPrevClick}>
+            <FiChevronLeft />
           </Button>
         </Row>
         <Row>
@@ -17,6 +19,7 @@ export default class BasicInfoStart extends Component {
         <Row>
           <Button
             variant="primary" type="submit"
+            bsPrefix="basic-info-next-button"
             onClick={() => {
               this.props.onNextClick();
             }}

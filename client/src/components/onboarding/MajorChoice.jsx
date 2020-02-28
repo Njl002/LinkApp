@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import './css/MajorChoice.css';
 
 export default class MajorChoice extends Component {
   constructor(props) {
@@ -17,8 +19,8 @@ export default class MajorChoice extends Component {
     return (
       <Container>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onPrevClick}>
-            Back
+          <Button variant="primary" type="submit" bsPrefix="major-back-button" onClick={this.props.onPrevClick}>
+            <FiChevronLeft />
           </Button>
         </Row>
         <Row>
@@ -47,8 +49,8 @@ export default class MajorChoice extends Component {
           </ButtonToolbar>
         </Row>
         <Row>
-          <Button variant="primary" type="submit" onClick={this.props.onNextClick}>
-            >
+          <Button variant="primary" type="submit" bsPrefix="major-next-button" onClick={this.props.onNextClick}>
+            <FiChevronRight />
           </Button>
         </Row>
       </Container>

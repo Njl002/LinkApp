@@ -1,12 +1,11 @@
-.name-form {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-shadow: none;
-  color: #4ABDAC;
+.role-toggle {
+  background-color: #4ABDAC;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
 }
 
-.name-back-button {
+.role-back-button {
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -14,8 +13,8 @@
   font-size: 35px;
   text-shadow: none;
 }
-
-.name-next-button {
+  
+.role-next-button {
   background-color: #4ABDAC;
   border: none;
   border-radius: 50%;

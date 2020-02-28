@@ -1,12 +1,4 @@
-.name-form {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-shadow: none;
-  color: #4ABDAC;
-}
-
-.name-back-button {
+.major-back-button {
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -15,7 +7,7 @@
   text-shadow: none;
 }
 
-.name-next-button {
+.major-next-button {
   background-color: #4ABDAC;
   border: none;
   border-radius: 50%;

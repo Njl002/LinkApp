@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import "./css/SchoolForm.css";
+import "./css/SchoolFormV2.css";
 
 export default class SchoolFormV2 extends Component {
   constructor(props) {

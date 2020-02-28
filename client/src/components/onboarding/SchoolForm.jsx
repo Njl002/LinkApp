@@ -29,7 +29,7 @@ export default class SchoolForm extends Component {
     return (
       <Container>
         <Row>
-          <Button variant="primary" type="submit" bsPrefix="back-button" onClick={this.props.onPrevClick}>
+          <Button variant="primary" type="submit" bsPrefix="school-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>
         </Row>
@@ -145,7 +145,7 @@ export default class SchoolForm extends Component {
           </Form>
         </Row>
         <Row>
-          <Button variant="primary" type="submit" bsPrefix="next-button" onClick={this.props.onNextClick}>
+          <Button variant="primary" type="submit" bsPrefix="school-next-button" onClick={this.props.onNextClick}>
             <FiChevronRight />
           </Button>
         </Row>
