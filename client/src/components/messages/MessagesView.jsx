@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import MessageCard from './MessageCard';
 
-import { getAllUsers, getAllMessages } from '../../api';
+import { getAllUsers, getAllMessages, getImage } from '../../api';
 import UserSession from '../../storage/UserSession';
 
 export default class MessagesView extends Component {
@@ -105,7 +105,7 @@ export default class MessagesView extends Component {
         partnerId={(messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}
         partnerName={messageCard.name}
         lastMessage={messageCard.body}
-        partnerImageURL={messageCard.imageURL}
+        partnerImageURL={getImage(messageCard.to === UserSession.getId() ? (messageCard.from) : (messageCard.to))}
       />
       </Col>
       </Row>

@@ -5,7 +5,7 @@ import ChatModal from './ChatModal';
 
 import { navConsts } from '../../../constants';
 
-import { getAllUsers } from '../../../api';
+import { getAllUsers, getImage } from '../../../api';
 
 // is LINKPROFILE routing
 export default class LinkProfileView extends Component {
@@ -74,7 +74,7 @@ export default class LinkProfileView extends Component {
         <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
         <Row> <h3>{this.state.major} </h3> </Row>
         <Row> <h3> {this.state.role} </h3> </Row>
-        <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
+        <Row> <Image src={getImage(this.state.id)} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
         <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
         <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
         <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
@@ -89,7 +89,7 @@ export default class LinkProfileView extends Component {
               </Button> 
               <ChatModal show={this.state.modalShow} onHide={() => this.setState({modalShow: false})}
                          name={this.state.firstName + " " + this.state.lastName}
-                         imageurl={this.state.imageURL} to={this.state.id}
+                         imageurl={getImage(this.state.id)} to={this.state.id}
               />
             </ButtonToolbar>
           </Col> 

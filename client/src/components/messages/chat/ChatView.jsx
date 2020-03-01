@@ -3,7 +3,7 @@ import { Container, Col, Row, Tab, Image, Nav, Form, Button } from 'react-bootst
 
 import ChatBox from './ChatBox';
 
-import { getAllUsers, getAllMessages, addMessage } from '../../../api';
+import { getAllUsers, getAllMessages, addMessage, getImage } from '../../../api';
 import UserSession from '../../../storage/UserSession';
 
 import './css/ChatView.css';
@@ -148,14 +148,14 @@ export default class ChatView extends Component {
               <Col sm={12} md={12}>
                 <Tab.Content>
                   <Tab.Pane eventKey="message">
-                    <ChatBox messages={this.state.messages} userId={this.state.id} imageURL={this.state.imageURL} onSendMessage={this.handleSendMessage}/>
+                    <ChatBox messages={this.state.messages} userId={this.state.id} imageURL={getImage(this.state.id)} onSendMessage={this.handleSendMessage}/>
                   </Tab.Pane>
                   <Tab.Pane eventKey="profile">
                     <Container>
                       <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
                       <Row> <h3>{this.state.major} </h3> </Row>
                       <Row> <h3> {this.state.role} </h3> </Row>
-                      <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
+                      <Row> <Image src={getImage(this.state.id)} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
                       <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
                       <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
                       <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>

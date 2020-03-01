@@ -16,7 +16,7 @@ export default class BioForm extends Component {
   render() {
 
     let photoOrButton = this.state.photoSet ? (
-      <Image src="https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg" style={{ width: '5rem', height: '5rem'}}/>)
+      <Image src={require('../../resources/images/profile/user_image.jpg')} style={{ width: '5rem', height: '5rem'}}/>)
       : (
         <Button variant="primary" type="submit" bsPrefix="bio-add-button" onClick={() => this.setState({photoSet: true})}>
             +
