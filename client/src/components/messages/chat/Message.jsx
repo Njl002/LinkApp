@@ -44,7 +44,7 @@ export default class Message extends Component {
       else {
         message = (
           <Row className="messageLine">
-            <Col xs={{ span: 10, offset: 2 }} md={{ span: 11, offset: 1 }}>
+            <Col xs={{ span: 10, offset: 2 }} md={{ span: 11, offset: 1 }} className="message">
               <Card body className="receivedMessage">
                 <Card.Text className="receivedMessageText">
                   {this.props.body}
