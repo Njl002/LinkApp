@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Row, Tabs, Tab, Image, Nav } from 'react-bootstrap';
+import { Container, Col, Row, Tab, Image, Nav, Form, Button } from 'react-bootstrap';
 
 import ChatBox from './ChatBox';
 
@@ -65,7 +65,9 @@ export default class ChatView extends Component {
         skills: link.skills, // to change to list
         hobbies: link.hobbies, // to change to list
         bio: link.bio,
-        imageURL: link.imageURL
+        imageURL: link.imageURL,
+
+        messageToSend: ""
       });
       return userId;
     })
@@ -94,14 +96,14 @@ export default class ChatView extends Component {
     });
   }
 
-  handleSendMessage(message) {
+  handleSendMessage() {
     console.log("Updating Chat state with message: ");
-    console.log(message);
+    console.log(this.state.messageToSend);
     let data = {
       to: this.state.id,
       from: UserSession.getId(),
       timeStamp: new Date().toJSON(),
-      body: message
+      body: this.state.messageToSend
     };
     const addMessagePromise = addMessage(data);
     addMessagePromise.then(newMessage => {
@@ -113,7 +115,8 @@ export default class ChatView extends Component {
     })
     .then(newMessages => {
       this.setState(prevState => ({
-        messages: newMessages
+        messages: newMessages,
+        messageToSend: ""
       }));
     })
     .catch(error => {
@@ -162,6 +165,27 @@ export default class ChatView extends Component {
                 </Tab.Content>
               </Col>
             </Row>
+            
+            <Row className="chatViewMessageBox">
+              <Col xs={10} md={11} className="chatViewMessageForm">
+                <Form >
+                  <Form.Group>
+                    <Form.Control 
+                      type="text" 
+                      name="messageForm" 
+                      value={this.state.messageToSend}
+                      onChange={e => this.setState({messageToSend: e.target.value})}
+                    />
+                  </Form.Group>
+                </Form>
+              </Col>
+              <Col xs={2} md={1} className="chatViewMessageButtonContainer">
+                <Button onClick={this.handleSendMessage} bsPrefix="chatViewSendMessageButton"> 
+                  Send 
+                </Button>
+              </Col>
+            </Row>
+
           </Tab.Container>
         </Row>
       </Container>

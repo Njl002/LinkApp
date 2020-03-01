@@ -13,7 +13,6 @@ export default class Message extends Component {
     let offset = 0;
     if (this.props.from === UserSession.getId()) {
       message = (
-        
         <Card body className="sentMessage">
           <Card.Text className="sentMessageText">
             {this.props.body}
@@ -24,12 +23,14 @@ export default class Message extends Component {
     else {
       message = (
         <Card body className="receivedMessage">
-          {this.props.body}
+            <Card.Text className="receivedMessageText">
+              {this.props.body}
+            </Card.Text>
         </Card>
       );
     }
     return (
-      <div className="messageBubble">
+      <div className="messageLine">
         {message}
       </div>
     );

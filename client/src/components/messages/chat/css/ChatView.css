@@ -35,3 +35,43 @@
   max-height: 70vh;
   overflow: scroll;
 }
+
+
+.chatViewMessageBox {
+  position: fixed;
+  bottom: 10vh;
+  width: 100%;
+  margin-left: -8px;
+}
+
+.chatViewMessageForm {
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  margin-left: -5px;
+}
+
+.chatViewMessageForm .form-group .form-control {
+  border-radius: 20px;
+}
+
+.chatViewMessageButtonContainer {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.chatViewSendMessageButton {
+  display: inline-block;
+  font-weight: 400;
+  background-color: white;
+  border-color: white;
+  color: #4ABDAC;
+  padding: .375rem .45rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  border: 1px solid transparent;
+  text-align: center;
+  vertical-align: middle;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

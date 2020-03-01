@@ -7,7 +7,6 @@ import { getAllUsers } from '../../api';
 import './css/LinksView.css';
 
 
-
 export default class LinksView extends Component {
 
   constructor(props) {
@@ -66,11 +65,11 @@ export default class LinksView extends Component {
     ));
 
     return (
-      <Container>
-        <Row >
+      <Container className="linksContainer">
+        <Row style={{height: "10vh"}}>
           <h1> Today's Links </h1>
         </Row>
-        <Row>
+        <Row style={{height: "80vh"}}>
           {list}
         </Row>
       </Container>

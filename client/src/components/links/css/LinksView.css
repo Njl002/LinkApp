@@ -2,3 +2,8 @@
   margin-bottom: 5vh;
   max-height: 90vh;
 }
+
+.linksContainer {
+  max-height: 90vh;
+  overflow: scroll;
+}

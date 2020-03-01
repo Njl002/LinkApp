@@ -1,23 +1,40 @@
-.messageBubble {
+.messageLine {
   width: 100%;
 }
 
 .sentMessage {
   float: right;
-  max-width: 90%;
-  margin-top: .75vh;
+  max-width: 85%;
+  margin-top: 1vh;
   background-color: #4ABDAC;
+  border-radius: 20px;
 }
 
-.sentMessageText {
+.sentMessage .card-body {
+  padding: 0.35rem 0.5rem;
+  min-height: 1rem;
+}
+
+.sentMessage .sentMessageText {
   text-align: left;
   color: white;
-
 }
+
 .receivedMessage {
   float: left;
   text-align: left;
-  max-width: 90%;
-  margin-top: .75vh;
+  max-width: 85%;
+  margin-top: 1vh;
   background-color: #dedede;
+  border-radius: 20px;
+}
+
+.sentMessage .receivedMessageText {
+  text-align: left;
+  color: black;
+}
+
+.receivedMessage .card-body {
+  padding: 0.5rem;
+  min-height: 1rem;
 }

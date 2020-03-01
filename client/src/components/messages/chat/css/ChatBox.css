@@ -3,24 +3,8 @@
   max-width: 100%;
   width: 100%;
   margin-bottom: 2vh;
+  padding-left: -15px;
+  padding-right: -15px;
 }
 
-.chatBoxMessageBox {
-  position: fixed;
-  bottom: 10vh;
-  width: 100%;
-  margin-left: -46px;
-}
 
-.chatBoxMessageForm {
-  width: 100%;
-  margin-right: 0;
-  padding-right: 0;
-  margin-left: -5px;
-}
-
-.chatBoxMessageButton {
-  width: 100%;
-  margin-left: 0;
-  padding-left: 0;
-}
