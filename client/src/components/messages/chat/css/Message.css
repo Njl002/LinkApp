@@ -1,5 +1,27 @@
 .messageLine {
   width: 100%;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.messageLine img {
+  position: absolute;
+  max-height: 6vh;
+  max-width: 6vh;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 1vh;
+  float: right;
+  bottom: 0.25vh;
+  left: 1.25vh;
+}
+
+.messageLine .image {
+  padding: 0;
+}
+
+.messageLine .message {
+  padding: 0;
 }
 
 .sentMessage {
@@ -31,7 +53,6 @@
 
 .sentMessage .receivedMessageText {
   text-align: left;
-  color: black;
 }
 
 .receivedMessage .card-body {

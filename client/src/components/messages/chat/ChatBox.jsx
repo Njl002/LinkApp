@@ -10,7 +10,7 @@ export default class ChatBox extends Component {
     return (
       <Container className="chatBoxContainer">
 
-        <MessageList messages={this.props.messages}/>
+        <MessageList messages={this.props.messages} userId={this.props.userId} imageURL={this.props.imageURL}/>
 
       </Container>
     );

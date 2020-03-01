@@ -13,7 +13,15 @@ export default class LoginView extends Component {
   // TODO give login check functionality
   handleLogin(email, password) {
     // give actually user/pass checking functionality later
-    this.props.onUserSessionUpdate(email, true, "13");
+
+    // default log in as id = "13"
+    if (email === "") {
+      this.props.onUserSessionUpdate(email, true, "13");
+    }
+    // to allow for user to log in as any id value
+    else {
+      this.props.onUserSessionUpdate(email, true, email);
+    }
   }
 
 

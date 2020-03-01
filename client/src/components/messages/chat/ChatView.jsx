@@ -40,6 +40,7 @@ export default class ChatView extends Component {
   }
 
   componentDidMount() {
+    // id is the other user
     this.fillValues(this.state.id);
   }
 
@@ -147,7 +148,7 @@ export default class ChatView extends Component {
               <Col sm={12} md={12}>
                 <Tab.Content>
                   <Tab.Pane eventKey="message">
-                    <ChatBox messages={this.state.messages} onSendMessage={this.handleSendMessage}/>
+                    <ChatBox messages={this.state.messages} userId={this.state.id} imageURL={this.state.imageURL} onSendMessage={this.handleSendMessage}/>
                   </Tab.Pane>
                   <Tab.Pane eventKey="profile">
                     <Container>
