@@ -5,7 +5,7 @@ import { navConsts } from '../../constants';
 
 import './css/LaunchView.css';
 
-import logo from '../../resources/link-image.png';
+import logo from '../../resources/images/link-image.png';
 
 export default class LaunchView extends Component {
 

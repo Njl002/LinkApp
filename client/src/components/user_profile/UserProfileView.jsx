@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import default_profile_img from '../../resources/blank-profile-picture.png';
 
 import UserSession from '../../storage/UserSession';
 

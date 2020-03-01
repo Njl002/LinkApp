@@ -16,7 +16,7 @@
       "skills": "HTML, CSS, ReactJS, Node.js, Java, C/C++, Scheme, x86 assembly, eating without chewing",
       "hobbies": "hiking, contemplating my existance",
       "bio": "Has awesome pet mice",
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Douglas_Engelbart_in_2008.jpg/972px-Douglas_Engelbart_in_2008.jpg"
+      "imageURL": "./profile/douglas_engelbart.jpg"
     },
     {
       "id": "2",
@@ -34,7 +34,7 @@
       "skills": "Brain stuff, basketball, hopping fences",
       "hobbies": "reading, sketching, taking notes",
       "bio": "Great at sketching",
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"
+      "imageURL": "./profile/ivan_sutherland.jpg"
     },
     {
       "id": "3",
@@ -52,7 +52,7 @@
       "skills": "Java, C++, teaching, leadership",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding",
       "bio": "Loves Trukese navigators",
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg"
+      "imageURL": "./profile/lucy_suchman"
     },
     {
       "id": "4",
@@ -70,7 +70,7 @@
       "skills": "graduated top of his class in the navy seals and over 300 confirmed kills",
       "hobbies": "call of duty",
       "bio": "Has stellar associative memory",
-      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"
+      "imageURL": "./profile/vannevar_bush.jpg"
     },
     {
       "id": "5",
@@ -88,7 +88,7 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "what are those",
       "bio": "Only friend with a Navy ship named after them",
-      "imageURL": "http://amhistory.si.edu/ogmt/images/upload/women-mathematicians/AHB2012q06025.jpg"
+      "imageURL": "./profile/grace_hopper.jpg"
     },
     {
       "id": "6",
@@ -106,7 +106,7 @@
       "skills": "working hard",
       "hobbies": "hobbying hard",
       "bio": "Really into psychology",
-      "imageURL": "http://uploads.edubilla.com/awards-winners/92/b4/allen-newell.jpg"
+      "imageURL": "./profile/allen_newell.jpg'"
     },
     {
       "id": "7",
@@ -124,7 +124,7 @@
       "skills": "HTML, CSS, ReactJS, Node.js, Java, C/C++, Scheme, x86 assembly, eating without chewing",
       "hobbies": "hiking, contemplating my existance",
       "bio": "Has awesome pet mice",
-      "imageURL": "https://truestudios.biz/media/widgetkit/Free_Headshot_Columbus_7-fb0e6b60237506ad28adc5951784af1e.jpg?fbclid=IwAR2VSCse-d1Zptnx_0pj7U_S0JGPPZx3jgCxb-BtSBemSpX-wXYkbo0ZAtI"
+      "imageURL": "./profile/amelia_richardson.jpg"
     },
     {
       "id": "8",
@@ -142,7 +142,7 @@
       "skills": "Brain stuff, basketball, hopping fences",
       "hobbies": "reading, sketching, taking notes",
       "bio": "Great at sketching",
-      "imageURL": "https://www.unh.edu/unhtoday/sites/default/files/styles/article_huge/public/article/2019/professional_woman_headshot.jpg?itok=3itzxHXh&fbclid=IwAR0Thfvw1ug5O_7htLZNu9QEOThmnf6pJf_K5Qh7CZrj6dtmvqQEnbTrYwM"
+      "imageURL": "./profile/tracy_kyles.jpg"
     },
     {
       "id": "9",
@@ -160,7 +160,7 @@
       "skills": "Java, C++, teaching, leadership",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding",
       "bio": "Loves Trukese navigators",
-      "imageURL": "https://www.andrewcollings.com/wp-content/uploads/2019/06/Hero-02-005-Chicago-Studio-Corporate-Headshot.jpg-1024x683-JPG60.JPG-1024x683.jpg?fbclid=IwAR00Sg2fTPCcAsyMJ2m_xn4JwS7-v0db-Qo3sbf0DTlX7HRFIiTayw7JcDc"
+      "imageURL": "./profile/edith_boucher.jpg"
     },
     {
       "id": "10",
@@ -178,7 +178,7 @@
       "skills": "graduated top of his class in the navy seals and over 300 confirmed kills",
       "hobbies": "call of duty",
       "bio": "Has stellar associative memory",
-      "imageURL": "https://jwhitephoto.com/wp-content/uploads/2017/11/metro-detroit-birmingham-headshot-photographer-jeff-white-jwhitephoto-11-725x1024.jpg?fbclid=IwAR1vwKINEvwYl0X8nTw_OLO-Id0DDGxzEhwt8dMgL_qjHYT2HbZHoBXbM7A"
+      "imageURL": "./profile/david_johnson.jpg"
     },
     {
       "id": "11",
@@ -196,7 +196,7 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "what are those",
       "bio": "Only friend with a Navy ship named after them",
-      "imageURL": "https://images.squarespace-cdn.com/content/v1/550c3008e4b0af84594cfd4f/1566939642924-JBHBRZTZKAII0M5979XO/ke17ZwdGBToddI8pDm48kOeC2_vIwtkNO4KLfB1JIsJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UedT6MCuDrG0_6iPwXLGF1669zXNhvZ0Gt3DqtjtSHkNlcTmcwU-Ed_fLjLxuPb0KQ/business-headshots-034d3ds22df32d72e-333df323sdfdwsadf3213.jpg?format=1500w&fbclid=IwAR1DeAPL22dCkUa5gm1MFC7IDa5MNE3rOTW0cHYdDlzomaTNT_ZKlHmVrd0"
+      "imageURL": "./profile/robert_james.jpg"
     },
     {
       "id": "12",
@@ -214,7 +214,7 @@
       "skills": "working hard",
       "hobbies": "hobbying hard",
       "bio": "Really into psychology",
-      "imageURL": "https://images.squarespace-cdn.com/content/v1/53ed0e3ce4b0c296acaeae80/1484146694492-6KR49GLN6411M8AWNFCJ/ke17ZwdGBToddI8pDm48kD8Xroq_AX5Zgi3HGn2a5gd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UQQ0iLpUJJ55dW55w_oZ6JvHnXlmx4oSoNzVwlPskgpsLIXfY3DEqu8fc08UsQJ-4w/NARTAN-2794-Edit+Headshot+Photography+by+Tommy+Collier+Productions+Denver+Colorado+Headshots+Photographer.jpg?format=1500w&fbclid=IwAR1DeAPL22dCkUa5gm1MFC7IDa5MNE3rOTW0cHYdDlzomaTNT_ZKlHmVrd0"
+      "imageURL": "./profile/allen_newells.jpg"
     },
     {
       "id": "13",
@@ -232,7 +232,7 @@
       "skills": "skill",
       "hobbies": "hobby",
       "bio": "bio",
-      "imageURL": "https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg"
+      "imageURL": "./profile/user_image.jpg"
     },
     {
       "id": "14",
@@ -250,7 +250,7 @@
       "skills": "skill",
       "hobbies": "hobby",
       "bio": "bio",
-      "imageURL": "https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg"
+      "imageURL": "./profile/user_image.jpg"
     }
   ]
 }
