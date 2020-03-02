@@ -8,12 +8,17 @@
 
 .userProfileBodyContainer .card-title {
   padding-left: 1vh;
+  margin-bottom: 0.25rem;
 }
 
 .userProfileBodyContainer .card-body {
   padding-left: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
 }
 
 .userProfileBodyContainer .card-text {
-  padding-left: 2vh;
+  padding-left: 1vh;
+  margin-bottom: .25rem;
 }
