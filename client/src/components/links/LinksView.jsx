@@ -40,6 +40,7 @@ export default class LinksView extends Component {
 
   render() {
     
+    // passing a lot of info into props, not all are used
     let list = this.state.links.map((link) => (
       <Col xs={6} md={6} key={link.id} className="profileCardCol">
       <LinkProfileCard
@@ -65,10 +66,10 @@ export default class LinksView extends Component {
 
     return (
       <Container className="linksContainer">
-        <Row style={{height: "10vh"}}>
+        <Row className="title">
           <h1> Today's Links </h1>
         </Row>
-        <Row style={{height: "80vh"}}>
+        <Row className="links">
           {list}
         </Row>
       </Container>

@@ -1,0 +1,10 @@
+.messagesViewContainer {
+  max-height: 90vh;
+}
+
+.messagesViewContainer .title {
+  max-height: 10vh;
+  width: 100%;
+  padding-left: 15px;
+  margin-left: 0;
+}

@@ -7,6 +7,8 @@ import MessageCard from './MessageCard';
 import { getAllUsers, getAllMessages, getImage } from '../../api';
 import UserSession from '../../storage/UserSession';
 
+import './css/MessagesView.css'
+
 export default class MessagesView extends Component {
   constructor(props) {
     super(props);
@@ -112,8 +114,8 @@ export default class MessagesView extends Component {
     ));
 
     return (
-      <Container>
-        <Row >
+      <Container className="messagesViewContainer">
+        <Row className="title">
           <h1> Messages </h1>
         </Row>
         {messageList}

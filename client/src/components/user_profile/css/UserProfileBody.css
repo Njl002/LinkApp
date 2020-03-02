@@ -1,0 +1,19 @@
+.userProfileBodyContainer {
+  width: 100%;
+}
+
+.userProfileBodyContainer .card {
+  width: 100%;
+}
+
+.userProfileBodyContainer .card-title {
+  padding-left: 1vh;
+}
+
+.userProfileBodyContainer .card-body {
+  padding-left: 1vh;
+}
+
+.userProfileBodyContainer .card-text {
+  padding-left: 2vh;
+}

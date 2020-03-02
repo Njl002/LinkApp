@@ -5,5 +5,16 @@
 
 .linksContainer {
   max-height: 90vh;
+  height: 90vh;
+}
+
+.linksContainer .title {
+  max-height: 10vh;
+  width: 100%;
+  padding-left: 15px;
+}
+
+.linksContainer .links {
+  height: 87vh;
   overflow: scroll;
 }

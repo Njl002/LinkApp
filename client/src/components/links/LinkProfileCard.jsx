@@ -12,12 +12,12 @@ export default class LinkProfileCard extends Component {
     return (
       <Card className="profileCard">
         <Textfit mode="single" forceSingleModeWidth={false} max={32}>
-          <Card.Title className="profileCardTitle">
+          <Card.Title >
             {this.props.firstName + " " + this.props.lastName}
           </Card.Title>
         </Textfit>
         <Textfit mode="single" max={24}>
-          <Card.Text className="profileCardText">
+          <Card.Text>
               {this.props.major}
           </Card.Text>
         </Textfit>
@@ -25,7 +25,7 @@ export default class LinkProfileCard extends Component {
           {this.props.role}
         </Card.Text>
         <Link to={"/" + LINKPROFILE + "/" + this.props.id}>
-          <Card.Img variant="top" src={this.props.imageURL} className="profileCardImg"/>
+          <Card.Img variant="top" src={this.props.imageURL} />
         </Link>
       </Card>
     );

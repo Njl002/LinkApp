@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
+import { FiUser, FiMessageSquare, FiLink} from "react-icons/fi";
 import { navConsts } from '../../constants';
 
 import './css/NavBar.css';
@@ -13,17 +14,17 @@ export default class NavBar extends Component {
       <Navbar expand="true" bg="light" fixed="bottom" className='navBar'>
         <Link to={"/" + LINKS}>
           <Navbar.Brand>
-            Links
+            <FiLink />
           </Navbar.Brand>
         </Link>
         <Link to={"/" + MESSAGES}>
           <Navbar.Brand>
-            Messages
+            <FiMessageSquare />
           </Navbar.Brand>
         </Link>
         <Link to={"/" + USERPROFILE}>
           <Navbar.Brand>
-            Profile
+            <FiUser />
           </Navbar.Brand>
         </Link>
       </Navbar>

@@ -5,8 +5,9 @@
 }
 
 .chatViewName {
-  margin-bottom: 2vh;
-  max-height: 8vh;
+  padding-top: 2vh;
+  margin-bottom: 1vh;
+  max-height: 7vh;
 }
 
 .chatViewContainer {
@@ -27,15 +28,16 @@
 .chatViewTabbing {
   margin-left: 0%;
   width: 100%;
-  max-height: 10vh;
+  max-height: 5vh;
+  height: 5vh;
 }
 
 .chatViewBody {
-  padding-top: 2vh;
+  padding-top: 0;
   width: 100%;
   margin-left: 0%;
-  max-height: 73vh;
-  height: 73vh;
+  max-height: 65vh;
+  height: 65vh;
   overflow: scroll;
 }
 
