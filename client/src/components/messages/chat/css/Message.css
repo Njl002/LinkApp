@@ -34,7 +34,7 @@
 
 .sentMessage .card-body {
   padding: 0.35rem 0.5rem;
-  min-height: 1rem;
+  min-height: 1.25rem;
 }
 
 .sentMessage .sentMessageText {
@@ -57,5 +57,5 @@
 
 .receivedMessage .card-body {
   padding: 0.5rem;
-  min-height: 1rem;
+  min-height: 1.25rem;
 }

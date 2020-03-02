@@ -13,8 +13,25 @@
   margin-bottom: 18vh;
 }
 
-.button {
+.launchView .signupBtn {
   margin-bottom: 1vh;
   width: 100%;
+  background-color: #4ABDAC;
+  border-color: #4ABDAC;
+  color: white;
+  border-radius: 20px;
+  padding: .375rem .45rem;
+  font-size: 1.5rem;
+}
+
+.launchView .loginBtn {
+  margin-bottom: 1vh;
+  width: 100%;
+  background-color: white;
+  border-color: white;
+  color: grey;
+  border-radius: 20px;
+  padding: .375rem .45rem;
+  font-size: 1.5rem;
 }
 

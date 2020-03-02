@@ -22,17 +22,17 @@ export default class LaunchView extends Component {
         <Row float="center">
           <Col xs={12} md={12}>
             <Link to={"/" + ONBOARDING_A}>
-              <Button className="button"> Get Started </Button>
+              <Button className="signupBtn"> Get Started </Button>
             </Link>
             <Link to={"/" + ONBOARDING_B}>
-              <Button className="button"> Get Started V2 (for A/B testing)</Button>
+              <Button className="signupBtn"> Get Started V2 (for A/B testing)</Button>
             </Link>
           </Col>
         </Row>
         <Row float="center">
           <Col xs={12} md={12} >
             <Link to={"/" + LOGIN}>
-              <Button className="button"> Login </Button>
+              <Button className="loginBtn"> Log In </Button>
             </Link>
           </Col>
         </Row>
