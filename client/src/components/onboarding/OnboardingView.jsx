@@ -79,6 +79,10 @@ export default class OnboardingView extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
   }
 
+  componentDidMount() {
+    this.props.handleTracking();
+  }
+
   handleNextClick() {
     this.setState(prevState => ({
       page: prevState.page + 1

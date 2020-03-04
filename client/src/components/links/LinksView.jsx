@@ -17,6 +17,7 @@ export default class LinksView extends Component {
 
   componentDidMount() {
     this.getLinks();
+    this.props.handleTracking();
   }
 
   // to do filter out self

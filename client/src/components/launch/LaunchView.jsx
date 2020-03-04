@@ -9,6 +9,10 @@ import logo from '../../resources/images/link-image.png';
 
 export default class LaunchView extends Component {
 
+  componentDidMount() {
+    this.props.handleTracking();
+  }
+
   render() {
     const { LOGIN, ONBOARDING_A, ONBOARDING_B } = navConsts;
     return (
