@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Col, Row, Tab, Image, Nav, Form, Button } from 'react-bootstrap';
 
 import ChatBox from './ChatBox';
+import ChatProfileView from './ChatProfileView';
 
 import { getAllUsers, getAllMessages, addMessage, getImage } from '../../../api';
 import UserSession from '../../../storage/UserSession';
@@ -48,6 +49,8 @@ export default class ChatView extends Component {
     const allUsersPromise = getAllUsers();
     allUsersPromise.then(data => {
       let link = data.users.find(x => x.id === userId);
+      console.log("Filling user data: ");
+      console.log(link);
       this.setState({
         id: link.id,
         firstName: link.firstName, 
@@ -151,17 +154,20 @@ export default class ChatView extends Component {
                     <ChatBox messages={this.state.messages} userId={this.state.id} imageURL={getImage(this.state.id)} onSendMessage={this.handleSendMessage}/>
                   </Tab.Pane>
                   <Tab.Pane eventKey="profile">
-                    <Container>
-                      <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
-                      <Row> <h3>{this.state.major} </h3> </Row>
-                      <Row> <h3> {this.state.role} </h3> </Row>
-                      <Row> <Image src={getImage(this.state.id)} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
-                      <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
-                      <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
-                      <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
-                      <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
-                      <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row>
-                    </Container>
+                    <ChatProfileView 
+                      firstName={this.state.firstName} 
+                      lastName={this.state.lastName}
+                      major={this.state.major}
+                      role={this.state.role}
+                      schoolName={this.state.schoolName}
+                      email={this.state.email}
+                      bio={this.state.bio}
+                      graduationYear={this.state.yearEnd}
+                      hometown={this.state.hometown}
+                      skills={this.state.skills}
+                      hobbies={this.state.hobbies}
+                      imageURL={getImage(this.state.id)}
+                    />
                   </Tab.Pane>
                 </Tab.Content>
               </Col>

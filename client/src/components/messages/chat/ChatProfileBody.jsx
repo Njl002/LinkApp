@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Container, Row, Card } from 'react-bootstrap';
-import { Textfit } from 'react-textfit';
 
-import './css/UserProfileBody.css';
+import './css/ChatProfileBody.css';
 
-export default class UserProfileBody extends Component {
+export default class ChatProfileBody extends Component {
   // Bio page
   // Graduation Year + Hometown
   // Skills
   // Hobbies
   render() {
     return (
-      <div className="userProfileBodyContainer">
+      <div className="chatProfileBodyContainer">
         <Card>
           <Card.Title>
             About

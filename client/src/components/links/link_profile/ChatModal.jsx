@@ -5,6 +5,8 @@ import UserSession from '../../../storage/UserSession';
 
 import { addMessage } from '../../../api';
 
+import './css/ChatModal.css';
+
 export default class ChatModal extends Component {
   constructor(props) {
     super(props);
@@ -45,16 +47,14 @@ export default class ChatModal extends Component {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header>
-          <Modal.Title id="contained-modal-title-vcenter">
+        <Modal.Body>
+          <Modal.Title className="chatModalTitle" id="contained-modal-title-vcenter">
             {this.props.name}
           </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Image src={this.props.imageurl} rounded style={{width:"20rem"}}/>
-          <Form>
+          <Image src={this.props.imageurl} className="chatModalProfileImage"/>
+          <Form >
             <Form.Group>
-              <Form.Control 
+              <Form.Control className="chatModalMessageBox"
                 type="text" 
                 name="messageForm" 
                 placeholder="Add a message" 
@@ -62,11 +62,10 @@ export default class ChatModal extends Component {
               />
             </Form.Group>
           </Form>
+          <Button className="chatModalSendBtn" onClick={() => this.handleSendMessage(this.state.message)}>Send</Button>
+          <Button className="chatModalCancelBtn" onClick={this.props.onHide}>Cancel</Button>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => this.handleSendMessage(this.state.message)}>Send</Button>
-          <Button onClick={this.props.onHide}>Cancel</Button>
-        </Modal.Footer>
+          
       </Modal>
     );
   }

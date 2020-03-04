@@ -1,0 +1,25 @@
+.modalProfileBodyContainer {
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.modalProfileBodyContainer .card {
+  width: 100%;
+}
+
+.modalProfileBodyContainer .card-title {
+  padding-left: 1vh;
+  margin-bottom: 0.25rem;
+}
+
+.modalProfileBodyContainer .card-body {
+  padding-left: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
+}
+
+.modalProfileBodyContainer .card-text {
+  padding-left: 1vh;
+  margin-bottom: .25rem;
+}

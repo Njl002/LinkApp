@@ -83,27 +83,20 @@ export default class UserProfileView extends Component {
         <Row>
           <Image src={this.state.imageURL} className="userProfileImage"/>
         </Row>
-        <UserProfileBody 
-          bio={this.state.bio}
-          graduationYear={this.state.yearEnd}
-          hometown={this.state.hometown}
-          skills={this.state.skills}
-          hobbies={this.state.hobbies}
-          email={this.state.email}
-          schoolName={this.state.schoolName}
-        />
+        <Row>
+          <UserProfileBody 
+            bio={this.state.bio}
+            graduationYear={this.state.yearEnd}
+            hometown={this.state.hometown}
+            skills={this.state.skills}
+            hobbies={this.state.hobbies}
+            email={this.state.email}
+            schoolName={this.state.schoolName}
+          />
+        </Row>
+        
 
       </Container>
     );
   }
 }
-
-{/* <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
-        <Row> <h3>{this.state.major} </h3> </Row>
-        <Row> <h3> {this.state.role} </h3> </Row>
-        <Row> <Image src={this.state.imageURL} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
-        <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
-        <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
-        <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
-        <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
-        <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row> */}

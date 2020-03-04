@@ -42,3 +42,5 @@
     transform: rotate(360deg);
   }
 }
+
+body.modal-open #root { -webkit-filter: blur(5px) grayscale(90%); }

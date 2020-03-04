@@ -1,0 +1,24 @@
+.chatProfileBodyContainer {
+  width: 100%;
+}
+
+.chatProfileBodyContainer .card {
+  width: 100%;
+}
+
+.chatProfileBodyContainer .card-title {
+  padding-left: 1vh;
+  margin-bottom: 0.25rem;
+}
+
+.chatProfileBodyContainer .card-body {
+  padding-left: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-right: 1vh;
+}
+
+.chatProfileBodyContainer .card-text {
+  padding-left: 1vh;
+  margin-bottom: .25rem;
+}

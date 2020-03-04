@@ -27,7 +27,7 @@ export default class MessageCard extends Component {
               <Image src={this.props.partnerImageURL} roundedCircle className="messageCardImg"
                      onClick={() => this.setState({ modalShow: true })} 
               /> 
-              <ProfileModal show={this.state.modalShow} onHide={() => this.setState({modalShow: false})} id={partnerId}/>
+              <ProfileModal show={this.state.modalShow} imageURL={this.props.partnerImageURL} onHide={() => this.setState({modalShow: false})} id={partnerId}/>
             </Col>
             
             <Col xs={9} md={9}>

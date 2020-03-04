@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Image, Button, ButtonToolbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FiMessageSquare, FiArrowLeft } from "react-icons/fi";
 import ChatModal from './ChatModal';
+import LinkProfileTitle from './LinkProfileTitle';
+import LinkProfileBody from './LinkProfileBody';
 
 import { navConsts } from '../../../constants';
 
 import { getAllUsers, getImage } from '../../../api';
+
+import './css/LinkProfileView.css';
 
 // is LINKPROFILE routing
 export default class LinkProfileView extends Component {
@@ -33,7 +38,6 @@ export default class LinkProfileView extends Component {
 
       modalShow: false
     }
-
   }
 
   componentDidMount() {
@@ -70,22 +74,44 @@ export default class LinkProfileView extends Component {
   render() {
     const { LINKS } = navConsts;
     return (
-      <Container>
-        <Row><h1>{this.state.firstName + " " + this.state.lastName}</h1></Row>
-        <Row> <h3>{this.state.major} </h3> </Row>
-        <Row> <h3> {this.state.role} </h3> </Row>
-        <Row> <Image src={getImage(this.state.id)} rounded style={{ width: '20rem', height: '20rem'}}/> </Row>
-        <Row> <Col> <h3> About </h3> <div> {this.state.bio} </div> </Col> </Row>
-        <Row> <Col> <h6> Graduation Year </h6> </Col> <Col> <div> {this.state.yearEnd} </div> </Col> </Row>
-        <Row> <Col> <h6> Hometown </h6> </Col> <Col> <div> {this.state.hometown} </div> </Col> </Row>
-        <Row> <Col> <h4> Skills </h4> <div> {this.state.skills} </div> </Col>  </Row>
-        <Row> <Col> <h4> Hobbies </h4> <div> {this.state.hobbies} </div> </Col>  </Row>
-        <Row> 
-          <Col> <Link to={"/" + LINKS}> <Button> X </Button> </Link> </Col> 
-          <Col> 
+      <Container className="linkProfileViewContainer">
+        <Row>
+          <LinkProfileTitle
+            firstName={this.state.firstName} 
+            lastName={this.state.lastName}
+            major={this.state.major}
+            role={this.state.role}
+            schoolName={this.state.schoolName}
+            email={this.state.email}
+          />
+        </Row>
+        <Row>
+          <Image src={getImage(this.state.id)} className="linkProfileImage"/>
+        </Row>
+        <Row>
+          <LinkProfileBody 
+            bio={this.state.bio}
+            graduationYear={this.state.yearEnd}
+            hometown={this.state.hometown}
+            skills={this.state.skills}
+            hobbies={this.state.hobbies}
+            email={this.state.email}
+            schoolName={this.state.schoolName}
+          />  
+        </Row>
+
+        <Row className="linkProfileBtnRow"> 
+          <Col md={{ span: 3, offset: 1 }} xs={{ span: 3, offset: 1 }}> 
+            <Link to={"/" + LINKS}> 
+              <Button className="linkProfileCancelBtn"> 
+                <FiArrowLeft />
+              </Button> 
+            </Link> 
+          </Col> 
+          <Col md={{ span: 3, offset: 4 }} xs={{ span: 3, offset: 4 }}> 
             <ButtonToolbar>
-              <Button onClick={() => this.setState({ modalShow: true })}> 
-                Message 
+              <Button className="linkProfileMessageBtn" onClick={() => this.setState({ modalShow: true })}> 
+                <FiMessageSquare />
               </Button> 
               <ChatModal show={this.state.modalShow} onHide={() => this.setState({modalShow: false})}
                          name={this.state.firstName + " " + this.state.lastName}
@@ -94,7 +120,8 @@ export default class LinkProfileView extends Component {
             </ButtonToolbar>
           </Col> 
         </Row>
-      </Container>
+      </Container>        
+        
     );
   }
 }
