@@ -43,6 +43,7 @@ export default class ChatView extends Component {
   componentDidMount() {
     // id is the other user
     this.fillValues(this.state.id);
+    this.props.handleTracking();
   }
 
   fillValues(userId) {

@@ -4,6 +4,10 @@ import { Redirect } from "react-router-dom";
 
 export default class LoginRedirect extends Component {
 
+  componentDidMount() {
+    this.props.handleTracking();
+  }
+
   render() {
     const { LAUNCH, LINKS } = navConsts;
     if (this.props.isAuthenticated) {

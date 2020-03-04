@@ -29,6 +29,7 @@ export default class MessagesView extends Component {
       console.log("setting messages view state error: ");
       console.log(error);
     })
+    this.props.handleTracking();
   }
 
   getDisplayMessages(userId) {

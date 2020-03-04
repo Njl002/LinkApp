@@ -37,6 +37,7 @@ export default class UserProfileView extends Component {
     let userId = UserSession.getId(); // should be set at this point 
     console.log("Getting user profile for user " + userId);
     this.getUser(userId);
+    this.props.handleTracking();
   }
 
   getUser(userId) {

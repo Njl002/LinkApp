@@ -10,6 +10,10 @@ export default class LoginView extends Component {
     this.handleLogin = this.handleLogin.bind(this);
   }
 
+  componentDidMount() {
+    this.props.handleTracking();
+  }
+
   // TODO give login check functionality
   handleLogin(email, password) {
     // give actually user/pass checking functionality later

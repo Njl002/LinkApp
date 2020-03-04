@@ -42,6 +42,7 @@ export default class LinkProfileView extends Component {
 
   componentDidMount() {
     this.getLink(this.state.id);
+    // this.props.handleTracking();
   }
 
   getLink(userId) {

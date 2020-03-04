@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { navConsts } from '../../constants';
+import ReactGA from 'react-ga';
 
 import LoginRedirect from './LoginRedirect';
 import LaunchView from '../launch/LaunchView';
@@ -29,6 +30,7 @@ export default class Main extends Component {
       userId: ""
     }
     this.handleUserSessionUpdate = this.handleUserSessionUpdate.bind(this);
+    this.updateTracking = this.updateTracking.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +41,12 @@ export default class Main extends Component {
     UserSession.setAuthenticated(priorAuthentication);
     UserSession.setId(priorId);
 
+    // Trying to get Google Analytics Working
+    ReactGA.initialize('UA-158770874-2');
+    ReactGA.set({
+      userId: priorId
+    })
+
     this.setState({username: priorUsername, isAuthenticated: priorAuthentication, userId: priorId});
   }
 
@@ -48,6 +56,11 @@ export default class Main extends Component {
     UserSession.setId(userId);
 
     this.setState({username: username, isAuthenticated: isAuthenticated, userId: userId});
+  }
+
+  updateTracking() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    console.log("This is what I am currently passing in as pageview: " + window.location.pathname + window.location.search);
   }
 
   render() {
@@ -73,6 +86,7 @@ export default class Main extends Component {
           render={() => (
             <LoginRedirect 
               isAuthenticated={this.state.isAuthenticated}
+              handleTracking={this.updateTracking}
             />
           )}
         />
@@ -83,7 +97,9 @@ export default class Main extends Component {
             render={() => (
               <LoginRedirect 
                 isAuthenticated={this.state.isAuthenticated}
-              />)}
+                handleTracking={this.updateTracking}
+              />
+            )}
           />
           ) : (
           <Route
@@ -91,7 +107,9 @@ export default class Main extends Component {
             render={() => (
               <LaunchView 
                 onBackClick={this.handleBackToLaunch}
-              />)}
+                handleTracking={this.updateTracking}
+              />
+            )}
           />
         )}
 
@@ -101,7 +119,9 @@ export default class Main extends Component {
             render={() => (
               <LoginRedirect 
                 isAuthenticated={this.state.isAuthenticated}
-              />)}
+                handleTracking={this.updateTracking}
+              />
+            )}
           />
           ) : (
           <Route
@@ -109,7 +129,9 @@ export default class Main extends Component {
             render={() => (
               <LoginView 
                 onUserSessionUpdate={this.handleUserSessionUpdate}
-              />)}
+                handleTracking={this.updateTracking}
+              />
+            )}
           />
         )}
         
@@ -118,20 +140,37 @@ export default class Main extends Component {
           render={() => (
             <LinksView 
               userId={this.state.userId}
+              handleTracking={this.updateTracking}
             />
           )}
         />
         <Route
           exact path={"/" + LINKPROFILE + "/:id"}
-          component={LinkProfileView}
+          render={(props) => (
+            <LinkProfileView
+              {...props}
+              handleTracking={this.updateTracking}
+            />
+          )}
+          // component={LinkProfileView}
         />
         <Route
           exact path={"/" + USERPROFILE}
-          component={UserProfileView}
+          render={() => (
+            <UserProfileView
+              handleTracking={this.updateTracking}
+            />
+          )}
+          // component={UserProfileView}
         />
         <Route
           exact path={"/" + MESSAGES}
-          component={MessagesView}
+          render={() => (
+            <MessagesView
+              handleTracking={this.updateTracking}
+            />
+          )}
+          // component={MessagesView}
         />
 
         <Route
@@ -139,18 +178,28 @@ export default class Main extends Component {
           render={() => (
             <OnboardingView 
               onUserSessionUpdate={this.handleUserSessionUpdate}
-            />)}
+              handleTracking={this.updateTracking}
+            />
+          )}
         />
         <Route
           exact path={"/" + ONBOARDING_B}
           render={() => (
             <OnboardingViewV2 
               onUserSessionUpdate={this.handleUserSessionUpdate}
-            />)}
+              handleTracking={this.updateTracking}
+            />
+          )}
         />
         <Route
           exact path={"/" + CHAT + "/:id"}
-          component={ChatView}
+          render={(props) => (
+            <ChatView
+              {...props}
+              handleTracking={this.updateTracking}
+            />
+          )}
+          // component={ChatView}
         />
 
       </Switch>
