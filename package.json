@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "react-ga": "^2.7.0",
     "react-icons": "^3.9.0"
   }
 }
