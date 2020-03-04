@@ -26,10 +26,10 @@ export default class LaunchView extends Component {
         <Row float="center">
           <Col xs={12} md={12}>
             <Link to={"/" + ONBOARDING_A}>
-              <Button className="signupBtn"> Get Started </Button>
+              <Button className="signupBtn"> Get Started A</Button>
             </Link>
             <Link to={"/" + ONBOARDING_B}>
-              <Button className="signupBtn"> Get Started V2 (for A/B testing)</Button>
+              <Button className="signupBtn"> Get Started B</Button>
             </Link>
           </Col>
         </Row>
