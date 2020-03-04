@@ -1,5 +1,5 @@
 .git
-
+*.DS_Store
 /client/package-lock.json
 /package-lock.json
 /client/node_modules
