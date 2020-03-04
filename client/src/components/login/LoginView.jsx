@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { Container, Col, Button} from 'react-bootstrap';
-
+import { Container, Row, Button} from 'react-bootstrap';
+import { FiChevronLeft } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import LoginForm from './LoginForm';
 
+import { navConsts } from '../../constants';
+
+
+import './css/LoginView.css';
 
 export default class LoginView extends Component {
   constructor(props) {
@@ -30,13 +35,22 @@ export default class LoginView extends Component {
 
 
   render() {
+    const { LAUNCH } = navConsts;
+
     return (
-      <Container>
-        <Col>
+      <Container className="loginFormContainer">
+        <Row>
+          <Link to={"/" + LAUNCH}>
+            <Button variant="primary" type="submit" bsPrefix="loginView-back-button">
+              <FiChevronLeft />
+            </Button>
+          </Link>
+        </Row>
+        <Row>
           <LoginForm 
             onLogin={this.handleLogin} 
           />
-        </Col>
+        </Row>
       </Container>
     );
   }

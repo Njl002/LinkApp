@@ -1,0 +1,20 @@
+.loginFormContainer {
+  position: relative;
+  height: 100vh;
+}
+
+.loginFormContainer .row {
+  margin-left: 0.75vh;
+  margin-top: 2vh;
+  width: 100%
+}
+
+.loginView-back_button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #DEDEDE;
+  font-size: 2rem;
+  text-shadow: none;
+  height: 100%;
+}

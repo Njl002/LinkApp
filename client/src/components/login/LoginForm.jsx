@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
+import './css/LoginForm.css';
+
 export default class LoginForm extends Component {
 
   constructor(props) {
@@ -10,7 +12,7 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <Form>
+      <Form className="loginForm">
         <Form.Group>
         <Form.Label>Username</Form.Label>
         <Form.Control 
@@ -28,6 +30,7 @@ export default class LoginForm extends Component {
           />
         </Form.Group>
         <Button 
+          className="loginFormSubmitBtn"
           variant="primary" type="submit" 
           onClick={() => {
             this.props.onLogin(this.state.username, this.state.password);
@@ -35,6 +38,7 @@ export default class LoginForm extends Component {
         >
           Submit
         </Button>
+        
       </Form>
     );
   }

@@ -1,0 +1,20 @@
+.loginForm {
+  width: 90%;
+  position: absolute;
+  top: 30%;
+}
+
+.loginForm .form-control {
+  border-radius: 20px;
+}
+
+.loginFormSubmitBtn {
+  margin-bottom: 1vh;
+  width: 100%;
+  background-color: #4ABDAC;
+  border-color: #4ABDAC;
+  color: white;
+  border-radius: 20px;
+  padding: .375rem .45rem;
+  font-size: 1rem;
+}
