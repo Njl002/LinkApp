@@ -41,7 +41,7 @@ export default class LoginView extends Component {
       <Container className="loginFormContainer">
         <Row>
           <Link to={"/" + LAUNCH}>
-            <Button variant="primary" type="submit" bsPrefix="loginView-back-button">
+            <Button variant="primary" type="submit" bsPrefix="loginView-back_button">
               <FiChevronLeft />
             </Button>
           </Link>

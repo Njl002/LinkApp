@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Col, Row, Tab, Image, Nav, Form, Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
+import { FiChevronLeft } from 'react-icons/fi';
 import ChatBox from './ChatBox';
 import ChatProfileView from './ChatProfileView';
 
+import { navConsts } from '../../../constants';
 import { getAllUsers, getAllMessages, addMessage, getImage } from '../../../api';
 import UserSession from '../../../storage/UserSession';
 
@@ -131,12 +133,20 @@ export default class ChatView extends Component {
   }
 
   render() {
+    const { MESSAGES } = navConsts;
+
+
     return (
       <Container className="chatViewContainer">
         <Row className="chatViewName">
-          <Col xs={12} md={12} lg={12}>
-            <h3> {this.state.firstName + " " + this.state.lastName} </h3>
+          <Col xs={3} md={3} lg={3}>
+            <Link to={"/" + MESSAGES}>
+              <Button variant="primary" type="submit" bsPrefix="chatView-back_button">
+                <FiChevronLeft />
+              </Button>
+            </Link>
           </Col>
+          <h3> {this.state.firstName + " " + this.state.lastName} </h3>
         </Row>
         <Row className="chatViewContent">
           <Tab.Container id="chatview" defaultActiveKey="message">
