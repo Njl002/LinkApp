@@ -43,7 +43,7 @@ export default class Main extends Component {
 
     // Trying to get Google Analytics Working
     ReactGA.initialize('UA-158770874-2');
-    ReactGA.ga('require', 'GTM-P8BTTM4');
+    // ReactGA.ga('require', 'GTM-P8BTTM4')
     ReactGA.set({
       userId: priorId
     })
