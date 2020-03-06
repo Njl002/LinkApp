@@ -4,8 +4,9 @@
 }
 
 .linksContainer {
-  max-height: 90vh;
+  max-height: 90%;
   height: 90vh;
+  overflow: scroll;
 }
 
 .linksContainer .title {
@@ -17,4 +18,5 @@
 .linksContainer .links {
   height: 87vh;
   overflow: scroll;
+  max-height: 90%;
 }
