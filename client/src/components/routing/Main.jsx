@@ -79,8 +79,9 @@ export default class Main extends Component {
     } = navConsts;
 
     return (
-    <div >
-      <Switch className="main">
+    <div className="main">
+      <div className="mainViewContainer">
+      <Switch >
 
         <Route
           exact path="/"
@@ -205,9 +206,12 @@ export default class Main extends Component {
         />
 
       </Switch>
+      </div>
+      <div className="navBarContainer">
       {this.state.isAuthenticated && (
         <NavBar userId={this.state.userId}/>
       )}
+      </div>
     </div>
     );
   }
