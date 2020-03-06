@@ -2,13 +2,10 @@
   display: block;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .mainViewContainer {
-  max-height: 90vh;
-  overflow: scroll;
-}
-
-.navBarContainer {
-  max-height: 10vh;
+  max-height: 90%;
+  width: 100%;
 }
