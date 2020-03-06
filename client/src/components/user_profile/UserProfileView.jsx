@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Image, Card } from 'react-bootstrap';
+import { Container, Row, Image, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UserProfileTitle from './UserProfileTitle';
 import UserProfileBody from './UserProfileBody';
 
@@ -31,8 +32,13 @@ export default class UserProfileView extends Component {
       hobbies: "", // to change to list
       bio: ""
     }
+
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
+  handleLogout() {
+    this.props.onUserSessionUpdate("", false, "");
+  }
   componentDidMount() {
     let userId = UserSession.getId(); // should be set at this point 
     console.log("Getting user profile for user " + userId);
@@ -94,6 +100,13 @@ export default class UserProfileView extends Component {
             email={this.state.email}
             schoolName={this.state.schoolName}
           />
+        </Row>
+        <Row>
+          <Link to={"/"}>
+            <Button className="logoutBtn" onClick={this.handleLogout}>
+              Logout
+            </Button>
+          </Link>
         </Row>
         
 

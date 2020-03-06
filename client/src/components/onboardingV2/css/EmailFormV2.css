@@ -1,0 +1,16 @@
+.email-form {
+  border-color: #979797;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-shadow: none;
+  color: #4ABDAC;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+}
+
+.email-view {
+  max-width: 80%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}

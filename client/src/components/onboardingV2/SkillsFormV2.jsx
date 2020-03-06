@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 
+import '../onboarding/css/SkillsForm.css';
+
+
 export default class SkillsFormV2 extends Component {
 
   render() {
@@ -12,7 +15,7 @@ export default class SkillsFormV2 extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="text" name="skillsForm" placeholder="Skills" 
+              <Form.Control type="text" name="skillsForm" bsPrefix="skills-form" placeholder="Skills" 
                 onChange={e => this.props.onSkillsChange(e.target.value)} />
             </Form.Group>
           </Form>

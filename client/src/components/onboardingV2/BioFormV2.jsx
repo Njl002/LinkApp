@@ -42,7 +42,7 @@ export default class BioFormV2 extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="bio" name="bioForm" onChange={e => this.props.onBioChange(e.target.value)} />
+              <Form.Control type="bio" name="bioForm" bsPrefix="bio-form" onChange={e => this.props.onBioChange(e.target.value)} />
             </Form.Group>
           </Form>
         </Row>

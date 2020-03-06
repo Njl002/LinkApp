@@ -160,6 +160,7 @@ export default class Main extends Component {
           render={() => (
             <UserProfileView
               handleTracking={this.updateTracking}
+              onUserSessionUpdate={this.handleUserSessionUpdate}
             />
           )}
           // component={UserProfileView}
