@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
+import '../onboarding/css/RoleChoice.css';
+
+
 export default class RoleChoiceV2 extends Component {
   constructor(props) {
     super(props);
@@ -27,8 +30,8 @@ export default class RoleChoiceV2 extends Component {
               defaultValue={"Mentor"}
               onChange={this.handleToggle}
             >
-              <ToggleButton value={"Mentor"}>Mentor</ToggleButton>
-              <ToggleButton value={"Mentee"}>Mentee</ToggleButton>
+              <ToggleButton value={"Mentor"} bsPrefix="role-toggle">Mentor</ToggleButton>
+              <ToggleButton value={"Mentee"} bsPrefix="role-toggle">Mentee</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>

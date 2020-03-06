@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { navConsts } from '../../constants';
 
+import '../onboarding/css/BioForm.css';
+
+
 export default class BioFormV2 extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,7 @@ export default class BioFormV2 extends Component {
     let photoOrButton = this.state.photoSet ? (
       <Image src={require('../../resources/images/profile/user_image.jpg')} style={{ width: '5rem', height: '5rem'}}/>)
       : (
-        <Button variant="primary" type="submit" onClick={() => this.setState({photoSet: true})}>
+        <Button variant="primary" type="submit" bsPrefix="bio-add-button" onClick={() => this.setState({photoSet: true})}>
             +
         </Button>
       );
@@ -45,7 +48,7 @@ export default class BioFormV2 extends Component {
         </Row>
         <Row>
           <Link to={"/"}>
-          <Button variant="primary" type="submit" onClick={this.props.onSignUp}>
+          <Button variant="primary" type="submit" bsPrefix="bio-finish-button" onClick={this.props.onSignUp}>
             Finish
           </Button>
           </Link>
