@@ -39,7 +39,7 @@
   width: 100%;
   margin-left: 0%;
   max-height: 65vh;
-  height: 87%;
+  height: 84%;
   overflow: scroll;
 }
 
@@ -55,7 +55,7 @@
 
 .chatViewMessageBox {
   position: fixed;
-  bottom: 5%;
+  bottom: 8%;
   width: 100%;
   margin-left: -8px;
   max-height: 10%;

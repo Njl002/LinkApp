@@ -1,7 +1,7 @@
 .userProfileViewContainer {
   width: 100%;
   text-align: left;
-  margin-bottom: 2%;
+  margin-bottom: 6vh;
   height: 90%;
   max-height: 90%;
   overflow: scroll;
@@ -10,7 +10,7 @@
 .userProfileViewContainer .row {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 2%;
+  margin-top: 2vh;
 }
 
 .userProfileImage {
