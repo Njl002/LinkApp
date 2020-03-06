@@ -1,9 +1,23 @@
+.name-view {
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+}
+
 .name-form {
+  border-color: #979797;
   border-left: 0;
   border-right: 0;
   border-top: 0;
   box-shadow: none;
   color: #4ABDAC;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+}
+
+.name-form::placeholder {
+  color: #979797;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 
 .name-back-button {
@@ -22,9 +36,12 @@
   box-shadow: none;
   color: white;
   font-size: 35px;
-  height: 60px;
+  height: 50px;
   line-height: 0.9;
   text-align: center;
   text-shadow: none;
-  width: 60px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }

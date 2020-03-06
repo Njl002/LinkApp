@@ -16,7 +16,7 @@ export default class RoleChoice extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="role-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="role-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
@@ -34,8 +34,8 @@ export default class RoleChoice extends Component {
               defaultValue={"Mentor"}
               onChange={this.handleToggle}
             >
-              <ToggleButton value={"Mentor"} >Mentor</ToggleButton>
-              <ToggleButton value={"Mentee"} >Mentee</ToggleButton>
+              <ToggleButton value={"Mentor"} bsPrefix="role-toggle">Mentor</ToggleButton>
+              <ToggleButton value={"Mentee"} bsPrefix="role-toggle">Mentee</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>

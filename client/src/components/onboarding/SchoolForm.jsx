@@ -27,7 +27,7 @@ export default class SchoolForm extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="school-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="school-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
@@ -65,7 +65,7 @@ export default class SchoolForm extends Component {
                 <option>11</option>
                 <option>12</option>
               </Form.Control>
-              <Form.Label>Month</Form.Label>
+              <Form.Label className="school-label">Month</Form.Label>
             </Form.Group>
           </Form>
           <Form>
@@ -90,7 +90,7 @@ export default class SchoolForm extends Component {
                 <option>2024</option>
                 <option>2025</option>
               </Form.Control>
-              <Form.Label>Year</Form.Label>
+              <Form.Label className="school-label">Year</Form.Label>
             </Form.Group>
           </Form>
         </Row>
@@ -115,7 +115,7 @@ export default class SchoolForm extends Component {
                 <option>11</option>
                 <option>12</option>
               </Form.Control>
-              <Form.Label>Month</Form.Label>
+              <Form.Label className="school-label">Month</Form.Label>
             </Form.Group>
           </Form>
           <Form>
@@ -140,7 +140,7 @@ export default class SchoolForm extends Component {
                 <option>2024</option>
                 <option>2025</option>
               </Form.Control>
-              <Form.Label>Year</Form.Label>
+              <Form.Label className="school-label">Year</Form.Label>
             </Form.Group>
           </Form>
         </Row>

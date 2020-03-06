@@ -7,7 +7,7 @@ export default class EmailForm extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="email-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="email-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
@@ -36,7 +36,7 @@ export default class EmailForm extends Component {
           </Form>
         </Row>
         <Row>
-          <Form.Label> Password (Note: don't put any sensitive passwords here as nothing is protected) </Form.Label>
+          <Form.Label className="email-label"> Password (Note: don't put any sensitive passwords here as nothing is protected) </Form.Label>
         </Row>
         <Row>
           <Button variant="primary" type="submit" bsPrefix="email-next-button" onClick={this.props.onNextClick}>

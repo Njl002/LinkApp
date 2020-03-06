@@ -7,7 +7,7 @@ export default class BasicInfoStart extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="basic-info-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="basic-info-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />

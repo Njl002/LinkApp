@@ -6,7 +6,7 @@ import './css/HometownForm.css';
 export default class HometownForm extends Component {
   render() {
     return (
-      <Container>
+      <Container className="hometown-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="hometown-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />

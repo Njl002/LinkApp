@@ -1,8 +1,41 @@
+.role-view {
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+}
+
 .role-toggle {
-  background-color: #4ABDAC;
-  position: absolute;
-  clip: rect(0,0,0,0);
-  pointer-events: none;
+  background-color: white;
+  border: 0.5px solid #979797;
+  border-radius: .25rem;
+  color: #979797;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  overflow: auto;
+  padding: .375rem .75rem;
+  text-align: center;
+  font-size: 25px;
+  width: 80vw;
+  height: 50px;
+  border-radius: 16px;
+}
+
+.role-toggle:not(:disabled):not(.disabled).active {
+  background-color: white;
+  border: 0.5px solid #4ABDAC;
+  border-radius: .25rem;
+  color: #4ABDAC;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+  padding: .375rem .75rem;
+  border-radius: 16px;
+}
+
+.role-toggle input{
+  display: none;
+  visibility: hidden;
 }
 
 .role-back-button {
@@ -21,9 +54,12 @@
   box-shadow: none;
   color: white;
   font-size: 35px;
-  height: 60px;
+  height: 50px;
   line-height: 0.9;
   text-align: center;
   text-shadow: none;
-  width: 60px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }

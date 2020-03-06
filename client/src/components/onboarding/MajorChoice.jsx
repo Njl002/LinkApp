@@ -17,7 +17,7 @@ export default class MajorChoice extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="major-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="major-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
@@ -38,13 +38,13 @@ export default class MajorChoice extends Component {
               defaultValue={"Aerospace Engineering"}
               onChange={this.handleToggle}
             >
-              <ToggleButton value={"Aerospace Engineering"}>Aerospace Engineering</ToggleButton>
-              <ToggleButton value={"BioInformatics"}>BioInformatics</ToggleButton>
-              <ToggleButton value={"Biomedical Engineering"}>Biomedical Engineering</ToggleButton>
-              <ToggleButton value={"Chemical Engineering"}>Chemical Engineering</ToggleButton>
-              <ToggleButton value={"Civil Engineering"}>Civil Engineering</ToggleButton>
-              <ToggleButton value={"Cognitive Science"}>Cognitive Science</ToggleButton>
-              <ToggleButton value={"Computer Science"}>Computer Science</ToggleButton>
+              <ToggleButton value={"Aerospace Engineering"} bsPrefix="major-toggle">Aerospace Engineering</ToggleButton>
+              <ToggleButton value={"BioInformatics"} bsPrefix="major-toggle">BioInformatics</ToggleButton>
+              <ToggleButton value={"Biomedical Engineering"}bsPrefix="major-toggle">Biomedical Engineering</ToggleButton>
+              <ToggleButton value={"Chemical Engineering"}bsPrefix="major-toggle">Chemical Engineering</ToggleButton>
+              <ToggleButton value={"Civil Engineering"}bsPrefix="major-toggle">Civil Engineering</ToggleButton>
+              <ToggleButton value={"Cognitive Science"}bsPrefix="major-toggle">Cognitive Science</ToggleButton>
+              <ToggleButton value={"Computer Science"}bsPrefix="major-toggle">Computer Science</ToggleButton>
             </ToggleButtonGroup>
           </ButtonToolbar>
         </Row>

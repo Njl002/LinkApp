@@ -7,7 +7,7 @@ export default class HobbiesForm extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="hobbies-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="hobbies-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />

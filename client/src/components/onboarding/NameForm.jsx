@@ -10,7 +10,7 @@ export default class NameForm extends Component {
   render() {
     const { LAUNCH } = navConsts;
     return (
-      <Container>
+      <Container className="name-view">
         <Row>
           <Link to={"/" + LAUNCH}>
             <Button variant="primary" type="submit" bsPrefix="name-back-button">
