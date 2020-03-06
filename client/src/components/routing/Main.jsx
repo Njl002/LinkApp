@@ -80,6 +80,7 @@ export default class Main extends Component {
 
     return (
     <div className="main">
+      <div className="mainContainer">
       <Switch>
 
         <Route
@@ -205,6 +206,7 @@ export default class Main extends Component {
         />
 
       </Switch>
+      </div>
       {this.state.isAuthenticated && (
         <NavBar userId={this.state.userId}/>
       )}
