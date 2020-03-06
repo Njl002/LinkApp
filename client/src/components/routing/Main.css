@@ -1,12 +1,11 @@
 .mainContainer {
-  padding-bottom: 10vh;
   display: block;
   align-items: center;
-  height: 90%;
-  overflow: scroll;
+  height: 90vh;
 }
 
-.main {
+.mainView {
   height: 100%;
   width: 100%;
+  overflow: scroll;
 }

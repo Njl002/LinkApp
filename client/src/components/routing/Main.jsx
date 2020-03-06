@@ -79,7 +79,7 @@ export default class Main extends Component {
     } = navConsts;
 
     return (
-    <div className="main">
+    <div className="mainView">
       <div className="mainContainer">
       <Switch>
 

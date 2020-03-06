@@ -1,11 +1,11 @@
 .messagesViewContainer {
-  max-height: 90vh;
+  max-height: 90%;
   margin-bottom: 2vh;
   overflow: scroll;
 }
 
 .messagesViewContainer .title {
-  max-height: 10vh;
+  max-height: 10%;
   width: 100%;
   padding-left: 15px;
   margin-left: 0;

@@ -3,6 +3,7 @@
   text-align: left;
   margin-bottom: 3vh;
   max-height: 90%;
+  overflow: scroll;
 }
 
 .linkProfileViewContainer .row {
