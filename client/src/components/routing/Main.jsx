@@ -79,8 +79,8 @@ export default class Main extends Component {
     } = navConsts;
 
     return (
-    <div className="main">
-      <Switch>
+    <div >
+      <Switch className="main">
 
         <Route
           exact path="/"

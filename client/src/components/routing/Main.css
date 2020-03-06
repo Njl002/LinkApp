@@ -1,7 +1,7 @@
 .main {
-  padding-bottom: 10vh;
   display: block;
   align-items: center;
   height: 100%;
   overflow: scroll;
+  max-height: 90vh;
 }

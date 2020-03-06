@@ -2,6 +2,7 @@
   width: 100%;
   text-align: left;
   margin-bottom: 3vh;
+  max-height: 90vh;
 }
 
 .linkProfileViewContainer .row {
