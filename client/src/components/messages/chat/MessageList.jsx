@@ -5,7 +5,17 @@ import Message from './Message';
 
 export default class MessageList extends Component {
 
-  on
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  }
+  
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }  
 
   render() {
 
@@ -43,6 +53,9 @@ export default class MessageList extends Component {
     return (
       <div>
         {messagesList}
+        <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.messagesEnd = el; }}>
+        </div>
       </div>
     );
   }

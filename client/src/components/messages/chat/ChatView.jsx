@@ -162,7 +162,12 @@ export default class ChatView extends Component {
               <Col sm={12} md={12}>
                 <Tab.Content>
                   <Tab.Pane eventKey="message">
-                    <ChatBox messages={this.state.messages} userId={this.state.id} imageURL={getImage(this.state.id)} onSendMessage={this.handleSendMessage}/>
+                    <ChatBox 
+                      messages={this.state.messages} 
+                      userId={this.state.id} 
+                      imageURL={getImage(this.state.id)} 
+                      onSendMessage={this.handleSendMessage}
+                    />
                   </Tab.Pane>
                   <Tab.Pane eventKey="profile">
                     <ChatProfileView 
