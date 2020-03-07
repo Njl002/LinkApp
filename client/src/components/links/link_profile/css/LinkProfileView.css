@@ -1,8 +1,9 @@
 .linkProfileViewContainer {
   width: 100%;
   text-align: left;
-  margin-bottom: 3vh;
+  padding-bottom: 55px;
   max-height: 90%;
+  overflow: scroll;
 }
 
 .linkProfileViewContainer .row {
