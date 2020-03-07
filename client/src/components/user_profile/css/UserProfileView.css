@@ -1,8 +1,8 @@
 .userProfileViewContainer {
   width: 100%;
   text-align: left;
-  margin-bottom: 6vh;
-  height: 90%;
+  padding-bottom: 85px;
+  height: 85%;
   max-height: 90%;
   overflow: scroll;
 }

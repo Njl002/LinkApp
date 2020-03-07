@@ -1,6 +1,6 @@
 .messagesViewContainer {
   max-height: 90%;
-  margin-bottom: 5vh;
+  padding-bottom: 50px;
   overflow: scroll;
 }
 
