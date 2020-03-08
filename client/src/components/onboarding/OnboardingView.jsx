@@ -258,7 +258,8 @@ export default class OnboardingView extends Component {
     } else if (this.state.page === 6) {
       return (<MajorChoice onNextClick={this.handleNextClick} 
                           onPrevClick={this.handlePrevClick}
-                          onMajorChange={this.handleMajorChange}/>);
+                          onMajorChange={this.handleMajorChange}
+                          firstName={this.state.firstName}/>);
     } else if (this.state.page === 7) {
       return (<SkillsForm onNextClick={this.handleNextClick} 
                           onPrevClick={this.handlePrevClick}
