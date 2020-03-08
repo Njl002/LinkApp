@@ -1,3 +1,16 @@
+.react-datepicker__input-container input {
+  border-color: #979797;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.react-datepicker__input-container input {
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 .school-view {
   max-width: 80%;
   margin-left: 10%;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./css/SchoolForm.css";
 
 export default class SchoolForm extends Component {
@@ -8,18 +10,36 @@ export default class SchoolForm extends Component {
     super(props);
 
     this.state = {
-      startDate: new Date("2016/08/20"),
-      endDate: new Date("2020/06/16")
+      startDate: new Date("2009/01/01"),
+      endDate: new Date("2009/01/01")
     };
   }
 
-  handleStartDateChange = date => {
+  onDateStartChange = date => {
+    var tempMonth = date.getMonth() + 1;
+    var monthString = "";
+    if (tempMonth < 10) {
+      monthString = '0' + tempMonth.toString();
+    } else {
+      monthString = tempMonth.toString();
+    }
+    this.props.onMonthStartChange(monthString);
+    this.props.onYearStartChange(date.getFullYear().toString());
     this.setState({
       startDate: date
     });
   };
 
-  handleEndDateChange = date => {
+  onDateEndChange = date => {
+    var tempMonth = date.getMonth() + 1;
+    var monthString = "";
+    if (tempMonth < 10) {
+      monthString = '0' + tempMonth.toString();
+    } else {
+      monthString = tempMonth.toString();
+    }
+    this.props.onMonthEndChange(monthString);
+    this.props.onYearEndChange(date.getFullYear().toString());
     this.setState({
       endDate: date
     });
@@ -48,101 +68,23 @@ export default class SchoolForm extends Component {
           <h2> From </h2>
         </Row>
         <Row>
-          <Form>
-            <Form.Group>
-              <Form.Control name="startMonthForm" as="select"
-                onChange={e => this.props.onMonthStartChange(e.target.value)} >
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-                <option>05</option>
-                <option>06</option>
-                <option>07</option>
-                <option>08</option>
-                <option>09</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-              </Form.Control>
-              <Form.Label className="school-label">Month</Form.Label>
-            </Form.Group>
-          </Form>
-          <Form>
-            <Form.Group>
-              <Form.Control name="startYearForm" as="select"
-                onChange={e => this.props.onYearStartChange(e.target.value)} >
-                <option>2009</option>
-                <option>2010</option>
-                <option>2011</option>
-                <option>2012</option>
-                <option>2013</option>
-                <option>2014</option>
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-              </Form.Control>
-              <Form.Label className="school-label">Year</Form.Label>
-            </Form.Group>
-          </Form>
+          <DatePicker
+            selected={this.state.startDate}
+            onChange={this.onDateStartChange}
+            dateFormat="MM/yyyy"
+            showMonthYearPicker
+          />
         </Row>
         <Row>
           <h2> To </h2>
         </Row>
         <Row>
-          <Form>
-            <Form.Group>
-              <Form.Control name="endMonthForm" as="select"
-                onChange={e => this.props.onMonthEndChange(e.target.value)} >
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-                <option>05</option>
-                <option>06</option>
-                <option>07</option>
-                <option>08</option>
-                <option>09</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-              </Form.Control>
-              <Form.Label className="school-label">Month</Form.Label>
-            </Form.Group>
-          </Form>
-          <Form>
-            <Form.Group>
-              <Form.Control name="endYearForm" as="select"
-                onChange={e => this.props.onYearEndChange(e.target.value)} >
-                <option>2009</option>
-                <option>2010</option>
-                <option>2011</option>
-                <option>2012</option>
-                <option>2013</option>
-                <option>2014</option>
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-              </Form.Control>
-              <Form.Label className="school-label">Year</Form.Label>
-            </Form.Group>
-          </Form>
+          <DatePicker
+            selected={this.state.endDate}
+            onChange={this.onDateEndChange}
+            dateFormat="MM/yyyy"
+            showMonthYearPicker
+          />
         </Row>
         <Row>
           <Button variant="primary" type="submit" bsPrefix="school-next-button" onClick={this.props.onNextClick}>
