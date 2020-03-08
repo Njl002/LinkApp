@@ -7,7 +7,7 @@ export default class EmailForm extends Component {
 
   render() {
     return (
-      <Container className="email-view">
+      <Container className="school-email-view">
         <Row>
           <Button variant="primary" type="submit" bsPrefix="email-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
@@ -19,7 +19,7 @@ export default class EmailForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control type="text" name="emailForm" bsPrefix="email-form" placeholder="School email" 
+              <Form.Control type="text" name="emailForm" bsPrefix="email-form" placeholder="School email"
                 onChange={e => this.props.onEmailChange(e.target.value)} />
             </Form.Group>
           </Form>
@@ -27,8 +27,8 @@ export default class EmailForm extends Component {
         <Row>
           <Form>
             <Form.Group controlId="formBasicPassword">
-              <Form.Control 
-                type="password" 
+              <Form.Control
+                type="password"
                 placeholder="Password"
                 bsPrefix="email-form"
                 onChange={e => this.props.onPasswordChange(e.target.value)} />
