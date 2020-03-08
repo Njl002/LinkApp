@@ -24,7 +24,7 @@ export default class MajorChoice extends Component {
           </Button>
         </Row>
         <Row>
-          <h1> Hi Bianca, </h1>
+          <h1> Hi {this.props.firstName}, </h1>
         </Row>
         <Row>
           <h2> Pick a major. </h2>
