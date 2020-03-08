@@ -48,7 +48,7 @@ export default class SchoolForm extends Component {
   render() {
     return (
       <Container className="school-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="school-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

@@ -7,7 +7,7 @@ export default class HometownForm extends Component {
   render() {
     return (
       <Container className="hometown-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="hometown-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

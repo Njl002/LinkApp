@@ -8,7 +8,7 @@ export default class EmailForm extends Component {
   render() {
     return (
       <Container className="school-email-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="email-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

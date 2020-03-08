@@ -8,7 +8,7 @@ export default class SkillsForm extends Component {
   render() {
     return (
       <Container className="skills-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="skills-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

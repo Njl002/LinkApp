@@ -5,6 +5,11 @@
   text-align: left;
 }
 
+.back-row {
+  width: 100vw;
+  margin-left: -40px;
+}
+
 .name-form {
   border-color: #979797;
   border-left: 0;

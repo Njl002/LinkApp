@@ -18,7 +18,7 @@ export default class MajorChoice extends Component {
   render() {
     return (
       <Container className="major-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="major-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

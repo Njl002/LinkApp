@@ -11,7 +11,7 @@ export default class NameForm extends Component {
     const { LAUNCH } = navConsts;
     return (
       <Container className="name-view">
-        <Row>
+        <Row className="back-row">
           <Link to={"/" + LAUNCH}>
             <Button variant="primary" type="submit" bsPrefix="name-back-button">
               <FiChevronLeft />
@@ -24,10 +24,10 @@ export default class NameForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control 
-                type="text" 
-                name="firstNameForm" 
-                placeholder="First Name" 
+              <Form.Control
+                type="text"
+                name="firstNameForm"
+                placeholder="First Name"
                 bsPrefix="name-form"
                 onChange={e => this.props.onFirstNameChange(e.target.value)}
               />
@@ -37,9 +37,9 @@ export default class NameForm extends Component {
         <Row>
           <Form>
             <Form.Group>
-              <Form.Control 
-                type="text" 
-                name="lastNameForm" 
+              <Form.Control
+                type="text"
+                name="lastNameForm"
                 placeholder="Last Name"
                 bsPrefix="name-form"
                 onChange={e => this.props.onLastNameChange(e.target.value)}

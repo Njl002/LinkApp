@@ -25,7 +25,7 @@ export default class BioForm extends Component {
 
     return (
       <Container className="bio-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="bio-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>

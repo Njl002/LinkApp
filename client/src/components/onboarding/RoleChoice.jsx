@@ -17,7 +17,7 @@ export default class RoleChoice extends Component {
   render() {
     return (
       <Container className="role-view">
-        <Row>
+        <Row className="back-row">
           <Button variant="primary" type="submit" bsPrefix="role-back-button" onClick={this.props.onPrevClick}>
             <FiChevronLeft />
           </Button>
