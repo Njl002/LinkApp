@@ -16,6 +16,7 @@
 
 .basic-info-next-button {
   background-color: #4ABDAC;
+  border: none;
   border-radius: 16px;
   box-shadow: none;
   color: white;

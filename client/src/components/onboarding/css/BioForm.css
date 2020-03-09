@@ -30,6 +30,7 @@
 
 .bio-add-button {
   background-color: #4ABDAC;
+  border: none;
   border-radius: 12px;
   box-shadow: none;
   color: white;
@@ -43,6 +44,7 @@
 
 .bio-finish-button {
   background-color: #4ABDAC;
+  border: none;
   border-radius: 12px;
   box-shadow: none;
   color: white;
