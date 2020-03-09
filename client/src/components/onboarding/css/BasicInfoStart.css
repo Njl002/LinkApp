@@ -24,6 +24,8 @@
   font-size: 25px;
   text-align: center;
   text-shadow: none;
-  width: 100%;
+  width: 80%;
   padding: .375rem .75rem;
+  position: absolute;
+  bottom: 20px;
 }

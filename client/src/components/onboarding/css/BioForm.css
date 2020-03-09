@@ -55,4 +55,6 @@
   width: 80vw;
   padding: .375rem .75rem;
   border-radius: 16px;
+  position: absolute;
+  bottom: 20px;
 }
