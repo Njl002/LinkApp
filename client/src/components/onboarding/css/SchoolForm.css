@@ -34,6 +34,11 @@
   margin-bottom: 20px;
 }
 
+.rbt-highlight-text {
+  color: #4ABDAC;
+  background-color: white;
+}
+
 .rbt-input-hint {
   visibility: hidden;
 }
