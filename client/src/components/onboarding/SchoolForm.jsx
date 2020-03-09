@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Button, Container, Row, Form } from 'react-bootstrap';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import DatePicker from "react-datepicker";
+import { Typeahead } from "react-bootstrap-typeahead";
 import "react-datepicker/dist/react-datepicker.css";
+import options from './data/us_institutions';
 import "./css/SchoolForm.css";
 
 export default class SchoolForm extends Component {
@@ -45,6 +47,12 @@ export default class SchoolForm extends Component {
     });
   };
 
+  handleSchoolNameChange = options => {
+    console.log(options);
+    console.log(options[0].institution);
+    this.props.onSchoolNameChange(options[0].institution);
+  }
+
   render() {
     return (
       <Container className="school-view">
@@ -57,10 +65,21 @@ export default class SchoolForm extends Component {
           <h1> I attend </h1>
         </Row>
         <Row>
+          <Typeahead
+            className="school-typeahead"
+            id="school-typeahead"
+            labelKey="institution"
+            onChange={this.handleSchoolNameChange}
+            options={options}
+            placeholder="Your School Name"
+            selectHintOnEnter={false}
+          />
+        </Row>
+        <Row>
           <Form>
             <Form.Group>
               <Form.Control type="text" name="schoolNameForm" placeholder="Your School Name" bsPrefix="school-form"
-                onChange={e => this.props.onSchoolNameChange(e.target.value)} />
+                onChange={e => this.props.onSchoolNameChange(e.target)} />
             </Form.Group>
           </Form>
         </Row>

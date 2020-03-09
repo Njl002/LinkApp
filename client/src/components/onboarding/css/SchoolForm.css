@@ -1,3 +1,30 @@
+.dropdown-item {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.form-control {
+  border-color: #979797;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-width: 2px;
+  color: #4ABDAC;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  height: initial;
+  padding: 0;
+}
+
+.form-control::placeholder {
+  color: #979797;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+}
+
+.rbt-input-hint {
+  visibility: hidden;
+}
+
 .react-datepicker__input-container input {
   border-color: #979797;
   border-left: 0;
@@ -7,6 +34,7 @@
 }
 
 .react-datepicker__input-container input {
+  color: #4ABDAC;
   font-family: Nunito, Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
