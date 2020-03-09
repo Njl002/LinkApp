@@ -1,43 +1,3 @@
-.role-view {
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: left;
-}
-
-.role-toggle {
-  background-color: white;
-  border: 0.5px solid #979797;
-  border-radius: .25rem;
-  color: #979797;
-  font-family: Nunito, Arial, Helvetica, sans-serif;
-  overflow: auto;
-  padding: .375rem .75rem;
-  text-align: center;
-  font-size: 25px;
-  width: 80vw;
-  height: 50px;
-  border-radius: 16px;
-}
-
-.role-toggle:not(:disabled):not(.disabled).active {
-  background-color: white;
-  border: 0.5px solid #4ABDAC;
-  border-radius: .25rem;
-  color: #4ABDAC;
-  font-family: Nunito, Arial, Helvetica, sans-serif;
-  overflow: auto;
-  text-align: center;
-  width: 100%;
-  padding: .375rem .75rem;
-  border-radius: 16px;
-}
-
-.role-toggle input{
-  display: none;
-  visibility: hidden;
-}
-
 .role-back-button {
   background-color: transparent;
   border: none;
@@ -46,20 +6,58 @@
   font-size: 35px;
   text-shadow: none;
 }
-  
+
 .role-next-button {
   background-color: #4ABDAC;
   border: none;
   border-radius: 50%;
   box-shadow: none;
+  bottom: 20px;
   color: white;
   font-size: 35px;
   height: 50px;
   line-height: 0.9;
+  position: absolute;
+  right: 20px;
   text-align: center;
   text-shadow: none;
   width: 50px;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+}
+
+.role-toggle {
+  background-color: white;
+  border: 0.5px solid #979797;
+  border-radius: 16px;
+  color: #979797;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  height: 50px;
+  overflow: auto;
+  padding: .375rem .75rem;
+  text-align: center;
+  font-size: 25px;
+  width: 80vw;
+}
+
+.role-toggle input{
+  display: none;
+  visibility: hidden;
+}
+
+.role-toggle:not(:disabled):not(.disabled).active {
+  background-color: white;
+  border: 0.5px solid #4ABDAC;
+  border-radius: 16px;
+  color: #4ABDAC;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  overflow: auto;
+  padding: .375rem .75rem;
+  text-align: center;
+  width: 100%;
+}
+
+.role-view {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 80%;
+  text-align: left;
 }

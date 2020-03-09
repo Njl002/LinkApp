@@ -1,8 +1,10 @@
-.hometown-view {
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: left;
+.hometown-back-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #DEDEDE;
+  font-size: 35px;
+  text-shadow: none;
 }
 
 .hometown-form {
@@ -19,28 +21,26 @@
   color: #979797;
 }
 
-.hometown-back-button {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  color: #DEDEDE;
-  font-size: 35px;
-  text-shadow: none;
-}
-
 .hometown-next-button {
   background-color: #4ABDAC;
   border: none;
   border-radius: 50%;
+  bottom: 20px;
   box-shadow: none;
   color: white;
   font-size: 35px;
   height: 50px;
   line-height: 0.9;
+  position: absolute;
+  right: 20px;
   text-align: center;
   text-shadow: none;
   width: 50px;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+}
+
+.hometown-view {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 80%;
+  text-align: left;
 }

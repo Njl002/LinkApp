@@ -1,8 +1,41 @@
-.bio-view {
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: left;
+.bio-add-button {
+  background-color: #4ABDAC;
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+  color: white;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  height: 50px;
+  text-align: center;
+  text-shadow: none;
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.bio-back-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #DEDEDE;
+  font-size: 35px;
+  text-shadow: none;
+}
+
+.bio-finish-button {
+  background-color: #4ABDAC;
+  border: none;
+  border-radius: 16px;
+  bottom: 20px;
+  box-shadow: none;
+  color: white;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  padding: .375rem .75rem;
+  position: absolute;
+  text-align: center;
+  text-shadow: none;
+  width: 80vw;
 }
 
 .bio-form {
@@ -19,43 +52,9 @@
   color: #979797
 }
 
-.bio-back-button {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  color: #DEDEDE;
-  font-size: 35px;
-  text-shadow: none;
-}
-
-.bio-add-button {
-  background-color: #4ABDAC;
-  border: none;
-  border-radius: 12px;
-  box-shadow: none;
-  color: white;
-  font-family: Nunito, Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  height: 50px;
-  text-align: center;
-  text-shadow: none;
-  width: 50px;
-  margin-bottom: 20px;
-}
-
-.bio-finish-button {
-  background-color: #4ABDAC;
-  border: none;
-  border-radius: 12px;
-  box-shadow: none;
-  color: white;
-  text-align: center;
-  font-family: Nunito, Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  text-shadow: none;
-  width: 80vw;
-  padding: .375rem .75rem;
-  border-radius: 16px;
-  position: absolute;
-  bottom: 20px;
+.bio-view {
+  margin-left: 10%;
+  margin-right: 10%;
+  max-width: 80%;
+  text-align: left;
 }
