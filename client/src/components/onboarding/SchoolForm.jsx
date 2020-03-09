@@ -49,8 +49,10 @@ export default class SchoolForm extends Component {
 
   handleSchoolNameChange = options => {
     console.log(options);
-    console.log(options[0].institution);
-    this.props.onSchoolNameChange(options[0].institution);
+    if(options.length > 0) {
+      console.log(options[0].institution);
+      this.props.onSchoolNameChange(options[0].institution);
+    }
   }
 
   render() {
@@ -74,14 +76,6 @@ export default class SchoolForm extends Component {
             placeholder="Your School Name"
             selectHintOnEnter={false}
           />
-        </Row>
-        <Row>
-          <Form>
-            <Form.Group>
-              <Form.Control type="text" name="schoolNameForm" placeholder="Your School Name" bsPrefix="school-form"
-                onChange={e => this.props.onSchoolNameChange(e.target)} />
-            </Form.Group>
-          </Form>
         </Row>
         <Row>
           <h2> From </h2>

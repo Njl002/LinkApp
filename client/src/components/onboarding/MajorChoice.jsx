@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { Button, Container, Row, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { Typeahead } from "react-bootstrap-typeahead";
+import options from './data/college_majors';
 import './css/MajorChoice.css';
 
 export default class MajorChoice extends Component {
   constructor(props) {
     super(props);
-
-    this.handleToggle = this.handleToggle.bind(this);
   }
 
-  handleToggle(vals) {
-    this.props.onMajorChange(vals);
-    this.setState({ sMajor: vals }, () => { console.log("New major:", this.state.sMajor)});
+  handleMajorChange = options => {
+    console.log(options);
+    if(options.length > 0) {
+      console.log(options[0].Major);
+      this.props.onMajorChange(options[0].Major);
+    }
   }
 
   render() {
@@ -30,23 +33,15 @@ export default class MajorChoice extends Component {
           <h2> Pick a major. </h2>
         </Row>
         <Row>
-          <ButtonToolbar>
-            <ToggleButtonGroup 
-              vertical 
-              type="radio" 
-              name="majorToggle" 
-              defaultValue={"Aerospace Engineering"}
-              onChange={this.handleToggle}
-            >
-              <ToggleButton value={"Aerospace Engineering"} bsPrefix="major-toggle">Aerospace Engineering</ToggleButton>
-              <ToggleButton value={"BioInformatics"} bsPrefix="major-toggle">BioInformatics</ToggleButton>
-              <ToggleButton value={"Biomedical Engineering"}bsPrefix="major-toggle">Biomedical Engineering</ToggleButton>
-              <ToggleButton value={"Chemical Engineering"}bsPrefix="major-toggle">Chemical Engineering</ToggleButton>
-              <ToggleButton value={"Civil Engineering"}bsPrefix="major-toggle">Civil Engineering</ToggleButton>
-              <ToggleButton value={"Cognitive Science"}bsPrefix="major-toggle">Cognitive Science</ToggleButton>
-              <ToggleButton value={"Computer Science"}bsPrefix="major-toggle">Computer Science</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
+          <Typeahead
+            className="major-typeahead"
+            id="major-typeahead"
+            labelKey="Major"
+            onChange={this.handleMajorChange}
+            options={options}
+            placeholder="Add Major"
+            selectHintOnEnter={false}
+          />
         </Row>
         <Row>
           <Button variant="primary" type="submit" bsPrefix="major-next-button" onClick={this.props.onNextClick}>

@@ -2,6 +2,7 @@
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 
 .form-control {
@@ -14,6 +15,7 @@
   font-family: Nunito, Arial, Helvetica, sans-serif;
   height: initial;
   padding: 0;
+  margin-bottom: 20px;
 }
 
 .form-control::placeholder {
