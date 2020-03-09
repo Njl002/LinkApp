@@ -1,5 +1,5 @@
 
-[
+export default [
   
   {'city': 'Abbeville', 'state': 'Louisiana'},
   {'city': 'Aberdeen', 'state': 'Maryland'},
@@ -5981,4 +5981,4 @@
 {'city': 'Zion', 'state': 'Illinois'},
 {'city': 'Zionsville', 'state': 'Indiana'},
 {'city': 'Zuni Pueblo', 'state': 'New Mexico'},
-  ]
+  ];
