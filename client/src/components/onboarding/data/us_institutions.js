@@ -1,4 +1,4 @@
-[
+export default [
   {
     "institution": "Alabama A & M University"
   },
@@ -23306,4 +23306,4 @@
   {
     "institution": "Louisiana Delta Community College"
   }
-]
+];
