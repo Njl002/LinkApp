@@ -37,9 +37,6 @@ export default class BioForm extends Component {
           {photoOrButton}
         </Row>
         <Row>
-          {/* <h2> Drag to reorder </h2> */}
-        </Row>
-        <Row>
           <h2> What are you looking for in your partnership? </h2>
         </Row>
         <Row>
