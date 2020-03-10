@@ -17,6 +17,7 @@
     "react-bootstrap-typeahead": "^4.0.0",
     "react-datepicker": "^2.14.0",
     "react-ga": "^2.7.0",
-    "react-icons": "^3.9.0"
+    "react-icons": "^3.9.0",
+    "react-textarea-autosize": "^7.1.2"
   }
 }

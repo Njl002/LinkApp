@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Container, Row, Form, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { navConsts } from '../../constants';
+import TextareaAutosize from 'react-textarea-autosize';
 import './css/BioForm.css';
 
 export default class BioForm extends Component {
@@ -31,7 +31,7 @@ export default class BioForm extends Component {
           </Button>
         </Row>
         <Row>
-          <h1> Add a photo! </h1>
+          <h2> Add a photo! </h2>
         </Row>
         <Row>
           {photoOrButton}
@@ -40,14 +40,15 @@ export default class BioForm extends Component {
           {/* <h2> Drag to reorder </h2> */}
         </Row>
         <Row>
-          <h1> What are you looking for in your partnership? </h1>
+          <h2> What are you looking for in your partnership? </h2>
         </Row>
         <Row>
-          <Form>
-            <Form.Group>
-              <Form.Control type="bio" name="bioForm" bsPrefix="bio-form" placeholder="Add your bio here" onChange={e => this.props.onBioChange(e.target.value)} />
-            </Form.Group>
-          </Form>
+          <TextareaAutosize
+            minRows={1}
+            maxRows={6}
+            placeholder="Add your bio here"
+            onChange={e => this.props.onBioChange(e.target.value)}
+          />
         </Row>
         <Row>
           <Link to={"/"}>
