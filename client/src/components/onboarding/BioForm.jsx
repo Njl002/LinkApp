@@ -44,10 +44,11 @@ export default class BioForm extends Component {
         </Row>
         <Row>
           <TextareaAutosize
-            minRows={1}
+            className="bio-form"
             maxRows={6}
-            placeholder="Add your bio here"
+            minRows={1}
             onChange={e => this.props.onBioChange(e.target.value)}
+            placeholder="Add your bio here"
           />
         </Row>
         <Row>
