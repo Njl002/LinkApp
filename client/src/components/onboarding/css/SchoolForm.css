@@ -1,11 +1,11 @@
-.dropdown-item {
+.school-view .dropdown-item {
   font-family: Nunito, Arial, Helvetica, sans-serif;
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
 }
 
-.form-control {
+.school-view .form-control {
   border-color: #979797;
   border-left: 0;
   border-right: 0;
@@ -18,7 +18,7 @@
   padding: 0;
 }
 
-.form-control::placeholder {
+.school-view .form-control::placeholder {
   color: #979797;
   font-family: Nunito, Arial, Helvetica, sans-serif;
 }
