@@ -10,7 +10,7 @@ export default class SkillsForm extends Component {
 
     this.state = {
       skillsForm: "",
-      skills: []
+      skills: this.props.skillsList
     };
 
     this.handleAddSkill = this.handleAddSkill.bind(this);
@@ -54,6 +54,7 @@ export default class SkillsForm extends Component {
     skillsString = skillsString.slice(0, -2);
     console.log(skillsString);
     this.props.onSkillsChange(skillsString);
+    this.props.onSkillsListChange(this.state.skills);
     this.props.onNextClick();
   }
 

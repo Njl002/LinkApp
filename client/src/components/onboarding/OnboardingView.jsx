@@ -53,6 +53,8 @@ export default class OnboardingView extends Component {
       major: "Aerospace Engineering",
       skills: "", // to change to list
       hobbies: "", // to change to list
+      skillsList: [],
+      hobbiesList: [],
       bio: ""
     };
     // paging handlers
@@ -73,7 +75,9 @@ export default class OnboardingView extends Component {
     this.handleHometownChange = this.handleHometownChange.bind(this);
     this.handleMajorChange = this.handleMajorChange.bind(this);
     this.handleSkillsChange = this.handleSkillsChange.bind(this);
+    this.handleSkillsListChange = this.handleSkillsListChange.bind(this);
     this.handleHobbiesChange = this.handleHobbiesChange.bind(this);
+    this.handleHobbiesListChange = this.handleHobbiesListChange.bind(this);
     this.handleBioChange = this.handleBioChange.bind(this);
 
     this.handleSignUp = this.handleSignUp.bind(this);
@@ -210,10 +214,23 @@ export default class OnboardingView extends Component {
     }));
   }
 
+  handleSkillsListChange(val) {
+    this.setState(prevState => ({
+      skillsList: val
+    }));
+  }
+
   // hobbies form
   handleHobbiesChange(val) {
     this.setState(prevState => ({
       hobbies: val
+    }));
+  }
+
+  // hobbies form
+  handleHobbiesListChange(val) {
+    this.setState(prevState => ({
+      hobbiesList: val
     }));
   }
 
@@ -263,11 +280,15 @@ export default class OnboardingView extends Component {
     } else if (this.state.page === 7) {
       return (<SkillsForm onNextClick={this.handleNextClick} 
                           onPrevClick={this.handlePrevClick}
-                          onSkillsChange={this.handleSkillsChange}/>);
+                          onSkillsChange={this.handleSkillsChange}
+                          onSkillsListChange={this.handleSkillsListChange}
+                          skillsList={this.state.skillsList}/>);
     } else if (this.state.page === 8) {
       return (<HobbiesForm onNextClick={this.handleNextClick} 
                           onPrevClick={this.handlePrevClick}
-                          onHobbiesChange={this.handleHobbiesChange}/>);
+                          onHobbiesChange={this.handleHobbiesChange}
+                          onHobbiesListChange={this.handleHobbiesListChange}
+                          hobbiesList={this.state.hobbiesList}/>);
     } else if (this.state.page === 9) {
       return (<BioForm onNextClick={this.handleNextClick} 
                       onPrevClick={this.handlePrevClick} 

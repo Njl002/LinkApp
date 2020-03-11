@@ -10,7 +10,7 @@ export default class HobbiesForm extends Component {
 
     this.state = {
       hobbiesForm: "",
-      hobbies: []
+      hobbies: this.props.hobbiesList
     };
 
     this.handleAddHobby = this.handleAddHobby.bind(this);
@@ -54,6 +54,7 @@ export default class HobbiesForm extends Component {
     hobbiesString = hobbiesString.slice(0, -2);
     console.log(hobbiesString);
     this.props.onHobbiesChange(hobbiesString);
+    this.props.onHobbiesListChange(this.state.hobbies);
     this.props.onNextClick();
   }
 
