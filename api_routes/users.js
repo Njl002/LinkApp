@@ -57,7 +57,8 @@ const userRoutes = (app, path, fs) => {
         skills: req.body.skills, // to change to list
         hobbies: req.body.hobbies, // to change to list
         bio: req.body.bio,
-        imageURL: req.body.imageURL
+        imageURL: req.body.imageURL,
+        blockedUsers: req.body.blockedUsers
       }
       
       data.users.push(newUser);
@@ -90,7 +91,8 @@ const userRoutes = (app, path, fs) => {
         skills: req.body.skills, // to change to list
         hobbies: req.body.hobbies, // to change to list
         bio: req.body.bio,
-        imageURL: req.body.imageURL
+        imageURL: req.body.imageURL,
+        blockedUsers: req.body.blockedUsers
       }
 
       data.users[index] = updatedUser;

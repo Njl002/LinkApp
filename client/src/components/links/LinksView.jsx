@@ -11,6 +11,7 @@ export default class LinksView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      blockedUsers: [],
       links : []
     }
   }
@@ -20,13 +21,23 @@ export default class LinksView extends Component {
     this.props.handleTracking();
   }
 
-  // to do filter out self
+
   getLinks = () => {
     const allUsersPromise = getAllUsers();
     allUsersPromise.then(data => {
+      // get blocked users
+      let user = data.users.find(x => x.id === this.props.userId);
+      this.state.blockedUsers = user.blockedUsers;
+      return data;
+    })
+    .then (data => {
       let mentorOrMentee = data.users.find(x => x.id === this.props.userId);
       console.log("This user is a " + mentorOrMentee.role);
       return data.users.filter(x => (x.id !== this.props.userId) && (x.role !== mentorOrMentee.role));
+    })
+    .then (data => {
+      // filter on blocked users
+      return data.filter(x => !this.state.blockedUsers.includes(x.id))
     })
     .then (data => {
       console.log("Displaying links: ");

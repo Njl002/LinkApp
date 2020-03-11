@@ -16,7 +16,8 @@
       "skills": "HTML, CSS, ReactJS, Node.js, Java, C/C++, Scheme, x86 assembly, eating without chewing",
       "hobbies": "hiking, contemplating my existance",
       "bio": "Has awesome pet mice",
-      "imageURL": "./profile/douglas_engelbart.jpg"
+      "imageURL": "./profile/douglas_engelbart.jpg",
+      "blockedUsers": []
     },
     {
       "id": "2",
@@ -34,7 +35,8 @@
       "skills": "Brain stuff, basketball, hopping fences",
       "hobbies": "reading, sketching, taking notes",
       "bio": "Great at sketching",
-      "imageURL": "./profile/ivan_sutherland.jpg"
+      "imageURL": "./profile/ivan_sutherland.jpg",
+      "blockedUsers": []
     },
     {
       "id": "3",
@@ -52,7 +54,8 @@
       "skills": "Java, C++, teaching, leadership",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding, cooking, eating, running, sports, basketball",
       "bio": "Loves Trukese navigators",
-      "imageURL": "./profile/lucy_suchman"
+      "imageURL": "./profile/lucy_suchman",
+      "blockedUsers": []
     },
     {
       "id": "4",
@@ -70,7 +73,8 @@
       "skills": "graduated top of his class in the navy seals and over 300 confirmed kills",
       "hobbies": "call of duty",
       "bio": "Has stellar associative memory",
-      "imageURL": "./profile/vannevar_bush.jpg"
+      "imageURL": "./profile/vannevar_bush.jpg",
+      "blockedUsers": []
     },
     {
       "id": "5",
@@ -88,7 +92,8 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "what are those",
       "bio": "Only friend with a Navy ship named after them",
-      "imageURL": "./profile/grace_hopper.jpg"
+      "imageURL": "./profile/grace_hopper.jpg",
+      "blockedUsers": []
     },
     {
       "id": "6",
@@ -106,7 +111,8 @@
       "skills": "working hard",
       "hobbies": "hobbying hard",
       "bio": "Really into psychology",
-      "imageURL": "./profile/allen_newell.jpg'"
+      "imageURL": "./profile/allen_newell.jpg",
+      "blockedUsers": []
     },
     {
       "id": "7",
@@ -124,7 +130,8 @@
       "skills": "HTML, CSS, ReactJS, Node.js, Java, C/C++, Scheme, x86 assembly, eating without chewing",
       "hobbies": "hiking, contemplating my existance",
       "bio": "Has awesome pet mice",
-      "imageURL": "./profile/amelia_richardson.jpg"
+      "imageURL": "./profile/amelia_richardson.jpg",
+      "blockedUsers": []
     },
     {
       "id": "8",
@@ -142,7 +149,8 @@
       "skills": "Brain stuff, basketball, hopping fences",
       "hobbies": "reading, sketching, taking notes",
       "bio": "Great at sketching",
-      "imageURL": "./profile/tracy_kyles.jpg"
+      "imageURL": "./profile/tracy_kyles.jpg",
+      "blockedUsers": []
     },
     {
       "id": "9",
@@ -160,7 +168,8 @@
       "skills": "Java, C++, teaching, leadership",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding",
       "bio": "Loves Trukese navigators",
-      "imageURL": "./profile/edith_boucher.jpg"
+      "imageURL": "./profile/edith_boucher.jpg",
+      "blockedUsers": []
     },
     {
       "id": "10",
@@ -178,7 +187,8 @@
       "skills": "graduated top of his class in the navy seals and over 300 confirmed kills",
       "hobbies": "call of duty",
       "bio": "Has stellar associative memory",
-      "imageURL": "./profile/david_johnson.jpg"
+      "imageURL": "./profile/david_johnson.jpg",
+      "blockedUsers": []
     },
     {
       "id": "11",
@@ -196,7 +206,8 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "what are those",
       "bio": "Only friend with a Navy ship named after them",
-      "imageURL": "./profile/robert_james.jpg"
+      "imageURL": "./profile/robert_james.jpg",
+      "blockedUsers": []
     },
     {
       "id": "12",
@@ -214,7 +225,8 @@
       "skills": "working hard",
       "hobbies": "hobbying hard",
       "bio": "Really into psychology",
-      "imageURL": "./profile/allen_newells.jpg"
+      "imageURL": "./profile/allen_newells.jpg",
+      "blockedUsers": []
     },
     {
       "id": "13",
@@ -232,7 +244,8 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding, cooking, eating, running, sports, basketball",
       "bio": "Hi! I'm new to campus and I'm looking to diversify myself and find a mentor and learn how to succeed. I also want to fill out this bio box with more fake text.",
-      "imageURL": "./profile/user_image.jpg"
+      "imageURL": "./profile/user_image.jpg",
+      "blockedUsers": []
     },
     {
       "id": "14",
@@ -250,7 +263,8 @@
       "skills": "Java, junit testing, C/C++, ARM, x86, Scala, OCaml, Haskell, Javascript, Node.js, HTML/CSS",
       "hobbies": "Volleyball, surfing, hiking, jogging, coding, cooking, eating, running, sports, basketball",
       "bio": "Hi! I'm new to campus and I'm looking to diversify myself and find a mentee and learn how to succeed. I also want to fill out this bio box with more fake text.",
-      "imageURL": "./profile/user_image.jpg"
+      "imageURL": "./profile/user_image.jpg",
+      "blockedUsers": []
     }
   ]
 }

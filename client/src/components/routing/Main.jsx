@@ -64,6 +64,11 @@ export default class Main extends Component {
     console.log("This is what I am currently passing in as pageview: " + window.location.pathname + window.location.search);
   }
 
+  // used for when we block a user and redirect back to link, need to reload to refresh the view
+  reloadPage() {
+    window.location.reload();
+  }
+
   render() {
 
     const {
@@ -108,7 +113,6 @@ export default class Main extends Component {
             exact path={"/" + LAUNCH}
             render={() => (
               <LaunchView 
-                onBackClick={this.handleBackToLaunch}
                 handleTracking={this.updateTracking}
               />
             )}
@@ -151,6 +155,7 @@ export default class Main extends Component {
           render={(props) => (
             <LinkProfileView
               {...props}
+              onBlockUser={this.reloadPage}
               handleTracking={this.updateTracking}
             />
           )}

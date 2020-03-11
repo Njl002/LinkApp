@@ -7,8 +7,9 @@ import LinkProfileTitle from './LinkProfileTitle';
 import LinkProfileBody from './LinkProfileBody';
 
 import { navConsts } from '../../../constants';
+import UserSession from '../../../storage/UserSession';
 
-import { getAllUsers, getImage } from '../../../api';
+import { getAllUsers, getImage, updateUser } from '../../../api';
 
 import './css/LinkProfileView.css';
 
@@ -34,10 +35,13 @@ export default class LinkProfileView extends Component {
       skills: "", // to change to list
       hobbies: "", // to change to list
       bio: "",
-      imageURL: "", 
+      imageURL: "",
+      blockedUsers: [], 
 
       modalShow: false
     }
+
+    this.handleCancelUser = this.handleCancelUser.bind(this);
   }
 
   componentDidMount() {
@@ -67,8 +71,25 @@ export default class LinkProfileView extends Component {
         skills: user.skills, // to change to list
         hobbies: user.hobbies, // to change to list
         bio: user.bio,
-        imageURL: user.imageURL
+        imageURL: user.imageURL,
       });
+    });
+  }
+
+  // adds the link's id to this user's blocked users
+  handleCancelUser() {
+    let userId = UserSession.getId(); // should be set at this point 
+    const allUsersPromise = getAllUsers();
+    allUsersPromise.then(data => {
+      let user = data.users.find(x => x.id === userId);
+      console.log(user);
+      user.blockedUsers.push(this.state.id);
+      return user;
+    }).then(user => {
+      console.log("update blocked user");
+      console.log(user);
+      updateUser(user, userId);
+      this.props.onBlockUser();
     });
   }
 
@@ -104,8 +125,8 @@ export default class LinkProfileView extends Component {
         <Row className="linkProfileBtnRow"> 
           <Col md={{ span: 3, offset: 1 }} xs={{ span: 3, offset: 1 }}> 
             <Link to={"/" + LINKS}> 
-              <Button className="linkProfileCancelBtn"> 
-                <FiArrowLeft />
+              <Button className="linkProfileCancelBtn" onClick={this.handleCancelUser}> 
+                X
               </Button> 
             </Link> 
           </Col> 

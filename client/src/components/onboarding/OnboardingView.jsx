@@ -117,7 +117,8 @@ export default class OnboardingView extends Component {
       skills: this.state.skills,
       hobbies: this.state.hobbies, 
       bio: this.state.bio,
-      imageURL: "https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg"
+      imageURL: "https://i.pinimg.com/736x/2e/0a/f8/2e0af89dac4dbf2aae5bbca791adb4c6.jpg",
+      blockedUsers: []
     };
     //const addUserPromise = addUser(data);
     const addUserPromise = updateUser(data, userId);

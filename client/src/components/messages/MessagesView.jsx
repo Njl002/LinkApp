@@ -13,6 +13,7 @@ export default class MessagesView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      blockedUsers: [],
       messages: []
     }
   }
@@ -38,14 +39,20 @@ export default class MessagesView extends Component {
     return usersPromise.then(data => {
       console.log("Got users response: ");
       console.log(data);
+      // get blocked users
+      let user = data.users.find(x => x.id === this.props.userId);
+      this.state.blockedUsers = user.blockedUsers;
       return data.users;
     }).then((allUsers) => {
-      
+        // filter messages to and from and blocked
         const messagesPromise = getAllMessages();
         return messagesPromise.then(data => {
           console.log("Got messages response: ");
           console.log(data);
-          return data.messages.filter(x => x.to === userId || x.from === userId);;
+          return data.messages.filter(x => 
+            (x.to === userId || x.from === userId) &&
+            (!this.state.blockedUsers.includes(x.to) && !this.state.blockedUsers.includes(x.from))
+          );
         }).then((selectMessages) => {
           selectMessages.sort((a,b) => new Date(b.timeStamp) - new Date(a.timeStamp)); // latest to first
           return selectMessages;
