@@ -40,7 +40,7 @@ export default class MessagesView extends Component {
       console.log("Got users response: ");
       console.log(data);
       // get blocked users
-      let user = data.users.find(x => x.id === this.props.userId);
+      let user = data.users.find(x => x.id === userId);
       this.state.blockedUsers = user.blockedUsers;
       return data.users;
     }).then((allUsers) => {
