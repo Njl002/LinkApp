@@ -1,3 +1,16 @@
+.add-hobby-button {
+  background-color: #4ABDAC;
+  border: none;
+  box-shadow: none;
+  border-radius: 16px;
+  color: white;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  height: 35px;
+  margin-bottom: 5px;
+  padding: .375rem .75rem;
+}
+
 .hobbies-back-button {
   background-color: transparent;
   border: none;
@@ -15,6 +28,7 @@
   box-shadow: none;
   color: #4ABDAC;
   font-family: Nunito, Arial, Helvetica, sans-serif;
+  margin-right: 12px;
 }
 
 .hobbies-form::placeholder {
@@ -43,4 +57,18 @@
   margin-right: 10%;
   max-width: 80%;
   text-align: left;
+}
+
+.hobby-button {
+  background-color: #4ABDAC;
+  border: none;
+  box-shadow: none;
+  border-radius: 16px;
+  color: white;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  height: 35px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: .375rem .75rem;
 }
