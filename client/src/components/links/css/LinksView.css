@@ -1,11 +1,11 @@
 .profileCardCol {
   margin-bottom: 5vh;
-  max-height: 90%;
+  max-height: 100%;
 }
 
 .linksContainer {
-  max-height: 90%;
-  height: 90%;
+  max-height: 100%;
+  height: 100%;
   overflow: scroll;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .linksContainer .links {
-  height: 87%;
+  height: 90vh;
   overflow: scroll;
-  max-height: 90%;
+  max-height: 100%;
 }
