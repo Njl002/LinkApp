@@ -5,4 +5,4 @@ To Run locally
 "npm start" in client
 
 current deployment (with demo data)
-https://a8-link-app.herokuapp.com
+https://a10-link-app.herokuapp.com
